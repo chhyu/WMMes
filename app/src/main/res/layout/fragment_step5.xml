@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/dp_10">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp">
+
+            <TableRow style="@style/tbRowStyle">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_bg"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlKaiMoSheding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30">
+
+                            <ImageView
+                                android:id="@+id/ivReLiuDaoWenDu"
+                                android:layout_width="@dimen/dp_5"
+                                android:layout_height="@dimen/dp_15"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:background="@color/bg_blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:layout_toRightOf="@+id/ivReLiuDaoWenDu"
+                                android:text="开模设定"
+                                android:textSize="@dimen/text_size_14" />
+
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/ivKaiMoSheDing"
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:layout_below="@+id/rlKaiMoSheding"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@mipmap/icon_kaimo" />
+
+                        <EditText
+                            android:id="@+id/etKMsheDingShijian"
+                            style="@style/step5_wendu_et_style"
+                            android:layout_below="@+id/rlKaiMoSheding"
+                            android:layout_toRightOf="@+id/ivKaiMoSheDing"
+                            android:hint="设定时间" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/shijishijian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="实际时间"
+                            android:textSize="@dimen/text_size_14" />
+
+
+                        <EditText
+                            android:id="@+id/etKMShiJiShiJian"
+                            style="@style/step5_wendu_et_style"
+                            android:layout_centerVertical="true"
+                            android:hint="实际时间"
+                            android:minWidth="500dp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_bg"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlDingchuShijian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30">
+
+                            <ImageView
+                                android:id="@+id/ivDingchuShijian"
+                                android:layout_width="@dimen/dp_5"
+                                android:layout_height="@dimen/dp_15"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:background="@color/bg_blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:layout_toRightOf="@+id/ivDingchuShijian"
+                                android:text="顶出设定"
+                                android:textSize="@dimen/text_size_14" />
+
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/ivivDingchuShijian"
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:layout_below="@+id/rlDingchuShijian"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@mipmap/icon_dingchu" />
+
+                        <EditText
+                            android:id="@+id/etDCSheDingShijian"
+                            style="@style/step5_wendu_et_style"
+                            android:layout_below="@+id/rlDingchuShijian"
+                            android:layout_toRightOf="@+id/ivivDingchuShijian"
+                            android:hint="设定时间" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Dingchushijishijian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="实际时间"
+                            android:textSize="@dimen/text_size_14" />
+
+
+                        <EditText
+                            android:id="@+id/etDCshijishijian"
+                            style="@style/step5_wendu_et_style"
+                            android:layout_below="@+id/Dingchushijishijian"
+                            android:hint="实际时间"
+                            android:minWidth="500dp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow style="@style/tbRowStyle">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_bg"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlDTSheding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30">
+
+                            <ImageView
+                                android:id="@+id/ivDingTuiSheDing"
+                                android:layout_width="@dimen/dp_5"
+                                android:layout_height="@dimen/dp_15"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:background="@color/bg_blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:layout_toRightOf="@+id/ivDingTuiSheDing"
+                                android:text="顶退设定"
+                                android:textSize="@dimen/text_size_14" />
+
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/ivDingTuiSheDi"
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:layout_below="@+id/rlDTSheding"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@mipmap/icon_kaimo" />
+
+                        <EditText
+                            android:id="@+id/etDTSheDingShijian"
+                            style="@style/step5_wendu_et_style"
+                            android:layout_below="@+id/rlDTSheding"
+                            android:layout_toRightOf="@+id/ivDingTuiSheDi"
+                            android:hint="设定时间" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dingtuishijishijian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="实际时间"
+                            android:textSize="@dimen/text_size_14" />
+
+
+                        <EditText
+                            android:id="@+id/etDTShiJiShiJian"
+                            style="@style/step5_wendu_et_style"
+                            android:layout_below="@+id/dingtuishijishijian"
+                            android:hint="实际时间" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_80"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_bg"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlHeMoSheDing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_30">
+
+                            <ImageView
+                                android:id="@+id/ivHeMoSheDingLine"
+                                android:layout_width="@dimen/dp_5"
+                                android:layout_height="@dimen/dp_15"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_8"
+                                android:background="@color/bg_blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp_10"
+                                android:layout_toRightOf="@+id/ivHeMoSheDingLine"
+                                android:text="合模设定"
+                                android:textSize="@dimen/text_size_14" />
+
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/ivHeMoSheDing"
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_35"
+                            android:layout_below="@+id/rlHeMoSheDing"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:src="@mipmap/icon_hemo" />
+
+                        <EditText
+                            android:id="@+id/etHMSheDingSJ"
+                            style="@style/step5_wendu_et_style"
+                            android:layout_below="@+id/rlHeMoSheDing"
+                            android:layout_toRightOf="@+id/ivHeMoSheDing"
+                            android:hint="设定时间" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_100"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/hemoshijishijian"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="实际时间"
+                            android:textSize="@dimen/text_size_14" />
+
+
+                        <EditText
+                            android:id="@+id/etHMShiJiSJ"
+                            style="@style/step5_wendu_et_style"
+                            android:layout_below="@+id/hemoshijishijian"
+                            android:hint="实际时间" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow style="@style/tbRowStyle">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/dp_5"
+                        android:text="冷却时间" />
+
+                    <EditText
+                        android:id="@+id/etLengQueSj"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:inputType="numberDecimal"
+                        android:hint="请输入冷却时间" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/text_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/dp_5"
+                        android:text="以上整个循环周期" />
+
+                    <EditText
+                        android:id="@+id/etXunHuanZhouQi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="numberDecimal"
+                        android:hint="请输入循环周期" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30">
+
+            <ImageView
+                android:id="@+id/ivKongPaoLine"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ivKongPaoLine"
+                android:text="空跑检查表"
+                android:textSize="@dimen/text_size_14" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llKongPao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4.55"
+                    android:gravity="center"
+                    android:text="点检项目"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="OK"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="NG"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!--A-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="1. 模具温度设定在原料供应商推荐的温度范围内" />
+
+                <LinearLayout
+                    android:id="@+id/llCheck1OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck1OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck1NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck1NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--B-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="2. 开合模具时，是否顺利，无异常状况(响声，障碍动作等)" />
+
+
+                <LinearLayout
+                    android:id="@+id/llCheck2OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck2OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck2NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck2NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--C-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="3. 顶出动作正确顺利,行程足够？滑块斜销和其他可移动部件的配合有无问题" />
+
+                <LinearLayout
+                    android:id="@+id/llCheck3OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck3OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck3NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck3NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--D-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="4. 开模行距能保证零件和流道的取出？" />
+
+
+                <LinearLayout
+                    android:id="@+id/llCheck4OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck4OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck4NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck4NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--E-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="5. 水路，油路和电线等接头有足够的间距以确保安全使用" />
+
+
+                <LinearLayout
+                    android:id="@+id/llCheck5OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck5OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck5NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck5NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--F-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="6. 温度控制线路（模具和热流道）连接已作为工艺条件进行记录" />
+
+                <LinearLayout
+                    android:id="@+id/llCheck6OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck6OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck6NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck6NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--G-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="7. 模具低压保护已经设定，以保护模具" />
+
+                <LinearLayout
+                    android:id="@+id/llCheck7OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck7OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck7NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck7NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--H-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="8. 热流道温度升到设定温度" />
+
+                <LinearLayout
+                    android:id="@+id/llCheck8OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck8OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck8NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck8NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--I-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="9. 模具运行时，水，油等连接未泄漏" />
+
+                <LinearLayout
+                    android:id="@+id/llCheck9OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck9OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck9NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck9NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--J-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="10. 模具全自动运行, 无影响循环时间的因素？" />
+
+                <LinearLayout
+                    android:id="@+id/llCheck10OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck10OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck10NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck10NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--K-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/stepTwoStepTextStyle2"
+                    android:text="11. 空循环结束后，模具无机械性损伤，如磨损或碰伤等" />
+
+                <LinearLayout
+                    android:id="@+id/llCheck11OK"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck11OK"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCheck11NG"
+                    style="@style/stepTwoStepTextStyle"
+                    android:layout_weight="1">
+
+                    <CheckBox
+                        android:id="@+id/cbCheck11NG"
+                        style="@style/stepTwoStepcbStyle" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_15"
+                android:text="如果以下任何一项的结果为NG时，必须在问题解决后再进行下一步试模；特殊情况需部门领导批准后再向下进行。"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size_22"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnNextStep"
+            style="@style/nextStepBtnStyle"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</ScrollView>

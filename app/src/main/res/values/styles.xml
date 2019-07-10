@@ -1,0 +1,405 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="WarpLinearLayoutDefault">
+        <item name="grivate">left</item>
+        <item name="horizontal_Space">20dp</item>
+        <item name="vertical_Space">20dp</item>
+        <item name="isFull">false</item>
+    </style>
+
+    <!--分割线-->
+    <style name="divider">
+        <item name="android:background">@color/divider</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+    </style>
+
+    <style name="stepOneStepRlStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dp_30</item>
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+        <item name="android:padding">@dimen/dp_5</item>
+    </style>
+
+    <style name="stepOneStepnameStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/dp_15</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+
+    <style name="stepOneStepCbStyle">
+        <item name="android:layout_width">@dimen/dp_40</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_marginRight">@dimen/dp_20</item>
+        <item name="android:background">@drawable/selector_cb_check_state</item>
+        <item name="android:button">@null</item>
+        <item name="android:padding">@dimen/dp_8</item>
+    </style>
+
+    <style name="nextStepBtnStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+        <item name="android:layout_marginBottom">@dimen/dp_20</item>
+        <item name="android:text">下一步</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">@dimen/dp_8</item>
+    </style>
+
+    <style name="stepTwoStepLlStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="stepTwoStepllStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">@dimen/dp_3</item>
+    </style>
+
+    <style name="stepExcelEtStyleUp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:enabled">false</item>
+        <item name="android:minWidth">300dp</item>
+
+    </style>
+
+    <style name="stepExcelEtStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">@dimen/dp_3</item>
+        <!-- <item name="android:text">16.166</item>-->
+    </style>
+
+    <style name="stepExcelTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">@dimen/dp_3</item>
+    </style>
+
+    <style name="stepTwoStepTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">4.5</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="stepTwoStepRadioGroupStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">4.5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="stepTwoStepTextStyle2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">4.5</item>
+    </style>
+
+    <style name="stepTwoStepcbStyle">
+        <item name="android:layout_width">@dimen/dp_25</item>
+        <item name="android:layout_height">@dimen/dp_25</item>
+        <item name="android:background">@drawable/selector_cb_check_state</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="stepTwoStepRbStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_25</item>
+        <item name="android:background">@drawable/selector_cb_check_state</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingRight">@dimen/dp_18</item>
+        <item name="android:paddingLeft">@dimen/dp_18</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="tbRowStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dp_20</item>
+        <item name="android:layout_marginRight">@dimen/dp_20</item>
+        <item name="android:background">@color/iconBlack</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="tbRowStyleTwo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/iconBlack</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="step4_temperature_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+    </style>
+
+    <style name="step4_temperature_et_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="step5_wendu_et_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp_35</item>
+        <item name="android:layout_marginLeft">@dimen/dp_15</item>
+        <item name="android:layout_marginRight">@dimen/dp_15</item>
+        <item name="android:background">@drawable/bg_juxing_gray</item>
+        <item name="android:minWidth">500dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="step6_yali_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+    </style>
+
+    <style name="step6_yali_et_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="step7_zhusu_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+    </style>
+
+    <style name="step8_zhusu_et_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:hint">请输入...</item>
+    </style>
+
+    <style name="step8_tianbiao_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+    </style>
+
+    <style name="step8_duanshe_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <style name="step8_duanshe_text_style2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:enabled">false</item>
+        <item name="android:text">点击拍照</item>
+
+    </style>
+
+    <style name="step7_zhusu_et_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:minWidth">500dp</item>
+    </style>
+
+    <style name="step11_zhusu_et_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:minWidth">500dp</item>
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="im_more_option_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_45</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:textColor">@color/md_light_blue_600</item>
+    </style>
+
+    <style name="dialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowFrame">@null</item> <!--边框-->
+        <item name="android:windowBackground">@color/transparent</item> <!-- 背景透明 -->
+        <item name="android:windowNoTitle">true</item> <!--无标题-->
+        <item name="android:windowIsTranslucent">true</item> <!--半透明-->
+        <item name="android:windowIsFloating">true</item> <!--是否浮现在activity之上-->
+    </style>
+
+    <style name="picture_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否启用标题栏 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 是否使用背景半透明 -->
+    </style>
+
+    <style name="Comm.Dialog.Anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/comm_anim_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/comm_anim_dialog_exit</item>
+    </style>
+
+
+    <style name="step11StepcbStyle">
+        <item name="android:layout_width">@dimen/dp_35</item>
+        <item name="android:layout_height">@dimen/dp_35</item>
+        <item name="android:background">@drawable/selector_cb_check_state</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:padding">@dimen/dp_6</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="step12_zhusu_et_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:minWidth">500dp</item>
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="step13_zhusu_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1.7</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+    </style>
+
+
+    <style name="step13_zhusu_et_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:minWidth">500dp</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:text">16.166</item>
+    </style>
+
+    <style name="step13_zhusu_et2_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/iconBlack</item>
+        <item name="android:background">@drawable/text_bg</item>
+        <item name="android:minWidth">500dp</item>
+        <item name="android:text">16.166</item>
+    </style>
+
+    <style name="tbRowStyletwelve">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/iconBlack</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="line_bg_gray_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/divider</item>
+    </style>
+
+    <style name="general_textview_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+    </style>
+</resources>

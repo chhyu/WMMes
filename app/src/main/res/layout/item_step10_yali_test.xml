@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <EditText
+        android:id="@+id/etLengqueShiJian"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="冷却时间"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+
+    <EditText
+        android:id="@+id/etWaiGuanZhiLiang"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="外观质量"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etChiCun"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="尺寸"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etBeiZhu"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="备注"
+        android:minWidth="500dp" />
+
+</LinearLayout>

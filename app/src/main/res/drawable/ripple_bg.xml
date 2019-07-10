@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--<shape xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:shape="rectangle">--><!--<solid android:color="#8cc476" />--><!--<corners android:radius="0dp" />--><!--</shape>-->
+
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#00000000">
+    <!--有界限的波纹-->
+    <!--<item android:drawable="?android:attr/selectableItemBackground" />-->
+
+    <!--可以超出视图区域的波纹-->
+    <item android:drawable="?android:attr/selectableItemBackgroundBorderless" />
+</ripple>
+

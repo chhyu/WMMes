@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/comm_appbar_fixed" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10">
+
+        <TableRow style="@style/tbRowStyleTwo">
+
+            <TextView
+                style="@style/step7_zhusu_text_style"
+                android:text="NO" />
+
+            <TextView
+                style="@style/step7_zhusu_text_style"
+                android:layout_weight="3"
+                android:text="问题描述" />
+
+            <TextView
+                style="@style/step7_zhusu_text_style"
+                android:layout_weight="3"
+                android:text="原因" />
+
+            <TextView
+                style="@style/step7_zhusu_text_style"
+                android:text="解决方法" />
+
+            <TextView
+                style="@style/step7_zhusu_text_style"
+                android:text="完成日期" />
+
+            <TextView
+                style="@style/step7_zhusu_text_style"
+                android:text="责任人" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcvProblemList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_15"
+        android:gravity="center"
+        android:text="点击加号添加问题描述"
+        android:textColor="@color/textHint" />
+
+    <Button
+        android:id="@+id/btnAddRecord"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/drawable_add"
+        android:padding="@dimen/dp_5" />
+
+</LinearLayout>

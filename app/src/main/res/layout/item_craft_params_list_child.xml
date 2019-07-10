@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_5">
+
+    <TextView
+        android:id="@+id/tvProcedureName"
+        style="@style/general_textview_style"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="合模"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvCraftParameterId"
+        style="@style/general_textview_style"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="1144406319261028352" />
+
+    <TextView
+        android:id="@+id/tvEquipmentNameText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvProcedureName"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="设备名称：" />
+
+    <TextView
+        android:id="@+id/tvEquipmentName"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvProcedureName"
+        android:layout_toRightOf="@+id/tvEquipmentNameText"
+        android:text="PA01" />
+
+    <TextView
+        android:id="@+id/tvUpperLimitText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEquipmentNameText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="上限：" />
+
+    <TextView
+        android:id="@+id/tvUpperLimit"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEquipmentNameText"
+        android:layout_toRightOf="@+id/tvUpperLimitText"
+        android:text="123" />
+
+    <TextView
+        android:id="@+id/tvLowerLimitText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEquipmentNameText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toLeftOf="@+id/tvLowerLimit"
+        android:text="下限：" />
+
+    <TextView
+        android:id="@+id/tvLowerLimit"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEquipmentNameText"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="11" />
+
+    <TextView
+        android:id="@+id/tvModelKernelCodeText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvLowerLimitText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="模仁：" />
+
+    <TextView
+        android:id="@+id/tvModelKernelCode"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvLowerLimit"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_toRightOf="@+id/tvModelKernelCodeText"
+        android:text="测试Kernel5" />
+
+    <TextView
+        android:id="@+id/tvModelFrameCodeText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvLowerLimitText"
+        android:layout_toLeftOf="@+id/tvModelFrameCode"
+        android:text="模架：" />
+
+    <TextView
+        android:id="@+id/tvModelFrameCode"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvLowerLimit"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:text="测试Kernel5" />
+</RelativeLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <EditText
+        android:id="@+id/etXueHao"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="穴号"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+
+    <EditText
+        android:id="@+id/etOne"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="1"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etTwo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="2"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etThree"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="3"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etFour"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="4"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etFive"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="5"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etSix"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="6"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etMin"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:enabled="false"
+        android:gravity="center"
+        android:hint="min"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etMax"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:enabled="false"
+        android:gravity="center"
+        android:hint="max"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etAverageValue"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:enabled="false"
+        android:gravity="center"
+        android:hint="average"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+
+</LinearLayout>

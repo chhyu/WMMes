@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlTopExcelRow1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/rlStepName"
+    android:layout_marginLeft="@dimen/dp_20"
+    android:layout_marginTop="@dimen/dp_3"
+    android:background="@drawable/bg_juxing_gray">
+
+    <!--模具、机台信息-->
+    <RelativeLayout
+        android:id="@+id/rlJiTaixinxi"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/rlTop">
+
+        <ImageView
+            android:id="@+id/ivjuxingbg"
+            android:layout_width="@dimen/dp_5"
+            android:layout_height="@dimen/dp_20"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:background="@color/bg_blue" />
+
+        <TextView
+            android:id="@+id/tvmuju"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/ivjuxingbg"
+            android:text="模具、机台信息"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold" />
+
+        <View
+            style="@style/divider"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+    <!--第一行-->
+    <LinearLayout
+        android:id="@+id/llOne"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/rlJiTaixinxi">
+
+        <!--日期-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="日期" />
+
+            <EditText
+                android:id="@+id/etDate"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--模仁-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="模仁" />
+
+            <EditText
+                android:id="@+id/etMuRen"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+
+        <!--模架-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="模架" />
+
+            <EditText
+                android:id="@+id/etMuJia"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+
+        <!--项目编号-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="项目编号" />
+
+            <EditText
+                android:id="@+id/etXiangMuBianHao"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--第二行-->
+    <LinearLayout
+        android:id="@+id/llTwo"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/llOne">
+
+        <!--机器编号-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="机器编号" />
+
+            <EditText
+                android:id="@+id/etJiqiBianhao"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--机器吨位-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="机器吨位" />
+
+            <EditText
+                android:id="@+id/etJiqiDunWei"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--螺杆直径-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="外射嘴直径" />
+
+            <EditText
+                android:id="@+id/etWaiSheZuiZhiJing"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--射嘴直径-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="内射嘴直径" />
+
+            <EditText
+                android:id="@+id/etNeiSheZuiZhiJing"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--第三行-->
+    <LinearLayout
+        android:id="@+id/llThree"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/llTwo">
+
+        <!--产品名称-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="产品名称" />
+
+            <EditText
+                android:id="@+id/etChanPinMingCheng"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--产品编号-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="产品编号" />
+
+            <EditText
+                android:id="@+id/etChanPinBianHao"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--客户料号-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="客户料号" />
+
+            <EditText
+                android:id="@+id/etKeHuLiaoHao"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--产品版本-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="产品版本" />
+
+            <EditText
+                android:id="@+id/etChanPinBanBen"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--第四行-->
+    <LinearLayout
+        android:id="@+id/llFour"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/llThree">
+
+        <!--原料名称-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="原料名称" />
+
+            <EditText
+                android:id="@+id/etYuanLiaoMingCheng"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--原料料号-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="原料料号" />
+
+            <EditText
+                android:id="@+id/etYuanLiaoLiaoHao"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--原料供应商-->
+        <LinearLayout
+            style="@style/stepTwoStepllStyle"
+            android:layout_weight="1.2">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="原料供应商" />
+
+            <EditText
+                android:id="@+id/etYuanLiaoGongYingShang"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+        <!--热流道加热点数 -->
+        <LinearLayout
+            style="@style/stepTwoStepllStyle"
+            android:layout_weight="1.5">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="热流道加热点数 " />
+
+            <EditText
+                android:id="@+id/etRLDJRDS"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--第五行-->
+    <LinearLayout
+        android:id="@+id/llFive"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/llFour">
+
+        <!--流到类型-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="流到类型" />
+
+            <EditText
+                android:id="@+id/etLiudaoLeiXing"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+
+        <!--螺杆直径-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="螺杆直径" />
+
+            <EditText
+                android:id="@+id/etLuoGanZhiJing"
+                style="@style/stepExcelEtStyleUp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

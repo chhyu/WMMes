@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="@dimen/dp_10">
+
+        <!--prepare-->
+        <RelativeLayout
+            android:id="@+id/rlPrepare"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_below="@+id/rlTop"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <ImageView
+                android:id="@+id/ivbg"
+                android:layout_width="@dimen/dp_8"
+                android:layout_height="@dimen/dp_20"
+                android:layout_centerVertical="true"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:id="@+id/tvprepare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ivbg"
+                android:text="试模前作业准备"
+                android:textSize="@dimen/text_size_30"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvprepare"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_toRightOf="@+id/tvprepare"
+                android:text="Prepare"
+                android:textColor="@color/textHint"
+                android:textSize="@dimen/text_size_14" />
+        </RelativeLayout>
+
+        <!--one-->
+        <RelativeLayout
+            android:id="@+id/rlOne"
+            style="@style/stepOneStepRlStyle"
+            android:layout_below="@+id/rlPrepare">
+
+            <TextView
+                android:id="@+id/tvOne"
+                style="@style/stepOneStepnameStyle"
+                android:layout_toLeftOf="@+id/cbStep1One"
+                android:text="1.已经阅读过此产品的原材料物性表了解其性能，看过模具装配图了解此模具结构和动作" />
+
+            <CheckBox
+                android:id="@+id/cbStep1One"
+                style="@style/stepOneStepCbStyle" />
+
+        </RelativeLayout>
+
+        <!--two-->
+        <RelativeLayout
+            android:id="@+id/rlTwo"
+            style="@style/stepOneStepRlStyle"
+            android:layout_below="@+id/rlOne">
+
+            <TextView
+                android:id="@+id/tvTwo"
+                style="@style/stepOneStepnameStyle"
+                android:layout_toLeftOf="@+id/cbStep1Two"
+                android:text="2.已经取得了模具部TPE提供的产品关键尺寸对应检查表，并了解此模具重要尺寸精度" />
+
+            <CheckBox
+                android:id="@+id/cbStep1Two"
+                style="@style/stepOneStepCbStyle" />
+
+        </RelativeLayout>
+
+        <!--three-->
+        <RelativeLayout
+            android:id="@+id/rlThree"
+            style="@style/stepOneStepRlStyle"
+            android:layout_below="@+id/rlTwo">
+
+            <TextView
+                android:id="@+id/tvThree"
+                style="@style/stepOneStepnameStyle"
+                android:layout_toLeftOf="@+id/cbStep1Three"
+                android:text="3.需准备电脑、电子称、流量计、照相机、接触式测温仪等，至少两人操作" />
+
+            <CheckBox
+                android:id="@+id/cbStep1Three"
+                style="@style/stepOneStepCbStyle" />
+
+        </RelativeLayout>
+
+        <!--four-->
+        <RelativeLayout
+            android:id="@+id/rlFour"
+            style="@style/stepOneStepRlStyle"
+            android:layout_below="@+id/rlThree">
+
+            <TextView
+                android:id="@+id/tvFour"
+                style="@style/stepOneStepnameStyle"
+                android:layout_toLeftOf="@+id/cbStep1Four"
+                android:text="4.点检确认设备安全、性能良好，设备规格与此模具匹配（包括：注塑机、模温机、除湿干燥机、热流道控制器、机械手&amp;夹治具等）" />
+
+            <CheckBox
+                android:id="@+id/cbStep1Four"
+                style="@style/stepOneStepCbStyle" />
+
+        </RelativeLayout>
+
+        <!--five-->
+        <RelativeLayout
+            android:id="@+id/rlFive"
+            style="@style/stepOneStepRlStyle"
+            android:layout_below="@+id/rlFour">
+
+            <TextView
+                android:id="@+id/tvFive"
+                style="@style/stepOneStepnameStyle"
+                android:layout_toLeftOf="@+id/cbStep1Five"
+                android:text="5.确定试模材料，并根据材料物性表推荐的烘料温度、时间先行烘料" />
+
+            <CheckBox
+                android:id="@+id/cbStep1Five"
+                style="@style/stepOneStepCbStyle" />
+
+        </RelativeLayout>
+
+        <!--six-->
+        <RelativeLayout
+            android:id="@+id/rlSix"
+            style="@style/stepOneStepRlStyle"
+            android:layout_below="@+id/rlFive">
+
+            <TextView
+                android:id="@+id/tvSix"
+                style="@style/stepOneStepnameStyle"
+                android:layout_toLeftOf="@+id/cbStep1Six"
+
+                android:text="6.每页的资料中只要填入黄色区域即可，其它参数无需填写和修改" />
+
+            <CheckBox
+                android:id="@+id/cbStep1Six"
+                style="@style/stepOneStepCbStyle" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnNextStep"
+            style="@style/nextStepBtnStyle"
+            android:layout_below="@+id/rlSix" />
+
+    </RelativeLayout>
+</ScrollView>

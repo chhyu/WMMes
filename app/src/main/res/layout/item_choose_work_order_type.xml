@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
+        android:background="@drawable/bottom_dialog_general_shape"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <TextView
+            android:id="@+id/tvTrialModel"
+            style="@style/im_more_option_style"
+            android:text="@string/work_order_type_of_trialModel" />
+
+        <include layout="@layout/line_divider" />
+
+        <TextView
+            android:id="@+id/tvTrialProduce"
+            style="@style/im_more_option_style"
+            android:text="@string/work_order_type_of_trialProduce" />
+
+        <include layout="@layout/line_divider" />
+
+        <TextView
+            android:id="@+id/tvRework"
+            style="@style/im_more_option_style"
+            android:text="@string/work_order_type_of_rework" />
+
+        <include layout="@layout/line_divider" />
+
+        <TextView
+            android:id="@+id/tvProduce"
+            style="@style/im_more_option_style"
+            android:text="@string/work_order_type_of_produce" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/dp_5"
+        android:background="@drawable/bottom_dialog_general_shape"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="取消"
+            android:textColor="@color/md_light_blue_600" />
+    </LinearLayout>
+</LinearLayout>

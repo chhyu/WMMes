@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/dp_10">
+
+        <include layout="@layout/top_title_layout" />
+
+        <include layout="@layout/top_stepname_layout" />
+
+        <include layout="@layout/top_excel_row_one_layout" />
+
+        <include layout="@layout/top_excel_row_two_layout" />
+
+        <RelativeLayout
+            android:id="@+id/rlShuiluliuliang"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/rlTop">
+
+            <ImageView
+                android:id="@+id/ivRange"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ivRange"
+                android:text="1.水路流量测试记录(要求requirtment：>4L 或 1G/Min)"
+                android:textSize="@dimen/text_size_14" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/stepTwoStepTextStyle"
+                android:text="定模" />
+
+            <TextView
+                style="@style/stepTwoStepTextStyle"
+                android:text="动模" />
+
+            <TextView
+                style="@style/stepTwoStepTextStyle"
+                android:text="滑块" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcvDingMo"
+                style="@style/stepTwoStepTextStyle"
+                android:text="定模" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcvDongMo"
+                style="@style/stepTwoStepTextStyle"
+                android:text="动模" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcvHuaKuai"
+                style="@style/stepTwoStepTextStyle"
+                android:text="滑块" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddRecord"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/drawable_add"
+            android:padding="@dimen/dp_5" />
+
+        <RelativeLayout
+            android:id="@+id/rlShuiLuLianJie"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/rlTop">
+
+            <ImageView
+                android:id="@+id/ivShuiluLianjie"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ivShuiluLianjie"
+                android:text="水路连接记录"
+                android:textSize="@dimen/text_size_14" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvShuiLuLianJie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnAddRecordLiuliang"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/drawable_add"
+            android:padding="@dimen/dp_5" />
+
+        <Button
+            android:id="@+id/btnNextStep"
+            style="@style/nextStepBtnStyle"
+            android:layout_below="@+id/llCheckThing"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</ScrollView>

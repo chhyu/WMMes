@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlStepName"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_60"
+    android:layout_below="@+id/rlTop"
+    android:layout_marginLeft="@dimen/dp_30"
+    android:layout_marginTop="@dimen/dp_20">
+
+    <ImageView
+        android:id="@+id/ivbg"
+        android:layout_width="@dimen/dp_8"
+        android:layout_height="@dimen/dp_20"
+        android:layout_centerVertical="true"
+        android:background="@color/bg_blue" />
+
+    <TextView
+        android:id="@+id/tvStepName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/ivbg"
+        android:text="模具检查&amp;安装模具"
+        android:textSize="@dimen/text_size_30"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvEnglishName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvStepName"
+        android:layout_marginLeft="@dimen/dp_3"
+        android:layout_toRightOf="@+id/tvStepName"
+        android:text="Check Mold&amp;Set Up"
+        android:textColor="@color/textHint"
+        android:textSize="@dimen/text_size_14" />
+</RelativeLayout>

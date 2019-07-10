@@ -1,0 +1,1467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10">
+
+            <TableRow style="@style/tbRowStyleTwo">
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:layout_weight="2"
+                    android:text="参数设置" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="设定值" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="实际值" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="最小值" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="最大值" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:layout_weight="4"
+                    android:text="工艺检查记录（时间/日期）" />
+
+            </TableRow>
+
+            <!--温度-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/text_bg"
+                    android:gravity="center"
+
+                    android:text="温度" />
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9">
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="进料段(ºC)" />
+
+                        <EditText
+                            android:id="@+id/etJinLiaoDuanSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etJinLiaoDuanSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etJinLiaoDuanMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etJinLiaoDuanMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etJinLiaoDuanTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="后段(ºC)" />
+
+                        <EditText
+                            android:id="@+id/etHouDuanSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHouDuanSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHouDuanMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHouDuanMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHouDuanTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="中间段(ºC)" />
+
+                        <EditText
+                            android:id="@+id/etZhongJianDuanSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etZhongJianDuanSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etZhongJianDuanMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etZhongJianDuanMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etZhongJianDuanTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="前段(ºC)" />
+
+                        <EditText
+                            android:id="@+id/etQianDuanSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianDuanSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianDuanMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianDuanMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianDuanTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="喷嘴(ºC)" />
+
+                        <EditText
+                            android:id="@+id/etPenZuiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etPenZuiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etPenZuiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etPenZuiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etPenZuiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <!--射出-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/text_bg"
+                    android:gravity="center"
+                    android:text="射出" />
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9">
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出 1 速(%)" />
+
+                        <EditText
+                            android:id="@+id/etSheChu1SuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu1SuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu1SuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu1SuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu1SuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出 2 速(%)" />
+
+                        <EditText
+                            android:id="@+id/etSheChu2SuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu2SuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu2SuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu2SuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu2SuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出  3 速(%)" />
+
+                        <EditText
+                            android:id="@+id/etSheChu3SuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu3SuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu3SuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu3SuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu3SuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出 4 速(%)" />
+
+                        <EditText
+                            android:id="@+id/etSheChu4SuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu4SuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu4SuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu4SuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChu4SuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="1 段位置(mm)" />
+
+                        <EditText
+                            android:id="@+id/et1DuanWeiZhiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et1DuanWeiZhiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et1DuanWeiZhiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et1DuanWeiZhiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et1DuanWeiZhiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="2 段位置(mm)" />
+
+                        <EditText
+                            android:id="@+id/et2DuanWeiZhiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et2DuanWeiZhiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et2DuanWeiZhiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et2DuanWeiZhiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et2DuanWeiZhiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="3 段位置(mm)" />
+
+                        <EditText
+                            android:id="@+id/et3DuanWeiZhiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et3DuanWeiZhiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et3DuanWeiZhiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et3DuanWeiZhiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et3DuanWeiZhiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="4 段位置(mm)" />
+
+                        <EditText
+                            android:id="@+id/et4DuanWeiZhiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et4DuanWeiZhiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et4DuanWeiZhiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et4DuanWeiZhiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/et4DuanWeiZhiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="V--P位置(mm)" />
+
+                        <EditText
+                            android:id="@+id/etVPWeiZhiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etVPWeiZhiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etVPWeiZhiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etVPWeiZhiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etVPWeiZhiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出压力1(bar)" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi1SD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi1SJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi1Min"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi1Max"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi1Time"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出压力2(bar)" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi2SD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi2SJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi2Min"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi2Max"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi2Time"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出压力3(bar)" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi3SD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi3SJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi3Min"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi3Max"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi3Time"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出压力4(bar)" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi4SD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi4SJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi4Min"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi4Max"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuYaLi4Time"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="冷却时间(sec)" />
+
+                        <EditText
+                            android:id="@+id/etLengQueShiJianSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etLengQueShiJianSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etLengQueShiJianMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etLengQueShiJianMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etLengQueShiJianTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="射出时间(sec)" />
+
+                        <EditText
+                            android:id="@+id/etSheChuShiJianSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuShiJianSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuShiJianMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuShiJianMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSheChuShiJianTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="周期时间(sec)" />
+
+                        <EditText
+                            android:id="@+id/etZhouQiShiJianSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etZhouQiShiJianSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etZhouQiShiJianMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etZhouQiShiJianMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etZhouQiShiJianTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <!--保压-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/text_bg"
+                    android:gravity="center"
+                    android:text="保压" />
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9">
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压1段(bar)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1DuanSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1DuanSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1DuanMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1DuanMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1DuanTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压2段(bar)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2DuanSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2DuanSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2DuanMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2DuanMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2DuanTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压3段(bar)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3DuanSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3DuanSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3DuanMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3DuanMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3DuanTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压1速(%)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1SuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1SuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1SuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1SuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa1SuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压2速(%)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2SuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2SuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2SuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2SuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa2SuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压3速(%)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3SuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3SuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3SuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3SuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYa3SuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压时间1(sec)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian1SD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian1SJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian1Min"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian1Max"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian1Time"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压时间2(sec)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian2SD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian2SJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian2Min"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian2Max"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian2Time"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="保压时间3(sec)" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian3SD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian3SJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian3Min"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian3Max"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBaoYaShiJian3Time"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="螺杆转速(%)" />
+
+                        <EditText
+                            android:id="@+id/etLuoGanZhuanSuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etLuoGanZhuanSuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etLuoGanZhuanSuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etLuoGanZhuanSuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etLuoGanZhuanSuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+
+            <!--锁模-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/text_bg"
+                    android:gravity="center"
+                    android:text="锁模" />
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9">
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="背压(bar)" />
+
+                        <EditText
+                            android:id="@+id/etBeiYaSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBeiYaSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBeiYaMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBeiYaMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etBeiYaTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="松退位置(mm)" />
+
+                        <EditText
+                            android:id="@+id/etSongTuiWeiZhiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSongTuiWeiZhiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSongTuiWeiZhiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSongTuiWeiZhiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSongTuiWeiZhiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="用料量(mm)" />
+
+                        <EditText
+                            android:id="@+id/etYongLiaoLiangSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etYongLiaoLiangSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etYongLiaoLiangMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etYongLiaoLiangMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etYongLiaoLiangTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="缓冲量(mm)" />
+
+                        <EditText
+                            android:id="@+id/etHuanChongLiangSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHuanChongLiangSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHuanChongLiangMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHuanChongLiangMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHuanChongLiangTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="模具保护压力(bar)" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuYaLiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuYaLiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuYaLiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuYaLiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuYaLiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="模具保护位置(mm)" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuWeiZhiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuWeiZhiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuWeiZhiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuWeiZhiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etMuJuBaoHuWeiZhiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="锁模力(bar)" />
+
+                        <EditText
+                            android:id="@+id/etSuoMoLiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSuoMoLiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSuoMoLiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSuoMoLiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etSuoMoLiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="顶出位置(mm)" />
+
+                        <EditText
+                            android:id="@+id/etDingChuWeiZhiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDingChuWeiZhiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDingChuWeiZhiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDingChuWeiZhiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDingChuWeiZhiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="定模温度(ºC)" />
+
+                        <EditText
+                            android:id="@+id/etDingMoWenDuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDingMoWenDuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDingMoWenDuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDingMoWenDuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDingMoWenDuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="动模温度(ºC)" />
+
+                        <EditText
+                            android:id="@+id/etDongMoWenDuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDongMoWenDuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDongMoWenDuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDongMoWenDuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etDongMoWenDuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+
+            <!--其它-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/text_bg"
+                    android:gravity="center"
+                    android:text="其它" />
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9">
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="烘料温度(ºC)" />
+
+                        <EditText
+                            android:id="@+id/etHongLiaoWenDuSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHongLiaoWenDuSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHongLiaoWenDuMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHongLiaoWenDuMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHongLiaoWenDuTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="回料比例(%)" />
+
+                        <EditText
+                            android:id="@+id/etHuiLiaoBiLiSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHuiLiaoBiLiSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHuiLiaoBiLiMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHuiLiaoBiLiMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etHuiLiaoBiLiTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="嵌件数量(个)" />
+
+                        <EditText
+                            android:id="@+id/etQianJianShuLiangSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianJianShuLiangSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianJianShuLiangMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianJianShuLiangMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianJianShuLiangTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                    <TableRow style="@style/tbRowStyleTwo">
+
+                        <TextView
+                            style="@style/step13_zhusu_text_style"
+                            android:text="嵌件编号" />
+
+                        <EditText
+                            android:id="@+id/etQianJianBianHaoSD"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianJianBianHaoSJ"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianJianBianHaoMin"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianJianBianHaoMax"
+                            style="@style/step13_zhusu_et_style" />
+
+                        <EditText
+                            android:id="@+id/etQianJianBianHaoTime"
+                            style="@style/step13_zhusu_et2_style"
+                            android:layout_weight="4" />
+
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnNextStep"
+            style="@style/nextStepBtnStyle"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+</ScrollView>

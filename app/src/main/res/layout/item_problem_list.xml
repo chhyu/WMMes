@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <EditText
+        android:id="@+id/etIndex"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:enabled="false"
+        android:gravity="center"
+        android:hint="序号"
+        android:minWidth="500dp" />
+
+
+    <EditText
+        android:id="@+id/etProblemDescribe"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="问题描述"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etReason"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="原因"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etSolution"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="方法"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etCompleteDate"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="日期"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etPerson"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:hint="责任人"
+        android:minWidth="500dp" />
+
+</LinearLayout>

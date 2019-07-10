@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <View style="@style/divider" />
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.weimi.wmmess.widget.banner.BannerLayout
+                android:id="@+id/bl_store_recycler_banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:autoPlaying="true"
+                app:centerScale="1.8"
+                app:itemSpace="20"
+                app:moveSpeed="1.8" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:scaleType="fitXY"
+                android:src="@mipmap/timg"
+                android:visibility="gone" />
+
+            <com.weimi.wmmess.widget.NoticeView
+                android:id="@+id/nv_store_tips"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone"
+                app:nvIcon="@drawable/main_app_icon_trumpet_solid"
+                app:nvIconPadding="8dp"
+                app:nvIconTint="@color/iconGrey"
+                app:nvTextColor="@color/textDim"
+                app:nvTextGravity="left"
+                app:nvTextSize="14sp" />
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvAPP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="4"
+            tools:listitem="@layout/main_grid_item_app" />
+    </LinearLayout>
+</LinearLayout>

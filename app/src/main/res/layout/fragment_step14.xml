@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/rlTop">
+
+            <ImageView
+                android:id="@+id/ivjuxingbg"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ivjuxingbg"
+                android:text="保压压力测试"
+                android:textSize="@dimen/text_size_14"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
+
+
+            <TableRow style="@style/tbRowStyleTwo">
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="保压压力" />
+
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="1" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="2" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="3" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="平均值" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="备注" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcvBaoYaYaLi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
+
+            <TableRow style="@style/tbRowStyleTwo">
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="最小保压" />
+
+
+                <EditText
+                    android:id="@+id/etYaLiMin"
+                    style="@style/step7_zhusu_text_style"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="最大保压" />
+
+                <EditText
+                    android:id="@+id/etYaLiMax"
+                    style="@style/step7_zhusu_text_style"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="确认保压" />
+
+                <EditText
+                    android:id="@+id/etYaLiConfirm"
+                    style="@style/step7_zhusu_text_style"
+                    android:inputType="numberDecimal" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnAddRecord"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/drawable_add"
+            android:padding="@dimen/dp_5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/rlTop">
+
+            <ImageView
+                android:id="@+id/baoyashijianceshi"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/baoyashijianceshi"
+                android:text="保压时间测试"
+                android:textSize="@dimen/text_size_14"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
+
+
+            <TableRow style="@style/tbRowStyleTwo">
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="保压时间" />
+
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="1" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="2" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="3" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="重量平均值" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="备注" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcvBaoYaTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
+
+            <TableRow style="@style/tbRowStyleTwo">
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="最小保压" />
+
+
+                <EditText
+                    android:id="@+id/etTimeMin"
+                    style="@style/step7_zhusu_text_style"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="最大保压" />
+
+                <EditText
+                    android:id="@+id/etTimeMax"
+                    style="@style/step7_zhusu_text_style"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="确认保压" />
+
+                <EditText
+                    android:id="@+id/etTimeConfirm"
+                    style="@style/step7_zhusu_text_style"
+                    android:inputType="numberDecimal" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnAddBaoYaShiJian"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/drawable_add"
+            android:padding="@dimen/dp_5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/rlTop">
+
+            <ImageView
+                android:id="@+id/ivYaLiTBFX"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ivYaLiTBFX"
+                android:text="保压压力图标分析"
+                android:textSize="@dimen/text_size_14"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChartYaLi"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_marginRight="@dimen/dp_50" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/rlTop">
+
+            <ImageView
+                android:id="@+id/ivSJTBFX"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ivSJTBFX"
+                android:text="保压时间图标分析"
+                android:textSize="@dimen/text_size_14"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChartTime"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_marginRight="@dimen/dp_50" />
+
+        <Button
+            android:id="@+id/btnNextStep"
+            style="@style/nextStepBtnStyle"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

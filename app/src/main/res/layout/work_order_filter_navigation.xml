@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:id="@+id/tvCreateTimeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/dp_10"
+        android:text="创建时间"
+        android:textSize="@dimen/text_size_18" />
+
+    <RelativeLayout
+        android:id="@+id/rlTimeFilter"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/tvCreateTimeText"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/bg_rectangle_corner">
+
+        <TextView
+            android:id="@+id/tvDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="一" />
+
+        <TextView
+            android:id="@+id/tvFilterStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toLeftOf="@+id/tvDivider"
+            android:background="@drawable/bg_juxing_white"
+            android:gravity="center"
+            android:hint="请选择开始时间"
+            android:padding="@dimen/dp_3"
+            android:textSize="@dimen/text_size_14" />
+
+        <TextView
+            android:id="@+id/tvFilterEndTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_toRightOf="@+id/tvDivider"
+            android:background="@drawable/bg_juxing_white"
+            android:gravity="center"
+            android:hint="请选择结束时间"
+            android:padding="@dimen/dp_3"
+            android:textSize="@dimen/text_size_14" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvDataRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlTimeFilter"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:text="数据范围"
+        android:textSize="@dimen/text_size_18" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/tvDataRange"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/divider" />
+
+    <RelativeLayout
+        android:id="@+id/rlWorkOrderType"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@+id/divider1"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="工单类型"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tvWorkOrderType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="请选择"
+            android:textSize="@dimen/text_size_16" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/common_drawable_right" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/rlWorkOrderType"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/divider" />
+
+    <RelativeLayout
+        android:id="@+id/rlWorkOrderState"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@+id/divider2"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="工单状态"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tvWorkOrderState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="请选择"
+            android:textSize="@dimen/text_size_16" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/common_drawable_right" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/rlWorkOrderState"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/divider" />
+</RelativeLayout>

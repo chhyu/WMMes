@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id_text_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="version"
+            android:textSize="20dip" />
+
+        <TextView
+            android:id="@+id/id_text_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="状态"
+            android:textSize="20dip" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            192.168.1.55:5060
+
+            <EditText
+                android:id="@+id/id_etext_ipport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="192.168.1.55:5060" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账号:"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/id_etext_regtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1001" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密码:"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/id_etext_regpwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="对方账号:"
+                android:textSize="20dip" />
+
+            <EditText
+                android:id="@+id/id_etext_dail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/id_etext_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="udp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/id_call_stateinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="呼叫状态"
+        android:textSize="20dip" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:onClick="reg"
+        android:text="注册" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_btn_boda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="boda"
+            android:text="语音拨打" />
+
+
+        <Button
+            android:id="@+id/id_btn_spboda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="videoda"
+            android:text="视频拨打" />
+
+        <Button
+            android:id="@+id/id_btn_gua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="guaduan"
+            android:text="挂断当前通话" />
+
+        <Button
+            android:id="@+id/id_btn_jie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:onClick="jie"
+            android:text="接电话" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/id_btn_jiejie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:onClick="kuoyin"
+        android:text="打开扩音" />
+
+    <Button
+        android:id="@+id/id_btn_dtmf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:onClick="senddtmf"
+        android:text="发送dtmf" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_text_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="code"
+            android:textSize="20dip" />
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlItem"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvProductName"
+        style="@style/general_textview_style"
+        android:padding="@dimen/dp_5"
+        android:text="测试产品"
+        android:textSize="@dimen/text_size_18" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        style="@style/general_textview_style"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/dp_5"
+        android:text="2018.07.09 11：36"
+        android:textSize="@dimen/text_size_18" />
+
+    <TextView
+        android:id="@+id/tvModelKernel"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvProductName"
+        android:padding="@dimen/dp_5"
+        android:text="模仁"
+        android:textSize="@dimen/text_size_18" />
+
+    <TextView
+        android:id="@+id/tvModelFrame"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvModelKernel"
+        android:padding="@dimen/dp_5"
+        android:text="模架"
+        android:textSize="@dimen/text_size_18" />
+
+    <TextView
+        android:id="@+id/tvEquipmentName"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvModelFrame"
+        android:padding="@dimen/dp_5"
+        android:text="设备名称"
+        android:textSize="@dimen/text_size_18" />
+
+    <TextView
+        android:id="@+id/tvProcedureName"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEquipmentName"
+        android:padding="@dimen/dp_5"
+        android:text="工序名称"
+        android:textSize="@dimen/text_size_18" />
+</RelativeLayout>

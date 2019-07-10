@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <EditText
+        android:id="@+id/etYaLi"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+
+    <EditText
+        android:id="@+id/etOne"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etTwo"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etThree"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etAverageValue"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:enabled="false"
+        android:inputType="numberDecimal"
+        android:minWidth="500dp" />
+
+    <EditText
+        android:id="@+id/etBeiZhu"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_juxing_gray"
+        android:gravity="center"
+        android:minWidth="500dp" />
+
+</LinearLayout>

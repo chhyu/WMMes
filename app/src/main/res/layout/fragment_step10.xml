@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/rlTop">
+
+            <ImageView
+                android:id="@+id/ivjuxingbg"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/ivjuxingbg"
+                android:text="保压压力测试"
+                android:textSize="@dimen/text_size_14"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
+
+
+            <TableRow style="@style/tbRowStyleTwo">
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="冷却时间(S)" />
+
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:layout_weight="2"
+                    android:text="产品外观质量    " />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="尺寸" />
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="备注" />
+
+            </TableRow>
+        </TableLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10" />
+
+        <Button
+            android:id="@+id/btnAddRecord"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/drawable_add"
+            android:padding="@dimen/dp_5" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10">
+
+            <TableRow style="@style/tbRowStyleTwo">
+
+                <TextView
+                    style="@style/step7_zhusu_text_style"
+                    android:text="确定冷却时间（结论）" />
+
+
+                <EditText
+                    android:id="@+id/etConfirmTime"
+                    style="@style/step7_zhusu_text_style"
+                    android:hint="确定冷却时间..."
+                    android:inputType="numberDecimal" />
+
+            </TableRow>
+        </TableLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@+id/rlTop">
+
+            <ImageView
+                android:id="@+id/baoyashijianceshi"
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:background="@color/bg_blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/baoyashijianceshi"
+                android:text="冷却时间分析"
+                android:textSize="@dimen/text_size_14"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_15">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1、在优化的射速.保压和保压时间下,取3模估算冷却时间的产品.（备注-冷却时间依据产品最大壁厚而定, 即: 冷却时间+保压时间=5×产品最大壁厚）；"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2、另取3模等待随后测量尺寸，每次降1-3秒冷却时间，取3模产品检查外观质量另取3模等待随后测量尺寸，（注意-每次改变冷却时间后需要过5分钟才能取样）；"
+                android:textSize="@dimen/text_size_16" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3、直到产品外观质量改变，或产品尺寸变化所有产品尺寸的测量必须等24小时以后，即产品尺寸趋于稳定之后 选择具有较短冷却时间和较好外观质量工艺参数进行取样和检验测量 ，最终选择冷却时间应考虑产品尺寸过程能力。"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="* 一般冷却时间选择在最短时间加1-2秒, 开始研究其质量和尺寸稳定性"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="** 当冷却时间+保压时间超过7X产品最大壁厚, 或有其它异常时, 须优先考虑"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:text="1 工艺条件是否合适, 如水路连接, 脱模能力等"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:text="2 模具冷却能力是否足够, 表面光洁度是否足够等"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:text="3 产品设计或模具设计是否有改善的空间和可能"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="*** 如果有明显异常不能通过工艺加以改进, 则停止试模进行改善"
+                android:textSize="@dimen/text_size_16" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnNextStep"
+            style="@style/nextStepBtnStyle"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</ScrollView>

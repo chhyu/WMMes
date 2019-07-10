@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlTopExcelRow2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/rlTopExcelRow1"
+    android:layout_marginLeft="@dimen/dp_20"
+    android:layout_marginTop="@dimen/dp_20"
+    android:background="@drawable/bg_juxing_gray">
+
+    <!--原料使用范围-->
+    <RelativeLayout
+        android:id="@+id/rlRange"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/rlTop">
+
+        <ImageView
+            android:id="@+id/ivRange"
+            android:layout_width="@dimen/dp_5"
+            android:layout_height="@dimen/dp_20"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:background="@color/bg_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/ivRange"
+            android:text="原料使用范围"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold" />
+
+        <View
+            style="@style/divider"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+    <!--第一行-->
+    <LinearLayout
+        android:id="@+id/llTopExcelRow2One"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/rlRange">
+
+        <!--干燥温度-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="干燥温度" />
+
+            <EditText
+                android:id="@+id/etGanZaoWenDu"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入干燥温度" />
+        </LinearLayout>
+        <!--干燥时间-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="干燥时间" />
+
+            <EditText
+                android:id="@+id/etGanZaoShiJian"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入干燥时间" />
+        </LinearLayout>
+        <!--原料含水分-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="原料含水分" />
+
+            <EditText
+                android:id="@+id/etYuanLiaoHanShuiFen"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入项目编号" />
+        </LinearLayout>
+        <!--成型温度-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="成型温度" />
+
+            <EditText
+                android:id="@+id/etChengXingWenDu"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入成型温度" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--第二行-->
+    <LinearLayout
+        android:id="@+id/llTopExcelRow2Two"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/llTopExcelRow2One">
+
+        <!--模具温度-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="模具温度" />
+
+            <EditText
+                android:id="@+id/etMuJuWenDu"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入模具温度" />
+        </LinearLayout>
+        <!--射出压力-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="射出压力" />
+
+            <EditText
+                android:id="@+id/etSheChuYaLi"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入射出压力" />
+        </LinearLayout>
+        <!--射出时间-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="射出时间" />
+
+            <EditText
+                android:id="@+id/etSheChuShiJian"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入射出时间" />
+        </LinearLayout>
+        <!--射出速度-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="射出速度" />
+
+            <EditText
+                android:id="@+id/etSheChuSuDu"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入射出速度" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--第三行-->
+    <LinearLayout
+        android:id="@+id/llTopExcelRow2Three"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/llTopExcelRow2Two">
+
+        <!--保压压力-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="保压压力" />
+
+            <EditText
+                android:id="@+id/etBaoYaYali"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入保压压力" />
+        </LinearLayout>
+        <!--保压时间-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="保压时间" />
+
+            <EditText
+                android:id="@+id/etBaoYaShiJian"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入保压时间" />
+        </LinearLayout>
+        <!--锁模力-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="锁模力" />
+
+            <EditText
+                android:id="@+id/etSuoMoLi"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入锁模力" />
+        </LinearLayout>
+        <!--开合模时间-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="开合模时间" />
+
+            <EditText
+                android:id="@+id/etKaiHeMoShiJian"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入开合模时间" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--第四行-->
+    <LinearLayout
+        android:id="@+id/llTopExcelRow2Four"
+        style="@style/stepTwoStepLlStyle"
+        android:layout_below="@+id/llTopExcelRow2Three">
+
+        <!--冷却时间-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="冷却时间" />
+
+            <EditText
+                android:id="@+id/etLengQueShijian"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入冷却时间" />
+        </LinearLayout>
+        <!--螺杆速度-->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="螺杆速度" />
+
+            <EditText
+                android:id="@+id/etLuoGanSuDu"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入螺杆速度" />
+        </LinearLayout>
+        <!--顶/退出时间-->
+        <LinearLayout
+            style="@style/stepTwoStepllStyle"
+            android:layout_weight="1.2">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="顶/退出时间" />
+
+            <EditText
+                android:id="@+id/etDingTuiChuShijian"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入顶/退出时间" />
+        </LinearLayout>
+        <!--背压 -->
+        <LinearLayout style="@style/stepTwoStepllStyle">
+
+            <TextView
+                style="@style/stepExcelTextStyle"
+                android:text="背压 " />
+
+            <EditText
+                android:id="@+id/etBeiYa"
+                style="@style/stepExcelEtStyle"
+                android:hint="请输入背压 " />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
