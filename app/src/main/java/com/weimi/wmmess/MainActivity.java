@@ -7,6 +7,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import com.weimi.wmmess.fragment.ContactsFragment;
 import com.weimi.wmmess.fragment.MessageFragment;
 import com.weimi.wmmess.fragment.MineFragment;
 import com.weimi.wmmess.presenter.MainPresenter;
+import com.weimi.wmmess.utils.ScreenUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,7 @@ public class MainActivity extends WMActivity<MainPresenter> {
 
     private FrameLayout flContainer;
     private BottomNavigationView bnvBottomNavigation;
+    private FrameLayout flBottom;
 
     @Override
     public int initLayout() {
@@ -33,8 +37,16 @@ public class MainActivity extends WMActivity<MainPresenter> {
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
         getToolbar().setNavigationIcon(null);
+        flBottom = findViewById(R.id.flBottom);
         flContainer = findViewById(R.id.flContainer);
         bnvBottomNavigation = findViewById(R.id.bnv_bottom_navigation);
+//        if (ScreenUtil.checkNavigationBarShow(this)) {
+//            int bottomStatusHeight = ScreenUtil.getBottomStatusHeight(this);
+//            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+//            params.bottomMargin = bottomStatusHeight;
+//            flBottom.setLayoutParams(params);
+//        }
+
     }
 
     private List<Fragment> fragmentList = new ArrayList<>();

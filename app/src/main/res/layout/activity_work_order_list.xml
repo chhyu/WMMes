@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@+id/rlFilter"
-    android:fitsSystemWindows="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".business.workOrder.WorkOrderListActivity">
 
@@ -14,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/comm_appbar_fixed" />
+      <!--  <include layout="@layout/comm_appbar_fixed" />-->
+        <include layout="@layout/toolbar_head_img" />
 
         <RelativeLayout
             android:id="@+id/rlFilter"

@@ -121,6 +121,7 @@ public class ApplicationCenterFragment extends BaseFragment<MainPresenter> {
         list.add(new AppItemBean(R.drawable.main_app_icon_shimu, R.color.md_blue_800, "科学试模", ShiMuActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_sip, R.color.md_deep_orange_400, "Sip通话", SipCallActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_gongdan, R.color.md_light_green_800, "工单管理", WorkOrderListActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_dianjian, R.color.md_deep_orange_800, "项目点检", WorkOrderListActivity.class));
     }
 
     /**

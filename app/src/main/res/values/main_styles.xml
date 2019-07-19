@@ -15,7 +15,7 @@
 
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="actionBarSize">48dp</item>
-        <item name="android:windowBackground">@android:color/white</item>       <!-- 窗口的背景颜色 -->
+       <!-- <item name="android:windowBackground">@android:color/white</item>  -->     <!-- 窗口的背景颜色 -->
         <item name="searchViewStyle">@style/MySearchViewStyle</item>            <!-- SearchView -->
         <item name="android:windowContentTransitions">true</item>               <!--激活过渡动画-->
         <item name="android:windowAnimationStyle">@style/WindowAnimation
@@ -52,10 +52,10 @@
         <item name="color_toolbar_bg">@color/md_grey_50</item>
         <item name="color_toolbar_nav_icon">@drawable/comm_home_icon_back</item>
         <item name="color_toolbar_text">@color/white</item>
-       <!-- <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowTranslucentNavigation">true</item>-->
-        <!--   <item name="android:windowLightStatusBar">true</item>-->
-        <item name="android:statusBarColor">@color/darkgray</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
     </style>
 
     <style name="Main.Theme.Full" parent="@style/AppBaseTheme">

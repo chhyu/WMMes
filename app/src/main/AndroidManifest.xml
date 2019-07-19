@@ -35,12 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".business.shimu.activity.ProblemRecordActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".business.shimu.activity.ShiMuActivity"
-            android:screenOrientation="landscape" />
+        <activity android:name=".business.shimu.activity.ProblemRecordActivity" />
+        <activity android:name=".business.shimu.activity.ShiMuActivity" />
         <activity android:name=".business.shimu.activity.ShiMuHistoryActivity" />
 
         <provider
@@ -59,9 +55,8 @@
         <activity android:name=".business.sip.VideoActivity" />
         <activity android:name=".business.workOrder.WorkOrderListActivity" />
         <activity android:name=".business.workOrder.CraftParamsListActivity" />
-        <activity
-            android:name=".business.shimu.activity.CraftConfirmActivity"
-            android:screenOrientation="landscape" />
+        <activity android:name=".business.shimu.activity.CraftConfirmActivity" />
+        <activity android:name=".business.spotCheck.SpotCheckActivity"></activity>
     </application>
 
 </manifest>

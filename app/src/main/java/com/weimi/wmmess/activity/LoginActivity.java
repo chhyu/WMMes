@@ -2,13 +2,19 @@ package com.weimi.wmmess.activity;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,11 +29,11 @@ import com.weimi.wmmess.widget.LoginButton;
 public class LoginActivity extends WMActivity<LoginPresenter> implements View.OnClickListener, ILoginView {
 
     private LoginButton btnLogin;
-    private ClearEditText etUserName;
-    private ClearEditText etPassword;
+    private EditText etUserName;
+    private EditText etPassword;
     private LoginPresenter presenter;
-    private ImageView ivEye;
-    private boolean isPasswordVisible = false;  //密码是否可见
+    private ImageButton ibAccountDelete;
+    private CheckBox cbPasswordVisibility;
 
     @Override
     public int initLayout() {
@@ -37,19 +43,26 @@ public class LoginActivity extends WMActivity<LoginPresenter> implements View.On
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
         etUserName = findViewById(R.id.etUserName);
+        ibAccountDelete = findViewById(R.id.ib_account_delete);
         etPassword = findViewById(R.id.etPassword);
+        cbPasswordVisibility = findViewById(R.id.cb_password_visibility);
         btnLogin = findViewById(R.id.btnLogin);
-        ivEye = findViewById(R.id.ivEye);
         btnLogin.setOnClickListener(this);
-        ivEye.setOnClickListener(this);
-        etPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if (i == EditorInfo.IME_ACTION_DONE) {   // 按下完成按钮，这里和上面imeOptions对应
-                    doLogin();
-                    return false;   //返回true，保留软键盘。false，隐藏软键盘
-                }
-                return true;
+        ibAccountDelete.setOnClickListener(this);
+        etPassword.setOnEditorActionListener((textView, i, keyEvent) -> {
+            if (i == EditorInfo.IME_ACTION_DONE) {   // 按下完成按钮，这里和上面imeOptions对应
+                doLogin();
+                return false;   //返回true，保留软键盘。false，隐藏软键盘
+            }
+            return true;
+        });
+        cbPasswordVisibility.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                cbPasswordVisibility.setButtonDrawable(R.drawable.main_app_icon_eye_open);
+                etPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                cbPasswordVisibility.setButtonDrawable(R.drawable.main_app_icon_eye_close);
+                etPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
             }
         });
     }
@@ -66,27 +79,12 @@ public class LoginActivity extends WMActivity<LoginPresenter> implements View.On
             case R.id.btnLogin:
                 doLogin();
                 break;
-            case R.id.ivEye:
-                passwordVisibleToggle();
+            case R.id.ib_account_delete:
+                etUserName.setText(null);
                 break;
         }
     }
 
-    /**
-     * 密码是否可见开关
-     */
-    private void passwordVisibleToggle() {
-        isPasswordVisible = !isPasswordVisible;
-        int selectionStart = etPassword.getSelectionStart();
-        if (isPasswordVisible) {
-            ivEye.setImageResource(R.drawable.main_app_icon_eye_open);
-            etPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-        } else {
-            ivEye.setImageResource(R.drawable.main_app_icon_eye_close);
-            etPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        }
-        etPassword.setSelection(selectionStart);
-    }
 
     private void doLogin() {
         String username = etUserName.getText().toString();

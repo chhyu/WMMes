@@ -97,8 +97,6 @@ public class ShiMuActivity extends WMActivity<MainPresenter> implements View.OnC
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-
-
         rcvStepList = findViewById(R.id.rcvStepList);
         flContainer = findViewById(R.id.flContainer);
 

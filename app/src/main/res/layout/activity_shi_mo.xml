@@ -7,7 +7,9 @@
     android:orientation="vertical"
     tools:context=".business.shimu.activity.ShiMuActivity">
 
-     <include layout="@layout/comm_appbar_fixed" />
+    <!--<include layout="@layout/comm_appbar_fixed" />-->
+
+    <include layout="@layout/toolbar_head_img" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rcvStepList"
@@ -31,6 +33,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_50"
             android:orientation="vertical">
 
             <include layout="@layout/top_excel_row_one_layout" />

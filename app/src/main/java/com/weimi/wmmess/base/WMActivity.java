@@ -22,6 +22,23 @@ public abstract class WMActivity<P extends BasePresenter> extends BaseActivity {
         super.onCreate(savedInstanceState);
 //        checkPermissionIfNecessary();
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        initTheme();
+    }
+
+    public void initTheme() {
+        try {
+            int result = 0;
+            int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+            if (resourceId > 0) {
+                result = getResources().getDimensionPixelSize(resourceId);
+            }
+            LinearLayout toptop = (LinearLayout) this.findViewById(R.id.toptop);
+            RelativeLayout.LayoutParams para = new RelativeLayout.LayoutParams(this.getWindowManager().getDefaultDisplay().getWidth(), result);
+            //设置修改后的布局。
+            toptop.setLayoutParams(para);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private Fragment saveFg;
