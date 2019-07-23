@@ -21,10 +21,10 @@ import com.weimi.wmmess.base.BaseFragment;
 import com.weimi.wmmess.base.adapter.CommAdapter;
 import com.weimi.wmmess.base.adapter.ViewHolder;
 import com.weimi.wmmess.bean.AppItemBean;
-import com.weimi.wmmess.business.shimu.activity.CraftConfirmActivity;
 import com.weimi.wmmess.business.shimu.activity.ShiMuActivity;
-import com.weimi.wmmess.business.shimu.activity.ShiMuHistoryActivity;
 import com.weimi.wmmess.business.sip.SipCallActivity;
+import com.weimi.wmmess.business.spotCheck.SpotCheckActivity;
+import com.weimi.wmmess.business.workHours.WorkHourActivity;
 import com.weimi.wmmess.business.workOrder.WorkOrderListActivity;
 import com.weimi.wmmess.presenter.MainPresenter;
 import com.weimi.wmmess.widget.NoticeView;
@@ -121,7 +121,8 @@ public class ApplicationCenterFragment extends BaseFragment<MainPresenter> {
         list.add(new AppItemBean(R.drawable.main_app_icon_shimu, R.color.md_blue_800, "科学试模", ShiMuActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_sip, R.color.md_deep_orange_400, "Sip通话", SipCallActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_gongdan, R.color.md_light_green_800, "工单管理", WorkOrderListActivity.class));
-        list.add(new AppItemBean(R.drawable.main_app_icon_dianjian, R.color.md_deep_orange_800, "项目点检", WorkOrderListActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_dianjian, R.color.md_deep_orange_800, "项目点检", SpotCheckActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_workhour, R.color.md_brown_800, "工时", WorkHourActivity.class));
     }
 
     /**

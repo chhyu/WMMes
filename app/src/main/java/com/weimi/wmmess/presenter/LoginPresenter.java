@@ -7,7 +7,7 @@ import com.weimi.wmmess.api.MainServive;
 import com.weimi.wmmess.base.BaseObserver;
 import com.weimi.wmmess.base.CommonPresenter;
 import com.weimi.wmmess.base.interfaces.IBaseView;
-import com.weimi.wmmess.constant.HostAddress;
+import com.weimi.wmmess.constants.HostAddress;
 import com.weimi.wmmess.http.HttpClient;
 import com.weimi.wmmess.model.ResultModel;
 import com.weimi.wmmess.params.LoginParams;

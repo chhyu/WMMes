@@ -223,7 +223,7 @@
             android:layout_height="@dimen/dp_30"
             android:layout_gravity="center"
             android:layout_margin="@dimen/dp_10"
-            android:background="@drawable/drawable_add"
+            android:background="@drawable/drawable_add_blue"
             android:padding="@dimen/dp_5" />
 
         <!--3.模具温度   4.螺杆转速-->

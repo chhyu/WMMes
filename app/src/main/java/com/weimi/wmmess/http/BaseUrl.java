@@ -1,13 +1,13 @@
 package com.weimi.wmmess.http;
 
 
-import com.weimi.wmmess.constant.HostAddress;
+import com.weimi.wmmess.constants.HostAddress;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Jason on 2018/8/6.
+ * Created by chhyu on 2019/6/6.
  */
 public class BaseUrl {
 

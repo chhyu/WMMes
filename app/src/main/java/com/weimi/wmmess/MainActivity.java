@@ -59,7 +59,7 @@ public class MainActivity extends WMActivity<MainPresenter> {
         fragmentList.add(ContactsFragment.newInstance());
         fragmentList.add(MineFragment.newInstance());
         bnvBottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        switchFragment(R.id.flContainer, fragmentList.get(0));
+        switchFragment(R.id.flContainer, fragmentList.get(1));
     }
 
     BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

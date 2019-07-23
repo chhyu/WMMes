@@ -136,7 +136,7 @@
             android:layout_height="@dimen/dp_35"
             android:layout_gravity="center"
             android:layout_margin="@dimen/dp_10"
-            android:background="@drawable/drawable_add"
+            android:background="@drawable/drawable_add_blue"
             android:padding="@dimen/dp_5" />
 
         <RelativeLayout
@@ -265,7 +265,7 @@
             android:layout_height="@dimen/dp_35"
             android:layout_gravity="center"
             android:layout_margin="@dimen/dp_10"
-            android:background="@drawable/drawable_add"
+            android:background="@drawable/drawable_add_blue"
             android:padding="@dimen/dp_5" />
 
         <RelativeLayout

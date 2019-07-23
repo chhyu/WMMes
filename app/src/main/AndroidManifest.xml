@@ -56,7 +56,16 @@
         <activity android:name=".business.workOrder.WorkOrderListActivity" />
         <activity android:name=".business.workOrder.CraftParamsListActivity" />
         <activity android:name=".business.shimu.activity.CraftConfirmActivity" />
-        <activity android:name=".business.spotCheck.SpotCheckActivity"></activity>
+        <activity android:name=".business.spotCheck.SpotCheckActivity" />
+        <activity android:name=".business.workHours.WorkHourActivity" />
+        <activity android:name=".business.workHours.activity.AddWorkHourActivity" />
+        <activity android:name=".business.workHours.activity.ChooseWorkOrderActivity" />
+        <activity android:name=".business.workHours.activity.ChooseProcedureActivity" />
+        <activity android:name=".business.workHours.activity.ChooseWorkCenterActivity" />
+        <activity android:name=".business.workHours.activity.ChooseWorkTimeTypeActivity" />
+        <activity android:name=".business.workHours.activity.ChooseDeviceActivity" />
+        <activity android:name=".business.workHours.activity.ChooseEmployeeActivity" />
+        <activity android:name=".business.workHours.activity.ChooseWorkTypeActivity"></activity>
     </application>
 
 </manifest>

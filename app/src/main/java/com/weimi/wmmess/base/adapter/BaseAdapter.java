@@ -118,8 +118,9 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<ViewHolder> im
     public void clearItems() {
         int itemCount = getItemCount();
         mDatas.clear();
-        notifyItemRangeRemoved(0, itemCount);
-        notifyItemRangeChanged(0, itemCount);
+//        notifyItemRangeRemoved(0, itemCount);
+//        notifyItemRangeChanged(0, itemCount);
+        notifyDataSetChanged();
     }
 
     public void removeItem(int position) {

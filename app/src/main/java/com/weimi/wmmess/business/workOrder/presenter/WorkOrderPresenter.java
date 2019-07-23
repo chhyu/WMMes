@@ -32,8 +32,7 @@ import com.weimi.wmmess.business.workOrder.enums.WorkOrderTypeEnum;
 import com.weimi.wmmess.business.workOrder.params.WorkOrderVO;
 import com.weimi.wmmess.business.workOrder.viewInterface.ICraftParamsView;
 import com.weimi.wmmess.business.workOrder.viewInterface.IWorkOrderListView;
-import com.weimi.wmmess.constant.Constant;
-import com.weimi.wmmess.constant.HostAddress;
+import com.weimi.wmmess.constants.HostAddress;
 import com.weimi.wmmess.constants.Constants;
 import com.weimi.wmmess.http.HttpClient;
 import com.weimi.wmmess.model.ListModel;
@@ -170,47 +169,34 @@ public class WorkOrderPresenter extends BasePresenter {
         WindowManager.LayoutParams lp = window.getAttributes();
         lp.alpha = 0.7f;
         window.setAttributes(lp);
-        mPopWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                lp.alpha = 1f;
-                window.setAttributes(lp);
-            }
+        mPopWindow.setOnDismissListener(() -> {
+            lp.alpha = 1f;
+            window.setAttributes(lp);
         });
 
         TextView tvTrialModel = popView.findViewById(R.id.tvTrialModel);
         TextView tvTrialProduce = popView.findViewById(R.id.tvTrialProduce);
         TextView tvRework = popView.findViewById(R.id.tvRework);
         TextView tvProduce = popView.findViewById(R.id.tvProduce);
+        TextView tvCancel = popView.findViewById(R.id.tvCancel);
 
-        tvTrialModel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderTypeChoosed(WorkOrderTypeEnum.TRIAL_MODEL, activity.getString(R.string.work_order_type_of_trialModel));
-                mPopWindow.dismiss();
-            }
+        tvTrialModel.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderTypeChoosed(WorkOrderTypeEnum.TRIAL_MODEL, activity.getString(R.string.work_order_type_of_trialModel));
+            mPopWindow.dismiss();
         });
-        tvTrialProduce.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderTypeChoosed(WorkOrderTypeEnum.TRIALP_RODUCE, activity.getString(R.string.work_order_type_of_trialProduce));
-                mPopWindow.dismiss();
-            }
+        tvTrialProduce.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderTypeChoosed(WorkOrderTypeEnum.TRIALP_RODUCE, activity.getString(R.string.work_order_type_of_trialProduce));
+            mPopWindow.dismiss();
         });
-        tvRework.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderTypeChoosed(WorkOrderTypeEnum.REWORK, activity.getString(R.string.work_order_type_of_rework));
-                mPopWindow.dismiss();
-            }
+        tvRework.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderTypeChoosed(WorkOrderTypeEnum.REWORK, activity.getString(R.string.work_order_type_of_rework));
+            mPopWindow.dismiss();
         });
-        tvProduce.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderTypeChoosed(WorkOrderTypeEnum.PRODUCE, activity.getString(R.string.work_order_type_of_produce));
-                mPopWindow.dismiss();
-            }
+        tvProduce.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderTypeChoosed(WorkOrderTypeEnum.PRODUCE, activity.getString(R.string.work_order_type_of_produce));
+            mPopWindow.dismiss();
         });
+        tvCancel.setOnClickListener(v -> mPopWindow.dismiss());
     }
 
 
@@ -233,12 +219,9 @@ public class WorkOrderPresenter extends BasePresenter {
         WindowManager.LayoutParams lp = window.getAttributes();
         lp.alpha = 0.7f;
         window.setAttributes(lp);
-        mPopWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                lp.alpha = 1f;
-                window.setAttributes(lp);
-            }
+        mPopWindow.setOnDismissListener(() -> {
+            lp.alpha = 1f;
+            window.setAttributes(lp);
         });
 
         TextView tvOrderStart = popView.findViewById(R.id.tvOrderStart);
@@ -246,42 +229,29 @@ public class WorkOrderPresenter extends BasePresenter {
         TextView tvProceducing = popView.findViewById(R.id.tvProceducing);
         TextView tvOrderFinish = popView.findViewById(R.id.tvOrderFinish);
         TextView tvOrderException = popView.findViewById(R.id.tvOrderException);
+        TextView tvCancel = popView.findViewById(R.id.tvCancel);
 
-        tvOrderStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.START, activity.getString(R.string.work_order_state_of_start));
-                mPopWindow.dismiss();
-            }
+        tvOrderStart.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.START, activity.getString(R.string.work_order_state_of_start));
+            mPopWindow.dismiss();
         });
-        tvReading.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.READYING, activity.getString(R.string.work_order_state_of_readying));
-                mPopWindow.dismiss();
-            }
+        tvReading.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.READYING, activity.getString(R.string.work_order_state_of_readying));
+            mPopWindow.dismiss();
         });
-        tvProceducing.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.PROCEDUCING, activity.getString(R.string.work_order_state_of_proceducing));
-                mPopWindow.dismiss();
-            }
+        tvProceducing.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.PROCEDUCING, activity.getString(R.string.work_order_state_of_proceducing));
+            mPopWindow.dismiss();
         });
-        tvOrderFinish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.FINISH, activity.getString(R.string.work_order_state_of_finish));
-                mPopWindow.dismiss();
-            }
+        tvOrderFinish.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.FINISH, activity.getString(R.string.work_order_state_of_finish));
+            mPopWindow.dismiss();
         });
-        tvOrderException.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.EXCEPTION, activity.getString(R.string.work_order_state_of_exception));
-                mPopWindow.dismiss();
-            }
+        tvOrderException.setOnClickListener(v -> {
+            ((IWorkOrderListView) mBaseView).onWorkOrderStateChoosed(WorkOrderStateEnum.EXCEPTION, activity.getString(R.string.work_order_state_of_exception));
+            mPopWindow.dismiss();
         });
+        tvCancel.setOnClickListener(v -> mPopWindow.dismiss());
     }
 
     /**
@@ -305,10 +275,11 @@ public class WorkOrderPresenter extends BasePresenter {
 
     /**
      * 检查工单是否有数据
+     *
      * @param orderId
      * @param procedureId
      */
-    public void checkWorkOrderHavingParameter( String orderId,String procedureId) {
+    public void checkWorkOrderHavingParameter(String orderId, String procedureId) {
         if (StringUtils.isEmpty(orderId)) {
             ToastUtils.showShort("工单ID为null");
             return;
@@ -323,7 +294,7 @@ public class WorkOrderPresenter extends BasePresenter {
                 .subscribe(new BaseObserver<ResultModel<Boolean>>() {
                     @Override
                     public void onSuccess(ResultModel<Boolean> result) {
-                        ((IWorkOrderListView) mBaseView).onCheckWorkOrderHavingParameterSuccess(result.getData(), orderId,procedureId);
+                        ((IWorkOrderListView) mBaseView).onCheckWorkOrderHavingParameterSuccess(result.getData(), orderId, procedureId);
                     }
                 });
     }

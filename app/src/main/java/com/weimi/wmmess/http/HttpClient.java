@@ -2,10 +2,9 @@ package com.weimi.wmmess.http;
 
 import android.text.TextUtils;
 
-import com.weimi.wmmess.constant.HostAddress;
+import com.weimi.wmmess.constants.HostAddress;
 import com.weimi.wmmess.http.intercepter.CommParamsInterceptor;
 import com.weimi.wmmess.http.intercepter.LoggingInterceptor;
-import com.weimi.wmmess.http.intercepter.TokenInterceptor;
 
 import java.util.concurrent.TimeUnit;
 

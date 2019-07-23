@@ -22,7 +22,7 @@ public class OrderListAdapter extends CommAdapter<WorkOrderListResbean> {
     @Override
     public void convert(ViewHolder holder, WorkOrderListResbean workOrderListResbean, int position) {
         super.convert(holder, workOrderListResbean, position);
-        TextView tvProductName = holder.getView(R.id.tvProductName);
+        TextView tvWorkOrderName = holder.getView(R.id.tvWorkOrderName);
         TextView tvWorkOrderCode = holder.getView(R.id.tvWorkOrderCode);
         TextView tvProductType = holder.getView(R.id.tvProductType);
         TextView tvPlanCount = holder.getView(R.id.tvPlanCount);
@@ -30,7 +30,7 @@ public class OrderListAdapter extends CommAdapter<WorkOrderListResbean> {
         TextView tvStartTime = holder.getView(R.id.tvStartTime);
         TextView tvEndTime = holder.getView(R.id.tvEndTime);
 
-        tvProductName.setText(workOrderListResbean.getProductName());
+        tvWorkOrderName.setText(workOrderListResbean.getWorkOrderCode());
         tvWorkOrderCode.setText(workOrderListResbean.getWorkOrderId());
         tvProductType.setText(workOrderListResbean.getWorkOrderType());
         tvPlanCount.setText(workOrderListResbean.getPlanCount() + "");

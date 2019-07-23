@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tvProcedureNameText"
+        style="@style/general_textview_style"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="工序名称:"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvProcedureName"
+        style="@style/general_textview_style"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/tvProcedureNameText"
+        android:text="合模"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvProcedureId"
+        style="@style/general_textview_style"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="1144406319261028352" />
+
+    <TextView
+        android:id="@+id/tvcreateTimeText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvProcedureName"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="创建时间：" />
+
+    <TextView
+        android:id="@+id/tvCreateTime"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvProcedureName"
+        android:layout_toRightOf="@+id/tvcreateTimeText"
+        android:text="2018.12.12" />
+
+
+    <TextView
+        android:id="@+id/tvUpdateTimeText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvcreateTimeText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="更新时间：" />
+
+    <TextView
+        android:id="@+id/tvUpdateTime"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvcreateTimeText"
+        android:layout_toRightOf="@+id/tvUpdateTimeText"
+        android:text="2018.12.12" />
+</RelativeLayout>

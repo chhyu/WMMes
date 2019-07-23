@@ -1,4 +1,4 @@
-package com.weimi.wmmess.constant;
+package com.weimi.wmmess.constants;
 
 
 /**

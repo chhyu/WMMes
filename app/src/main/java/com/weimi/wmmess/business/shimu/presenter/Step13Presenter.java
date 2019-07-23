@@ -4,10 +4,7 @@ import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.weimi.wmmess.base.BasePresenter;
 import com.weimi.wmmess.base.interfaces.IBaseView;
-import com.weimi.wmmess.business.shimu.api.ShiMuServive;
 import com.weimi.wmmess.business.shimu.bean.step13.Step13Resbean;
-import com.weimi.wmmess.constant.HostAddress;
-import com.weimi.wmmess.http.HttpClient;
 
 public class Step13Presenter extends BasePresenter {
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tvEmpNameText"
+        style="@style/general_textview_style"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="姓名:"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvEmpName"
+        style="@style/general_textview_style"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/tvEmpNameText"
+        android:text="合模"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvEmpId"
+        style="@style/general_textview_style"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="1144406319261028352" />
+
+    <TextView
+        android:id="@+id/tvEmpCodeText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEmpNameText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="编码：" />
+
+    <TextView
+        android:id="@+id/tvEmpCode"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEmpNameText"
+        android:layout_toRightOf="@+id/tvEmpCodeText"
+        android:text="123456" />
+
+
+    <TextView
+        android:id="@+id/tvEmailText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEmpCodeText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="Email：" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEmpCodeText"
+        android:layout_toRightOf="@+id/tvEmailText"
+        android:text="2018.12.12" />
+
+    <TextView
+        android:id="@+id/tvNumberText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEmailText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="电话：" />
+
+    <TextView
+        android:id="@+id/tvTelephoneNumber"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvEmailText"
+        android:layout_toRightOf="@+id/tvNumberText"
+        android:text="12345" />
+
+</RelativeLayout>

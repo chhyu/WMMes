@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/appbar"
     android:orientation="vertical">
 
     <ImageView
@@ -43,13 +43,23 @@
 
         <TextView
             android:id="@+id/tvToolTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="     "
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_18" />
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/drawable_add_write"
+            android:padding="@dimen/dp_8"
+            android:visibility="gone" />
     </android.support.v7.widget.Toolbar>
 </RelativeLayout>
 

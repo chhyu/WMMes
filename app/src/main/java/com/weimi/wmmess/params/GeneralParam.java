@@ -9,6 +9,7 @@ public class GeneralParam {
 
     private int size;
     private int current;
+    private String keyword;
 
     public int getSize() {
         return size;
@@ -24,5 +25,13 @@ public class GeneralParam {
 
     public void setCurrent(int current) {
         this.current = current;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 }

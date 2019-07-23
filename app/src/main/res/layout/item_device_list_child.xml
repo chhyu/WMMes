@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_5">
+
+
+    <TextView
+        android:id="@+id/tvDeviceNameText"
+        style="@style/general_textview_style"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="名称："
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvDeviceName"
+        style="@style/general_textview_style"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@+id/tvDeviceNameText"
+        android:text="合模"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvDeviceId"
+        style="@style/general_textview_style"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="1144406319261028352" />
+
+    <TextView
+        android:id="@+id/tvEquipmentCodeText"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvDeviceName"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="设备Code：" />
+
+    <TextView
+        android:id="@+id/tvDeviceCode"
+        style="@style/general_textview_style"
+        android:layout_below="@+id/tvDeviceName"
+        android:layout_toRightOf="@+id/tvEquipmentCodeText"
+        android:text="PA01" />
+
+</RelativeLayout>

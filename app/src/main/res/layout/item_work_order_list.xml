@@ -5,7 +5,7 @@
     android:padding="@dimen/dp_3">
 
     <TextView
-        android:id="@+id/tvProductName"
+        android:id="@+id/tvWorkOrderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp_10"
@@ -24,7 +24,7 @@
         android:id="@+id/tvProductTypeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvProductName"
+        android:layout_below="@+id/tvWorkOrderName"
         android:layout_marginLeft="@dimen/dp_10"
         android:text="产品类型：" />
 
@@ -32,7 +32,7 @@
         android:id="@+id/tvProductType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvProductName"
+        android:layout_below="@+id/tvWorkOrderName"
         android:layout_toRightOf="@+id/tvProductTypeText"
         android:text="生产工单" />
 
