@@ -21,6 +21,7 @@ import com.weimi.wmmess.base.BaseFragment;
 import com.weimi.wmmess.base.adapter.CommAdapter;
 import com.weimi.wmmess.base.adapter.ViewHolder;
 import com.weimi.wmmess.bean.AppItemBean;
+import com.weimi.wmmess.business.procedureInput.activity.ProcedureInputActivity;
 import com.weimi.wmmess.business.shimu.activity.ShiMuActivity;
 import com.weimi.wmmess.business.sip.SipCallActivity;
 import com.weimi.wmmess.business.spotCheck.SpotCheckActivity;
@@ -123,6 +124,7 @@ public class ApplicationCenterFragment extends BaseFragment<MainPresenter> {
         list.add(new AppItemBean(R.drawable.main_app_icon_gongdan, R.color.md_light_green_800, "工单管理", WorkOrderListActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_dianjian, R.color.md_deep_orange_800, "项目点检", SpotCheckActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_workhour, R.color.md_brown_800, "工时", WorkHourActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_procedure_input, R.color.md_deep_orange_400, "工时", ProcedureInputActivity.class));
     }
 
     /**

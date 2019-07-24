@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.weimi.wmmess.widget.SwipeItemMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground">
+
+    <RelativeLayout
+        android:id="@+id/rlRootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_3">
+
+
+        <TextView
+            android:id="@+id/tvUserNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="员工姓名："
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvUserNameText"
+            android:text="喻长辉"
+            android:textSize="@dimen/text_size_16" />
+
+
+        <TextView
+            android:id="@+id/tvWorkOrderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUserName"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="工单：" />
+
+        <TextView
+            android:id="@+id/tvWorkOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUserName"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvWorkOrderText"
+            android:text="12212" />
+
+        <TextView
+            android:id="@+id/tvGongXuText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWorkOrderText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvProductTypeText"
+            android:text="工序：" />
+
+        <TextView
+            android:id="@+id/tvGongXu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWorkOrder"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvGongXuText"
+            android:text="包装机" />
+
+        <TextView
+            android:id="@+id/tvBanCiText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvGongXuText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvPlanCountText"
+            android:text="班次：" />
+
+        <TextView
+            android:id="@+id/tvBanCi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvGongXuText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvBanCiText"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/tvStartTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvBanCiText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="开始时间：" />
+
+        <TextView
+            android:id="@+id/tvStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvBanCiText"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@+id/tvStartTimeText"
+            android:text="2018.13.15" />
+
+        <TextView
+            android:id="@+id/tvEndTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvStartTimeText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="结束时间:" />
+
+        <TextView
+            android:id="@+id/tvEndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvStartTimeText"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@+id/tvEndTimeText"
+            android:text="2019.12.12" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:text="删除"
+        android:textColor="@android:color/white" />
+</com.weimi.wmmess.widget.SwipeItemMenuLayout>

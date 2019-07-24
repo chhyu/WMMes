@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red">
+    android:background="@mipmap/login_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       >
-        <!--android:layout_margin="160dp"-->
+        android:layout_margin="160dp">
+
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -27,12 +27,13 @@
 
             <ImageView
                 android:id="@+id/ivLogo"
-                android:layout_width="@dimen/dp_50"
-                android:layout_height="@dimen/dp_50"
+                android:layout_width="@dimen/dp_110"
+                android:layout_height="@dimen/dp_110"
                 android:layout_above="@+id/tvWelcome"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="@dimen/dp_20"
-                android:src="@mipmap/logo" />
+                android:scaleType="fitXY"
+                android:src="@mipmap/login_icon" />
 
             <View
                 android:id="@+id/divider"
@@ -58,24 +59,27 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/md_yellow_50">
+            android:background="@color/white">
 
             <RelativeLayout
                 android:id="@+id/rl_account"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_above="@+id/rl_password"
-                android:orientation="horizontal">
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/bg_juxing_gray"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_15">
 
                 <EditText
                     android:id="@+id/etUserName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/dp_40"
-                    android:layout_marginRight="@dimen/dp_10"
                     android:layout_toLeftOf="@+id/ib_account_delete"
                     android:background="@null"
-                    android:drawableLeft="@drawable/main_app_icon_account"
+                    android:drawableLeft="@mipmap/login_icon_user"
                     android:drawablePadding="@dimen/activity_horizontal_margin"
                     android:hint="登录名/手机号"
                     android:imeOptions="actionNext"
@@ -88,35 +92,30 @@
                     android:layout_height="@dimen/dp_25"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/dp_35"
+                    android:layout_marginRight="@dimen/dp_15"
                     android:background="@drawable/selector_edittext_clear"
                     android:padding="@dimen/dp_10" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="@dimen/dp_40"
-                    android:layout_marginRight="@dimen/dp_40"
-                    android:layout_marginBottom="@dimen/dp_5"
-                    android:background="#DBDBDB" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_password"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"
-                android:orientation="horizontal">
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@drawable/bg_juxing_gray"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_15">
 
                 <EditText
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/dp_40"
                     android:layout_toLeftOf="@+id/cb_password_visibility"
                     android:background="@null"
-                    android:drawableLeft="@drawable/main_app_icon_password"
+                    android:drawableLeft="@mipmap/login_icon_pwd"
                     android:drawablePadding="@dimen/activity_horizontal_margin"
                     android:hint="请输入密码"
                     android:imeOptions="actionDone"
@@ -130,26 +129,48 @@
                     android:layout_height="@dimen/dp_30"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/dp_30"
+                    android:layout_marginRight="@dimen/dp_10"
                     android:button="@drawable/main_app_icon_eye_close"
                     android:gravity="center" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="@dimen/dp_40"
-                    android:layout_marginRight="@dimen/dp_40"
-                    android:layout_marginBottom="@dimen/dp_5"
-                    android:background="#DBDBDB" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/llOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_password"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_15">
+
+                <CheckBox
+                    android:id="@+id/cbNextAutoLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_gravity="left"
+                    android:text="下次自动登录"
+                    android:textColor="#999" />
+
+                <TextView
+                    android:id="@+id/tvForgetPwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:gravity="center"
+                    android:text="忘记密码"
+                    android:textColor="#999" />
             </RelativeLayout>
 
             <com.weimi.wmmess.widget.LoginButton
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
-                android:layout_below="@+id/rl_password"
-                android:layout_margin="@dimen/dp_30" />
+                android:layout_below="@+id/llOption"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20" />
         </RelativeLayout>
+
     </LinearLayout>
 </RelativeLayout>

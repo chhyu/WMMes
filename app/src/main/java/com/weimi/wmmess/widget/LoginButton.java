@@ -52,7 +52,8 @@ public class LoginButton extends View {
 
     private String text = "";
 
-    private int bgColor = Color.BLUE;
+//    private int bgColor = Color.BLUE;
+    private int bgColor = R.color.colorPrimary;
 
     public void setBgColor(int color) {
         this.bgColor = color;
@@ -64,7 +65,8 @@ public class LoginButton extends View {
         this.textColor = color;
     }
 
-    private int proColor = Color.WHITE;
+//    private int proColor = Color.WHITE;
+    private int proColor = R.color.colorPrimary;
 
     public void setProColor(int color) {
         this.proColor = color;
