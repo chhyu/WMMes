@@ -68,7 +68,11 @@
         <activity android:name=".business.workHours.activity.ChooseWorkTypeActivity" />
         <activity android:name=".business.procedureInput.activity.presenter.ProcedureInputListActivity" />
         <activity android:name=".business.procedureInput.activity.presenter.AddProcedureInputActivity" />
-        <activity android:name=".business.procedureInput.activity.ProcedureInputActivity"></activity>
+        <activity android:name=".business.procedureInput.activity.ProcedureInputActivity" />
+        <activity android:name=".business.procedureInput.activity.AddProcedureInputActivity" />
+        <activity android:name=".business.procedureOutput.activity.ProcedureOutputListActivity" />
+        <activity android:name=".business.procedureOutput.activity.ProcedureOutputListActivity" />
+        <activity android:name=".business.procedureOutput.activity.AddProcedureOutputActivity"></activity>
     </application>
 
 </manifest>

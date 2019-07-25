@@ -1,11 +1,13 @@
 package com.weimi.wmmess.business.procedureInput.activity;
 
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.SizeUtils;
@@ -51,6 +53,12 @@ public class ProcedureInputActivity extends WMActivity<ProcedureInputPresenter> 
 
         etSearch = findViewById(R.id.etSearch);
         tvSearch = findViewById(R.id.tvSearch);
+        ImageView ivAdd = findViewById(R.id.ivAdd);
+        ivAdd.setVisibility(View.VISIBLE);
+        ivAdd.setOnClickListener(v -> {
+            Intent intent = new Intent(ProcedureInputActivity.this, AddProcedureInputActivity.class);
+            startActivity(intent);
+        });
 
         tvSearch.setOnClickListener(v -> {
             String keyword = etSearch.getText().toString();
@@ -67,6 +75,11 @@ public class ProcedureInputActivity extends WMActivity<ProcedureInputPresenter> 
         setTitle("工序投入");
         presenter = new ProcedureInputPresenter(this);
         initRcv();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         requestProcedureInputList(true, null);
     }
 
@@ -98,15 +111,18 @@ public class ProcedureInputActivity extends WMActivity<ProcedureInputPresenter> 
         swipeMenuRecyclerView.setLoadMoreListener(mLoadMoreListener);
         adapter = new ProcedureInputListAdapter(this, R.layout.item_procedure_input_list);
         swipeMenuRecyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new OnItemClickListener() {
+
+        adapter.setOnProcedureInputItemClickListener(new ProcedureInputListAdapter.OnProcedureInputItemClickListener() {
             @Override
-            public void onItemClick(View view, ViewHolder holder, int position) {
-                // TODO: 2019/7/23
+            public void onProcedureInputItemClick(ProcedureInputResbean procedureInputResbean) {
+                Intent intent = new Intent(ProcedureInputActivity.this, AddProcedureInputActivity.class);
+                intent.putExtra(AddProcedureInputActivity.RECORD_ID, procedureInputResbean.getRecordId());
+                startActivity(intent);
             }
 
             @Override
-            public boolean onItemLongClick(View view, ViewHolder holder, int position) {
-                return false;
+            public void onSwipProcedureInputItemClick(ProcedureInputResbean procedureInputResbean) {
+                presenter.deleteProcedureInputItem(procedureInputResbean.getRecordId());
             }
         });
     }
@@ -118,7 +134,6 @@ public class ProcedureInputActivity extends WMActivity<ProcedureInputPresenter> 
             mRefreshLayout.setRefreshing(false);
         }
     }
-
     private void requestProcedureInputList(boolean isRefresh, String keyword) {
         if (isRefresh) {
             current = 1;
@@ -136,7 +151,7 @@ public class ProcedureInputActivity extends WMActivity<ProcedureInputPresenter> 
     public void onLoadProcedureInputListSuccess(ListModel<ProcedureInputResbean> listModel) {
         if (listModel != null && listModel.getRecords().size() > 0) {
             maskView.setVisibility(View.GONE);
-            mRefreshLayout.setVisibility(View.VISIBLE);
+            swipeMenuRecyclerView.setVisibility(View.VISIBLE);
             if (isRefresh()) {
                 adapter.clearItems();
             }
@@ -149,12 +164,17 @@ public class ProcedureInputActivity extends WMActivity<ProcedureInputPresenter> 
             if (isRefresh()) {
                 //显示空视图
                 maskView.setVisibility(View.VISIBLE);
-                mRefreshLayout.setVisibility(View.GONE);
+                swipeMenuRecyclerView.setVisibility(View.GONE);
                 maskView.show();
             } else {
                 swipeMenuRecyclerView.loadMoreFinish(false, false);
             }
         }
+    }
+
+    @Override
+    public void onDeteleProcedureInputItemSuccess() {
+        requestProcedureInputList(true, null);
     }
 
     private boolean isRefresh() {

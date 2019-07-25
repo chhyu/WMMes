@@ -4,6 +4,7 @@ import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.orhanobut.logger.Logger;
 import com.weimi.wmmess.base.interfaces.IObserver;
+import com.weimi.wmmess.constants.Constants;
 import com.weimi.wmmess.model.ResultModel;
 
 import io.reactivex.Observer;
@@ -24,7 +25,7 @@ public abstract class WMObserver<T> implements Observer<ResultModel<T>>, IObserv
     public void onNext(ResultModel<T> result) {
         if (result == null) {
             onFailed("请求错误，请稍后再试");
-        } else if (result.getStatus().equals("1")) {
+        } else if (result.getStatus().equals(Constants.RESPONSE_SUCCESS)) {
             onSuccess(result.getData());
         } else {
             String status = result.getStatus();

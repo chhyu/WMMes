@@ -35,6 +35,7 @@ public class ChooseProcedureActivity extends WMActivity<WorkHourPresenter> imple
 
     public static final String WORK_ORDER_BOM_ID = "work_order_bom_id";
     public static final String WORK_ORDER_CRAFT_ID = "work_order_craft_id";
+    public static final String WORK_PROCEDURE = "work_procedure";
     private EditText etSearch;
     private TextView tvSearch;
     private SwipeRefreshLayout mRefreshLayout;
@@ -113,7 +114,7 @@ public class ChooseProcedureActivity extends WMActivity<WorkHourPresenter> imple
             public void onItemClick(View view, ViewHolder holder, int position) {
                 ProcedureResbean procedureResbean = adapter.getDatas().get(position);
                 Intent intent = new Intent();
-                intent.putExtra(AddWorkHourActivity.WORK_PROCEDURE, JSON.toJSONString(procedureResbean));
+                intent.putExtra(WORK_PROCEDURE, JSON.toJSONString(procedureResbean));
                 setResult(RESULT_OK, intent);
                 finish();
             }

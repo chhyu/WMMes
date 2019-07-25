@@ -25,6 +25,7 @@ import java.util.List;
 
 public class ChooseWorkCenterActivity extends WMActivity<WorkHourPresenter> implements IChooseWorkCenterView {
 
+    public static final String WORK_CENTER = "work_center";
     private SwipeRefreshLayout mRefreshLayout;
     private SwipeMenuRecyclerView swipeMenuRecyclerView;
     private MaskView maskView;
@@ -61,7 +62,7 @@ public class ChooseWorkCenterActivity extends WMActivity<WorkHourPresenter> impl
             public void onItemClick(View view, ViewHolder holder, int position) {
                 WorkCenterResbean workCenterResbean = adapter.getDatas().get(position);
                 Intent intent = new Intent();
-                intent.putExtra(AddWorkHourActivity.WORK_CENTER, JSON.toJSONString(workCenterResbean));
+                intent.putExtra(WORK_CENTER, JSON.toJSONString(workCenterResbean));
                 setResult(RESULT_OK, intent);
                 finish();
             }

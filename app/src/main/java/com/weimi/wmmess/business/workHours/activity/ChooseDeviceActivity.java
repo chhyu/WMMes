@@ -7,6 +7,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
@@ -28,10 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChooseDeviceActivity extends ExpandableListActivity implements IChooseDeviceView {
-    private EditText etSearch;
-    private TextView tvSearch;
+    public static final String WORK_DEVICE = "work_device";
     private MaskView maskView;
-
     private WorkHourPresenter presenter;
     private PullToRefreshExpandableListView elvDeviceList;
     private DeviceTreeAdapter adapter;
@@ -40,19 +40,36 @@ public class ChooseDeviceActivity extends ExpandableListActivity implements ICho
     protected void onCreate(@androidx.annotation.Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_device);
+        initTheme();
         initView();
         initData();
     }
 
+    public void initTheme() {
+        try {
+            int result = 0;
+            int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+            if (resourceId > 0) {
+                result = getResources().getDimensionPixelSize(resourceId);
+            }
+            LinearLayout toptop = (LinearLayout) this.findViewById(R.id.toptop);
+            RelativeLayout.LayoutParams para = new RelativeLayout.LayoutParams(this.getWindowManager().getDefaultDisplay().getWidth(), result);
+            //设置修改后的布局。
+            toptop.setLayoutParams(para);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void initView() {
-        etSearch = findViewById(R.id.etSearch);
-        tvSearch = findViewById(R.id.tvSearch);
         maskView = findViewById(R.id.maskview);
         elvDeviceList = findViewById(R.id.elvDeviceList);
+        TextView tvToolTitle = findViewById(R.id.tvToolTitle);
+        tvToolTitle.setText("选择设备");
     }
 
     public void initData() {
-        setTitle("选择设备");
+
         presenter = new WorkHourPresenter(this);
         adapter = new DeviceTreeAdapter(this, new ArrayList<>());
         setListAdapter(adapter);
@@ -63,7 +80,7 @@ public class ChooseDeviceActivity extends ExpandableListActivity implements ICho
         elvDeviceList.getRefreshableView().setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
             Intent intent = new Intent();
             DeviceChildResbean deviceChildResbean = (DeviceChildResbean) adapter.getChild(groupPosition, childPosition);
-            intent.putExtra(AddWorkHourActivity.WORK_DEVICE, JSON.toJSONString(deviceChildResbean));
+            intent.putExtra(WORK_DEVICE, JSON.toJSONString(deviceChildResbean));
             setResult(RESULT_OK, intent);
             finish();
             return false;

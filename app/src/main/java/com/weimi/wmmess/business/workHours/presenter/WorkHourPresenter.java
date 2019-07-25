@@ -29,6 +29,7 @@ import com.weimi.wmmess.business.workHours.viewInterface.IChooseWorkTypeView;
 import com.weimi.wmmess.business.workHours.viewInterface.IWorkHourView;
 import com.weimi.wmmess.business.workOrder.bean.WorkOrderListResbean;
 import com.weimi.wmmess.business.workOrder.params.MobileWorkOrderParam;
+import com.weimi.wmmess.constants.Constants;
 import com.weimi.wmmess.constants.HostAddress;
 import com.weimi.wmmess.http.HttpClient;
 import com.weimi.wmmess.model.ListModel;
@@ -77,7 +78,6 @@ public class WorkHourPresenter extends BasePresenter {
 
                     @Override
                     public void onSuccess(ResultModel<ListModel<WorkHourListResbean>> result) {
-                        Log.e("lmsg", "loadWorkHourList==" + JSON.toJSONString(result));
                         ((IWorkHourView) mBaseView).onLoadWorkHourListSuccess(result.getData());
                     }
                 });
@@ -101,8 +101,8 @@ public class WorkHourPresenter extends BasePresenter {
 
                     @Override
                     public void onSuccess(ResultModel<Object> result) {
-                        boolean isSuccess = (boolean) result.getData();
-                        if (isSuccess) {
+                        String status = result.getStatus();
+                        if (status.equals(Constants.RESPONSE_SUCCESS)) {
                             ((IWorkHourView) mBaseView).onDeleteWorkHourSuccess();
                         }
                     }
@@ -150,7 +150,6 @@ public class WorkHourPresenter extends BasePresenter {
                     @Override
                     public void onSuccess(ResultModel<List<ProcedureResbean>> result) {
                         List<ProcedureResbean> data = result.getData();
-                        Log.e("lmsg", "result==" + JSON.toJSONString(data));
                         ((IChooseProcedureView) mBaseView).onLoadProcedureListSuccess(data);
                     }
                 });
@@ -297,8 +296,8 @@ public class WorkHourPresenter extends BasePresenter {
                 .subscribe(new BaseObserver<ResultModel<Object>>() {
                     @Override
                     public void onSuccess(ResultModel<Object> result) {
-                        boolean isSuccess = (boolean) result.getData();
-                        if (isSuccess) {
+                        String status = result.getStatus();
+                        if (status.equals(Constants.RESPONSE_SUCCESS)) {
                             ((IAddHourView) mBaseView).onAddHourSuccess();
                         }
                     }
@@ -342,8 +341,8 @@ public class WorkHourPresenter extends BasePresenter {
                 .subscribe(new BaseObserver<ResultModel<Object>>() {
                     @Override
                     public void onSuccess(ResultModel<Object> result) {
-                        boolean isSuccess = (boolean) result.getData();
-                        if (isSuccess) {
+                        String status = result.getStatus();
+                        if (status.equals(Constants.RESPONSE_SUCCESS)) {
                             ((IAddHourView) mBaseView).onUpdateHourSuccess();
                         }
                     }

@@ -32,6 +32,8 @@ import com.weimi.wmmess.widget.emptyView.MaskView;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 
 public class ChooseEmployeeActivity extends WMActivity<WorkHourPresenter> implements IChooseEmployeeView {
+
+    public static final String WORK_EMPLOYEE = "WORK_Employee";
     private SwipeMenuRecyclerView swipeMenuRecyclerView;
     private SwipeRefreshLayout mRefreshLayout;
     private MaskView maskView;
@@ -120,7 +122,7 @@ public class ChooseEmployeeActivity extends WMActivity<WorkHourPresenter> implem
             public void onItemClick(View view, ViewHolder holder, int position) {
                 EmployeeResbean employeeResbean = adapter.getDatas().get(position);
                 Intent intent = new Intent();
-                intent.putExtra(AddWorkHourActivity.WORK_EMPLOYEE, JSON.toJSONString(employeeResbean));
+                intent.putExtra(WORK_EMPLOYEE, JSON.toJSONString(employeeResbean));
                 setResult(RESULT_OK, intent);
                 finish();
             }

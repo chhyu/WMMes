@@ -1,121 +1,112 @@
-package com.weimi.wmmess.business.workHours.activity;
+package com.weimi.wmmess.business.procedureOutput.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.alibaba.fastjson.JSON;
 import com.blankj.utilcode.util.SizeUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.weimi.wmmess.R;
 import com.weimi.wmmess.base.WMActivity;
-import com.weimi.wmmess.base.adapter.OnItemClickListener;
-import com.weimi.wmmess.base.adapter.ViewHolder;
-import com.weimi.wmmess.business.workHours.WorkHourActivity;
-import com.weimi.wmmess.business.workHours.presenter.WorkHourPresenter;
-import com.weimi.wmmess.business.workHours.viewInterface.IChooseWorkOrderView;
-import com.weimi.wmmess.business.workOrder.adapter.OrderListAdapter;
-import com.weimi.wmmess.business.workOrder.bean.WorkOrderListResbean;
-import com.weimi.wmmess.business.workOrder.params.MobileWorkOrderParam;
-import com.weimi.wmmess.business.workOrder.params.WorkOrderVO;
+import com.weimi.wmmess.business.procedureInput.activity.AddProcedureInputActivity;
+import com.weimi.wmmess.business.procedureInput.bean.ProcedureInputResbean;
+import com.weimi.wmmess.business.procedureOutput.adapter.ProcedureOutputListAdapter;
+import com.weimi.wmmess.business.procedureOutput.bean.ProcedureOutputResbean;
+import com.weimi.wmmess.business.procedureOutput.presenter.ProcedureOutputPresenter;
+import com.weimi.wmmess.business.procedureOutput.viewInterface.IProcedureOutputView;
 import com.weimi.wmmess.model.ListModel;
 import com.weimi.wmmess.params.GeneralParam;
-import com.weimi.wmmess.utils.CommUtils;
 import com.weimi.wmmess.utils.ConfigUtils;
 import com.weimi.wmmess.widget.DividerItemDecoration;
 import com.weimi.wmmess.widget.LoadMoreFootView;
 import com.weimi.wmmess.widget.emptyView.MaskView;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 
-/**
- * 新增工时--选择工单
- */
-public class ChooseWorkOrderActivity extends WMActivity<WorkHourPresenter> implements IChooseWorkOrderView {
-
-    public static final String WORK_ORDER = "work_order";
+public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPresenter> implements IProcedureOutputView {
     private SwipeMenuRecyclerView swipeMenuRecyclerView;
     private SwipeRefreshLayout mRefreshLayout;
     private MaskView maskView;
-    private WorkHourPresenter presenter;
     private int size = 20;
     private int current = 1;
     private EditText etSearch;
     private TextView tvSearch;
-    private OrderListAdapter adapter;
+    private ProcedureOutputPresenter presenter;
+    private ProcedureOutputListAdapter adapter;
 
     @Override
     public int initLayout() {
-        return R.layout.activity_choose_work_order;
+        return R.layout.activity_procedure_output_list;
     }
 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
-        swipeMenuRecyclerView = findViewById(R.id.smrcvWorkOrder);
+        swipeMenuRecyclerView = findViewById(R.id.swipeMenuRecyclerView);
         mRefreshLayout = findViewById(R.id.mRefreshLayout);
         maskView = findViewById(R.id.maskview);
 
         etSearch = findViewById(R.id.etSearch);
         tvSearch = findViewById(R.id.tvSearch);
+        ImageView ivAdd = findViewById(R.id.ivAdd);
+        ivAdd.setVisibility(View.VISIBLE);
+        ivAdd.setOnClickListener(v -> {
+            Intent intent = new Intent(ProcedureOutputListActivity.this, AddProcedureOutputActivity.class);
+            startActivity(intent);
+        });
 
         tvSearch.setOnClickListener(v -> {
             String keyword = etSearch.getText().toString();
             if (StringUtils.isEmpty(keyword)) {
-                toastShort("请输入关键字");
+                toastShort("请输入搜索关键字");
                 return;
             }
-            requestMesCommonProductWorkOrder(true, keyword);
+            requestProcedureOutputList(true, keyword);
         });
     }
 
-    @Override
-    public void initData() {
-        setTitle("选择工单");
-        presenter = new WorkHourPresenter(this);
-        initRcv();
-        requestMesCommonProductWorkOrder(true, null);
-    }
-
-    private boolean isRefresh() {
-        return current == 1;
-    }
-
-    private void requestMesCommonProductWorkOrder(boolean isrefresh, String keyWord) {
-        if (isrefresh) {
+    private void requestProcedureOutputList(boolean isRefresh, String keyword) {
+        if (isRefresh) {
             current = 1;
         } else {
             current++;
         }
-        MobileWorkOrderParam mobileWorkOrderParam = new MobileWorkOrderParam();
-        GeneralParam generalParam = new GeneralParam();
-        generalParam.setSize(size);
-        generalParam.setCurrent(current);
-        WorkOrderVO workOrderVO = new WorkOrderVO();
-        workOrderVO.setKeyword(keyWord);
-        mobileWorkOrderParam.setParam(generalParam);
-        mobileWorkOrderParam.setWorkOrderVO(workOrderVO);
-        presenter.loadMesCommonProductWorkOrder(mobileWorkOrderParam);
+        GeneralParam param = new GeneralParam();
+        param.setCurrent(current);
+        param.setSize(size);
+        param.setKeyword(keyword);
+        presenter.loadProcedureOutputList(param);
+    }
+
+    @Override
+    public void initData() {
+        setTitle("工序产出");
+        presenter = new ProcedureOutputPresenter(this);
+        initRcv();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        requestProcedureOutputList(true, null);
     }
 
     /**
      * 下拉刷新
      */
     private SwipeRefreshLayout.OnRefreshListener mRefreshListener = () -> {
-        current = 1;
-        requestMesCommonProductWorkOrder(true, null);
+        requestProcedureOutputList(true, null);
     };
 
     /**
      * 加载更多。
      */
     private SwipeMenuRecyclerView.LoadMoreListener mLoadMoreListener = () -> {
-        current++;
-        requestMesCommonProductWorkOrder(false, null);
+        requestProcedureOutputList(false, null);
     };
 
     private void initRcv() {
@@ -130,23 +121,27 @@ public class ChooseWorkOrderActivity extends WMActivity<WorkHourPresenter> imple
         swipeMenuRecyclerView.addFooterView(loadMoreView);
         swipeMenuRecyclerView.setLoadMoreView(loadMoreView);
         swipeMenuRecyclerView.setLoadMoreListener(mLoadMoreListener);
-        adapter = new OrderListAdapter(this, R.layout.item_work_order_list);
+        adapter = new ProcedureOutputListAdapter(this, R.layout.item_procedure_out_list);
         swipeMenuRecyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new OnItemClickListener() {
+
+        adapter.setOnProcedureOutputItemClickListener(new ProcedureOutputListAdapter.OnProcedureOutputItemClickListener() {
+
             @Override
-            public void onItemClick(View view, ViewHolder holder, int position) {
-                WorkOrderListResbean workOrderListResbean = adapter.getDatas().get(position);
-                Intent intent = new Intent();
-                intent.putExtra(WORK_ORDER, JSON.toJSONString(workOrderListResbean));
-                setResult(RESULT_OK, intent);
-                finish();
+            public void onProcedureOutputItemClick(ProcedureOutputResbean procedureOutputResbean) {
+                Intent intent = new Intent(ProcedureOutputListActivity.this, AddProcedureOutputActivity.class);
+                intent.putExtra(AddProcedureOutputActivity.RECORD_ID, procedureOutputResbean.getRecordId());
+                startActivity(intent);
             }
 
             @Override
-            public boolean onItemLongClick(View view, ViewHolder holder, int position) {
-                return false;
+            public void onSwipProcedureOutputItemClick(ProcedureOutputResbean procedureOutputResbean) {
+                presenter.deleteProcedureOutputItem(procedureOutputResbean);
             }
         });
+    }
+
+    private boolean isRefresh() {
+        return current == 1;
     }
 
     @Override
@@ -158,7 +153,7 @@ public class ChooseWorkOrderActivity extends WMActivity<WorkHourPresenter> imple
     }
 
     @Override
-    public void onLoadWorkOrderListSuccess(ListModel<WorkOrderListResbean> listModel) {
+    public void onLoadProcedureOutputSuccess(ListModel<ProcedureOutputResbean> listModel) {
         if (listModel != null && listModel.getRecords().size() > 0) {
             maskView.setVisibility(View.GONE);
             swipeMenuRecyclerView.setVisibility(View.VISIBLE);
@@ -182,5 +177,10 @@ public class ChooseWorkOrderActivity extends WMActivity<WorkHourPresenter> imple
         }
     }
 
-
+    @Override
+    public void onDeteleProcedureOutputItemSuccess() {
+        toastShort("删除成功");
+        finish();
+        requestProcedureOutputList(true, null);
+    }
 }

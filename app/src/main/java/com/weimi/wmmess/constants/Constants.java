@@ -29,4 +29,10 @@ public class Constants {
      * 默认的工序ID
      */
     public static final String DEFAULT_PROCEDURE_ID = "1131373516650975232";
+
+
+    /**
+     * 接口响应成功
+     */
+    public static final String RESPONSE_SUCCESS = "1";
 }

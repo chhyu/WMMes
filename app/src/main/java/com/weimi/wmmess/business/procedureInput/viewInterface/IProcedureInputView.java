@@ -12,4 +12,6 @@ import com.weimi.wmmess.model.ListModel;
 public interface IProcedureInputView extends IBaseView {
 
     void onLoadProcedureInputListSuccess(ListModel<ProcedureInputResbean> listModel);
+
+    void onDeteleProcedureInputItemSuccess();
 }

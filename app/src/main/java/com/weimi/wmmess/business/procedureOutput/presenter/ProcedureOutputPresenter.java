@@ -1,4 +1,4 @@
-package com.weimi.wmmess.business.procedureInput.presenter;
+package com.weimi.wmmess.business.procedureOutput.presenter;
 
 import android.util.Log;
 
@@ -7,14 +7,18 @@ import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.weimi.wmmess.base.BaseObserver;
 import com.weimi.wmmess.base.BasePresenter;
+import com.weimi.wmmess.base.WMObserver;
 import com.weimi.wmmess.base.interfaces.IBaseView;
-import com.weimi.wmmess.business.procedureInput.api.ProcedureInputService;
 import com.weimi.wmmess.business.procedureInput.bean.PorcedureInputDetailResbean;
-import com.weimi.wmmess.business.procedureInput.bean.ProcedureInputResbean;
 import com.weimi.wmmess.business.procedureInput.params.WmMesWorkshopProcedureInputRegister;
 import com.weimi.wmmess.business.procedureInput.viewInterface.IAddProcedureInputView;
 import com.weimi.wmmess.business.procedureInput.viewInterface.IProcedureInputView;
+import com.weimi.wmmess.business.procedureOutput.api.ProcedureOutputService;
+import com.weimi.wmmess.business.procedureOutput.bean.ProcedureOutputDetailResbean;
+import com.weimi.wmmess.business.procedureOutput.bean.ProcedureOutputResbean;
 import com.weimi.wmmess.business.procedureOutput.params.WmMesWorkshopProcedureOutputRegister;
+import com.weimi.wmmess.business.procedureOutput.viewInterface.IAddProcedureOutputView;
+import com.weimi.wmmess.business.procedureOutput.viewInterface.IProcedureOutputView;
 import com.weimi.wmmess.business.workHours.api.WorkHourService;
 import com.weimi.wmmess.business.workHours.bean.WorkHourListResbean;
 import com.weimi.wmmess.business.workHours.viewInterface.IWorkHourView;
@@ -25,60 +29,56 @@ import com.weimi.wmmess.model.ListModel;
 import com.weimi.wmmess.model.ResultModel;
 import com.weimi.wmmess.params.GeneralParam;
 
+import java.util.Collections;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
  * Create by chhyu
- * on 2019/7/23
+ * on 2019/7/24
  * Describle:
  */
-public class ProcedureInputPresenter extends BasePresenter {
+public class ProcedureOutputPresenter extends BasePresenter {
 
-    private ProcedureInputService service;
+    private ProcedureOutputService service;
 
-    public ProcedureInputPresenter(IBaseView view) {
+    public ProcedureOutputPresenter(IBaseView view) {
         super(view);
         service = HttpClient
                 .builder()
                 .baseUrl(HostAddress.HOST_API)
                 .build()
                 .getRetrofit()
-                .create(ProcedureInputService.class);
+                .create(ProcedureOutputService.class);
     }
 
-    /**
-     * 加载工序投入列表
-     *
-     * @param param
-     */
-    public void loadProcedureInputList(GeneralParam param) {
-        service.loadProcedureInputList(param)
+    public void loadProcedureOutputList(GeneralParam param) {
+        service.loadProcedureOutputList(param)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())//多个subscribeOn只有第一个起作用
                 .doOnSubscribe(disposable -> mBaseView.showProgress())
                 .doFinally(() -> mBaseView.hideProgress())
                 .compose(getLifecycleProvider().bindToLifecycle())
                 .compose(getLifecycleProvider().bindToLifecycle())
-                .subscribe(new BaseObserver<ResultModel<ListModel<ProcedureInputResbean>>>() {
+                .subscribe(new WMObserver<ListModel<ProcedureOutputResbean>>() {
                     @Override
-                    public void onSuccess(ResultModel<ListModel<ProcedureInputResbean>> result) {
-                        ((IProcedureInputView) mBaseView).onLoadProcedureInputListSuccess(result.getData());
+                    public void onSuccess(ListModel<ProcedureOutputResbean> listModel) {
+                        ((IProcedureOutputView) mBaseView).onLoadProcedureOutputSuccess(listModel);
                     }
                 });
     }
 
     /**
-     * 检查数据并新增工序投入
+     * 检查数据和新增
      *
      * @param params
      */
-    public void checkDataAndInsertProcedureInput(WmMesWorkshopProcedureInputRegister params) {
-        boolean isLegal = checkDataIsLegal(params);
-        if (!isLegal) {
+    public void checkDataAndInsertProcedureOut(WmMesWorkshopProcedureOutputRegister params) {
+        if (!checkDataIsLegal(params)) {
             return;
         }
-        service.insertMesWorkshopProcedureInput(params)
+        service.insertMesWorkshopProcedureOutput(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())//多个subscribeOn只有第一个起作用
                 .doOnSubscribe(disposable -> mBaseView.showProgress())
@@ -90,7 +90,7 @@ public class ProcedureInputPresenter extends BasePresenter {
                     public void onSuccess(ResultModel<Object> result) {
                         String status = result.getStatus();
                         if (status.equals(Constants.RESPONSE_SUCCESS)) {
-                            ((IAddProcedureInputView) mBaseView).onInsertProcedureInputSuccess();
+                            ((IAddProcedureOutputView) mBaseView).onInsertProcedureInputSuccess();
                         } else {
                             ToastUtils.showShort("新增失败，请稍后再试");
                         }
@@ -104,7 +104,7 @@ public class ProcedureInputPresenter extends BasePresenter {
      * @param params
      * @return
      */
-    private boolean checkDataIsLegal(WmMesWorkshopProcedureInputRegister params) {
+    private boolean checkDataIsLegal(WmMesWorkshopProcedureOutputRegister params) {
         if (StringUtils.isEmpty(params.getWorkOrderId())) {
             ToastUtils.showShort("请选择工单");
             return false;
@@ -138,63 +138,16 @@ public class ProcedureInputPresenter extends BasePresenter {
     }
 
     /**
-     * 删除工序投入条目
-     *
-     * @param recordId
-     */
-    public void deleteProcedureInputItem(String recordId) {
-        service.deleteMesWorkshopProcedureInput(recordId)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())//多个subscribeOn只有第一个起作用
-                .doOnSubscribe(disposable -> mBaseView.showProgress())
-                .doFinally(() -> mBaseView.hideProgress())
-                .compose(getLifecycleProvider().bindToLifecycle())
-                .compose(getLifecycleProvider().bindToLifecycle())
-                .subscribe(new BaseObserver<ResultModel<Object>>() {
-                    @Override
-                    public void onSuccess(ResultModel<Object> result) {
-                        String status = result.getStatus();
-                        if (status.equals(Constants.RESPONSE_SUCCESS)) {
-                            ((IProcedureInputView) mBaseView).onDeteleProcedureInputItemSuccess();
-                        } else {
-                            ToastUtils.showShort("删除失败，请稍后再试");
-                        }
-                    }
-                });
-    }
-
-    /**
-     * 获取工序详情信息
-     *
-     * @param recordId
-     */
-    public void getMesWorkshopProcedureInputById(String recordId) {
-        service.getMesWorkshopProcedureInputById(recordId)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())//多个subscribeOn只有第一个起作用
-                .doOnSubscribe(disposable -> mBaseView.showProgress())
-                .doFinally(() -> mBaseView.hideProgress())
-                .compose(getLifecycleProvider().bindToLifecycle())
-                .compose(getLifecycleProvider().bindToLifecycle())
-                .subscribe(new BaseObserver<ResultModel<PorcedureInputDetailResbean>>() {
-                    @Override
-                    public void onSuccess(ResultModel<PorcedureInputDetailResbean> result) {
-                        ((IAddProcedureInputView) mBaseView).onGetProcedureDetailSuccess(result.getData());
-                    }
-                });
-    }
-
-    /**
      * 更新
      *
      * @param params
      */
-    public void updateProcedureInput(WmMesWorkshopProcedureInputRegister params) {
+    public void updateProcedureOutput(WmMesWorkshopProcedureOutputRegister params) {
         boolean isLegal = checkDataIsLegal(params);
         if (!isLegal) {
             return;
         }
-        service.updateMesWorkshopProcedureInput(params)
+        service.updateMesWorkshopProcedureOutput(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())//多个subscribeOn只有第一个起作用
                 .doOnSubscribe(disposable -> mBaseView.showProgress())
@@ -206,7 +159,7 @@ public class ProcedureInputPresenter extends BasePresenter {
                     public void onSuccess(ResultModel<Object> result) {
                         String status = result.getStatus();
                         if (status.equals(Constants.RESPONSE_SUCCESS)) {
-                            ((IAddProcedureInputView) mBaseView).onUpdateProcedureInputSuccess();
+                            ((IAddProcedureOutputView) mBaseView).onUpdateProcedureInputSuccess();
                         } else {
                             ToastUtils.showShort("更新失败，请稍后再试");
                         }
@@ -214,4 +167,46 @@ public class ProcedureInputPresenter extends BasePresenter {
                 });
     }
 
+    /**
+     * 获得投出
+     *
+     * @param recordId
+     */
+    public void getMesWorkshopProcedureOutputById(String recordId) {
+        service.getMesWorkshopProcedureOutputById(recordId)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())//多个subscribeOn只有第一个起作用
+                .doOnSubscribe(disposable -> mBaseView.showProgress())
+                .doFinally(() -> mBaseView.hideProgress())
+                .compose(getLifecycleProvider().bindToLifecycle())
+                .compose(getLifecycleProvider().bindToLifecycle())
+                .subscribe(new WMObserver<ProcedureOutputDetailResbean>() {
+                    @Override
+                    public void onSuccess(ProcedureOutputDetailResbean procedureOutputDetailResbean) {
+                        ((IAddProcedureOutputView) mBaseView).onGetProcedureDetailSuccess(procedureOutputDetailResbean);
+                    }
+                });
+    }
+
+
+    public void deleteProcedureOutputItem(ProcedureOutputResbean procedureOutputResbean) {
+        service.deleteMesWorkshopProcedureOutput(procedureOutputResbean.getRecordId())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())//多个subscribeOn只有第一个起作用
+                .doOnSubscribe(disposable -> mBaseView.showProgress())
+                .doFinally(() -> mBaseView.hideProgress())
+                .compose(getLifecycleProvider().bindToLifecycle())
+                .compose(getLifecycleProvider().bindToLifecycle())
+                .subscribe(new BaseObserver<ResultModel<Object>>() {
+                    @Override
+                    public void onSuccess(ResultModel<Object> result) {
+                        String status = result.getStatus();
+                        if (status.equals(Constants.RESPONSE_SUCCESS)) {
+                            ((IProcedureOutputView) mBaseView).onDeteleProcedureOutputItemSuccess();
+                        } else {
+                            ToastUtils.showShort("删除失败，请稍后再试");
+                        }
+                    }
+                });
+    }
 }

@@ -71,6 +71,8 @@ public class LoginActivity extends WMActivity<LoginPresenter> implements View.On
     public void initData() {
         btnLogin.setButtonText("登录");
         presenter = new LoginPresenter(this);
+
+        doLogin();
     }
 
     @Override
@@ -108,12 +110,12 @@ public class LoginActivity extends WMActivity<LoginPresenter> implements View.On
 
     @Override
     public void onLoginFailed(String msg) {
-        onLoginDone();
+        toastShort("登录失败");
     }
 
     @Override
     public void onLoginError(String msg) {
-        onLoginDone();
+        toastShort("登录失败");
     }
 
     private void onLoginDone() {

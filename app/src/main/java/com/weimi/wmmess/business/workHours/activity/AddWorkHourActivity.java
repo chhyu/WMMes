@@ -31,6 +31,11 @@ import com.weimi.wmmess.utils.TimeUtils;
 import com.weimi.wmmess.widget.datepick.DatePickDialog;
 import com.weimi.wmmess.widget.datepick.bean.DateType;
 
+import static com.weimi.wmmess.business.workHours.activity.ChooseDeviceActivity.WORK_DEVICE;
+import static com.weimi.wmmess.business.workHours.activity.ChooseEmployeeActivity.WORK_EMPLOYEE;
+import static com.weimi.wmmess.business.workHours.activity.ChooseProcedureActivity.WORK_PROCEDURE;
+import static com.weimi.wmmess.business.workHours.activity.ChooseWorkCenterActivity.WORK_CENTER;
+import static com.weimi.wmmess.business.workHours.activity.ChooseWorkOrderActivity.WORK_ORDER;
 import static com.weimi.wmmess.utils.TimeUtils.formatLocalDataTime;
 
 /**
@@ -39,14 +44,8 @@ import static com.weimi.wmmess.utils.TimeUtils.formatLocalDataTime;
 public class AddWorkHourActivity extends WMActivity<WorkHourPresenter> implements View.OnClickListener, IAddHourView {
 
     public static final String WORK_HOUR_ID = "work_hour_id";
-
-    public static final String WORK_ORDER = "work_order";
-    public static final String WORK_PROCEDURE = "work_procedure";
-    public static final String WORK_CENTER = "work_center";
     public static final String WORK_TIME_TYPE = "work_time_type";
-    public static final String WORK_EMPLOYEE = "WORK_Employee";
     public static final String WORK_TYPE = "work_type";
-    public static final String WORK_DEVICE = "work_device";
     private RelativeLayout rlWorkOrder, rlProcedure, rlWorkCenter, rlWorkHourType, rlSinglePrice, rlWorkTime, rlActualStartTime;
     private RelativeLayout rlDeviceName, rlEmployee, rlWorkType2, rlAmount, rlShift, rlDuration, rlActualEndTime;
     private static final int REQUEST_WORK_ORDER = 110;
@@ -167,7 +166,6 @@ public class AddWorkHourActivity extends WMActivity<WorkHourPresenter> implement
                 startActivityForResult(intent, REQUEST_WORK_TIME_TYPE);
                 break;
             case R.id.rlDeviceName:
-                toastShort("设备名称");
                 intent = new Intent(AddWorkHourActivity.this, ChooseDeviceActivity.class);
                 startActivityForResult(intent, REQUEST_DEVICE);
                 break;
