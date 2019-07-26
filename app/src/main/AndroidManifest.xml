@@ -56,7 +56,7 @@
         <activity android:name=".business.workOrder.WorkOrderListActivity" />
         <activity android:name=".business.workOrder.CraftParamsListActivity" />
         <activity android:name=".business.shimu.activity.CraftConfirmActivity" />
-        <activity android:name=".business.spotCheck.SpotCheckActivity" />
+        <activity android:name=".business.spotCheck.SpotCheckProjectListActivity" />
         <activity android:name=".business.workHours.WorkHourActivity" />
         <activity android:name=".business.workHours.activity.AddWorkHourActivity" />
         <activity android:name=".business.workHours.activity.ChooseWorkOrderActivity" />
@@ -66,13 +66,13 @@
         <activity android:name=".business.workHours.activity.ChooseDeviceActivity" />
         <activity android:name=".business.workHours.activity.ChooseEmployeeActivity" />
         <activity android:name=".business.workHours.activity.ChooseWorkTypeActivity" />
-        <activity android:name=".business.procedureInput.activity.presenter.ProcedureInputListActivity" />
-        <activity android:name=".business.procedureInput.activity.presenter.AddProcedureInputActivity" />
         <activity android:name=".business.procedureInput.activity.ProcedureInputActivity" />
         <activity android:name=".business.procedureInput.activity.AddProcedureInputActivity" />
         <activity android:name=".business.procedureOutput.activity.ProcedureOutputListActivity" />
-        <activity android:name=".business.procedureOutput.activity.ProcedureOutputListActivity" />
-        <activity android:name=".business.procedureOutput.activity.AddProcedureOutputActivity"></activity>
+        <activity android:name=".business.procedureOutput.activity.AddProcedureOutputActivity" />
+        <activity android:name=".business.defectRegister.activity.DefectRegisterListActivity" />
+        <activity android:name=".business.defectRegister.activity.AddDefectRegisterActivity" />
+        <activity android:name=".business.defectRegister.activity.ChooseDefectActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.weimi.wmmess.widget.SwipeItemMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground">
+
+    <RelativeLayout
+        android:id="@+id/rlRootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tvDefectNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="缺陷名称："
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tvDefectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvDefectNameText"
+            android:text="毛边"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tvProcedureNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDefectNameText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="工序名称：" />
+
+        <TextView
+            android:id="@+id/tvProcedureName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDefectNameText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvProcedureNameText" />
+
+
+        <TextView
+            android:id="@+id/tvWorkOrderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvProcedureNameText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="工单：" />
+
+        <TextView
+            android:id="@+id/tvWorkOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvProcedureNameText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvWorkOrderText" />
+
+        <TextView
+            android:id="@+id/tvWorkCenterText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWorkOrderText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvProductTypeText"
+            android:text="工作中心：" />
+
+        <TextView
+            android:id="@+id/tvWorkCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWorkOrder"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvWorkCenterText" />
+
+        <TextView
+            android:id="@+id/tvEmployeeNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWorkCenterText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvPlanCountText"
+            android:text="员工：" />
+
+        <TextView
+            android:id="@+id/tvEmployeeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWorkCenterText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvEmployeeNameText" />
+
+        <TextView
+            android:id="@+id/tvDeviceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmployeeNameText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="设备：" />
+
+        <TextView
+            android:id="@+id/tvDevice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmployeeNameText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tvDeviceText" />
+
+        <TextView
+            android:id="@+id/tvStartTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDeviceText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="开始时间：" />
+
+        <TextView
+            android:id="@+id/tvStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDeviceText"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@+id/tvStartTimeText" />
+
+        <TextView
+            android:id="@+id/tvEndTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvStartTimeText"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="结束时间:" />
+
+        <TextView
+            android:id="@+id/tvEndTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvStartTimeText"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_toRightOf="@+id/tvEndTimeText" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:text="删除"
+        android:textColor="@android:color/white" />
+</com.weimi.wmmess.widget.SwipeItemMenuLayout>

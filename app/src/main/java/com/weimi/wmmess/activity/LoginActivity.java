@@ -111,11 +111,13 @@ public class LoginActivity extends WMActivity<LoginPresenter> implements View.On
     @Override
     public void onLoginFailed(String msg) {
         toastShort("登录失败");
+        btnLogin.stopAnim();
     }
 
     @Override
     public void onLoginError(String msg) {
         toastShort("登录失败");
+        btnLogin.stopAnim();
     }
 
     private void onLoginDone() {

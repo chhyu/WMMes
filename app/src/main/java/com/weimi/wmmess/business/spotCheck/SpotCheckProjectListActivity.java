@@ -10,9 +10,9 @@ import com.weimi.wmmess.R;
 import com.weimi.wmmess.base.WMActivity;
 
 /**
- * 项目点检
+ * 点检项目列表
  */
-public class SpotCheckActivity extends WMActivity<SpotCheckPresenter> {
+public class SpotCheckProjectListActivity extends WMActivity<SpotCheckPresenter> {
 
     private SpotCheckPresenter presenter;
     private RecyclerView rcvSpotCheckList;

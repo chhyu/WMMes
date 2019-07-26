@@ -21,11 +21,12 @@ import com.weimi.wmmess.base.BaseFragment;
 import com.weimi.wmmess.base.adapter.CommAdapter;
 import com.weimi.wmmess.base.adapter.ViewHolder;
 import com.weimi.wmmess.bean.AppItemBean;
+import com.weimi.wmmess.business.defectRegister.activity.DefectRegisterListActivity;
 import com.weimi.wmmess.business.procedureInput.activity.ProcedureInputActivity;
 import com.weimi.wmmess.business.procedureOutput.activity.ProcedureOutputListActivity;
 import com.weimi.wmmess.business.shimu.activity.ShiMuActivity;
 import com.weimi.wmmess.business.sip.SipCallActivity;
-import com.weimi.wmmess.business.spotCheck.SpotCheckActivity;
+import com.weimi.wmmess.business.spotCheck.SpotCheckProjectListActivity;
 import com.weimi.wmmess.business.workHours.WorkHourActivity;
 import com.weimi.wmmess.business.workOrder.WorkOrderListActivity;
 import com.weimi.wmmess.presenter.MainPresenter;
@@ -122,11 +123,12 @@ public class ApplicationCenterFragment extends BaseFragment<MainPresenter> {
     private void addButtons() {
         list.add(new AppItemBean(R.drawable.main_app_icon_shimu, R.color.md_blue_800, "科学试模", ShiMuActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_sip, R.color.md_deep_orange_400, "Sip通话", SipCallActivity.class));
-        list.add(new AppItemBean(R.drawable.main_app_icon_gongdan, R.color.md_light_green_800, "工单管理", WorkOrderListActivity.class));
-        list.add(new AppItemBean(R.drawable.main_app_icon_dianjian, R.color.md_deep_orange_800, "项目点检", SpotCheckActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_gongdan, R.color.md_light_green_800, "试模工单", WorkOrderListActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_dianjian, R.color.md_deep_orange_800, "项目点检", SpotCheckProjectListActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_workhour, R.color.md_brown_800, "工时", WorkHourActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_procedure_input, R.color.md_deep_orange_400, "工序投入", ProcedureInputActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_procedure_output, R.color.md_green_A100, "工序产出", ProcedureOutputListActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_defect_register, R.color.md_cyan_A200, "缺陷登记", DefectRegisterListActivity.class));
     }
 
     /**

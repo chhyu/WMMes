@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_head_img" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshExpandableListView
+        android:id="@+id/elvDefectList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar"
+        android:childDivider="@color/bg_blue"
+        android:scrollbars="none" />
+
+
+    <com.weimi.wmmess.widget.emptyView.MaskView
+        android:id="@+id/maskview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar"
+        android:visibility="gone" />
+</RelativeLayout>

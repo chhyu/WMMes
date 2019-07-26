@@ -1,4 +1,4 @@
-package com.weimi.wmmess.business.workHours.activity;
+package com.weimi.wmmess.business.defectRegister.activity;
 
 import android.app.ExpandableListActivity;
 import android.content.Intent;
@@ -12,27 +12,27 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.handmark.pulltorefresh.library.PullToRefreshExpandableListView;
 import com.weimi.wmmess.R;
-import com.weimi.wmmess.business.workHours.adapter.DeviceTreeAdapter;
-import com.weimi.wmmess.business.workHours.bean.DeviceChildResbean;
-import com.weimi.wmmess.business.workHours.bean.DeviceParentResbean;
-import com.weimi.wmmess.business.workHours.presenter.WorkHourPresenter;
-import com.weimi.wmmess.business.workHours.viewInterface.IChooseDeviceView;
+import com.weimi.wmmess.business.defectRegister.adapter.DefectTreeAdapter;
+import com.weimi.wmmess.business.defectRegister.bean.DefectChildResbean;
+import com.weimi.wmmess.business.defectRegister.bean.DefectParentResbean;
+import com.weimi.wmmess.business.defectRegister.presenter.DefectRegisterPresenter;
+import com.weimi.wmmess.business.defectRegister.viewInterface.IChooseDefectView;
 import com.weimi.wmmess.widget.emptyView.MaskView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChooseDeviceActivity extends ExpandableListActivity implements IChooseDeviceView {
-    public static final String WORK_DEVICE = "work_device";
+public class ChooseDefectActivity extends ExpandableListActivity implements IChooseDefectView {
+    public static final String DEFECT_REGISTER = "defect_register";
     private MaskView maskView;
-    private WorkHourPresenter presenter;
-    private PullToRefreshExpandableListView elvDeviceList;
-    private DeviceTreeAdapter adapter;
+    private PullToRefreshExpandableListView elvDefectList;
+    private DefectRegisterPresenter presenter;
+    private DefectTreeAdapter adapter;
 
     @Override
-    protected void onCreate(@androidx.annotation.Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_device);
+        setContentView(R.layout.activity_choose_defect);
         initTheme();
         initView();
         initData();
@@ -56,7 +56,7 @@ public class ChooseDeviceActivity extends ExpandableListActivity implements ICho
 
     public void initView() {
         maskView = findViewById(R.id.maskview);
-        elvDeviceList = findViewById(R.id.elvDeviceList);
+        elvDefectList = findViewById(R.id.elvDefectList);
         TextView tvToolTitle = findViewById(R.id.tvToolTitle);
         tvToolTitle.setText("选择设备");
 
@@ -64,34 +64,33 @@ public class ChooseDeviceActivity extends ExpandableListActivity implements ICho
         toolbar.setNavigationOnClickListener(v -> finish());
     }
 
-    public void initData() {
-        presenter = new WorkHourPresenter(this);
-        adapter = new DeviceTreeAdapter(this, new ArrayList<>());
+    private void initData() {
+        presenter = new DefectRegisterPresenter(this);
+        adapter = new DefectTreeAdapter(this, new ArrayList<>());
         setListAdapter(adapter);
         int width = getWindowManager().getDefaultDisplay().getWidth();
-        elvDeviceList.getRefreshableView().setIndicatorBounds(width - 160, width - 40);
-//        elvDeviceList.setMode(PullToRefreshBase.Mode.BOTH);//两端刷新
-//        elvDeviceList.setRefreshing(false);
-        elvDeviceList.getRefreshableView().setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
+        elvDefectList.getRefreshableView().setIndicatorBounds(width - 160, width - 40);
+        presenter.loadDefectList();
+
+        elvDefectList.getRefreshableView().setOnChildClickListener((parent, v, groupPosition, childPosition, id) -> {
             Intent intent = new Intent();
-            DeviceChildResbean deviceChildResbean = (DeviceChildResbean) adapter.getChild(groupPosition, childPosition);
-            intent.putExtra(WORK_DEVICE, JSON.toJSONString(deviceChildResbean));
+            DefectChildResbean childResbean = (DefectChildResbean) adapter.getChild(groupPosition, childPosition);
+            intent.putExtra(DEFECT_REGISTER, JSON.toJSONString(childResbean));
             setResult(RESULT_OK, intent);
             finish();
             return false;
         });
-        presenter.loadDeviceList();
     }
 
     @Override
-    public void onLoadDeviceListSuccess(List<DeviceParentResbean> list) {
+    public void onLoadDefectTreeSuccess(List<DefectParentResbean> list) {
         if (list == null || list.size() == 0) {
             maskView.setVisibility(View.VISIBLE);
-            elvDeviceList.setVisibility(View.GONE);
+            elvDefectList.setVisibility(View.GONE);
             maskView.show();
         } else {
             maskView.setVisibility(View.GONE);
-            elvDeviceList.setVisibility(View.VISIBLE);
+            elvDefectList.setVisibility(View.VISIBLE);
             adapter.addDatas(list);
         }
     }
@@ -110,4 +109,6 @@ public class ChooseDeviceActivity extends ExpandableListActivity implements ICho
     public void hideProgress() {
 
     }
+
+
 }

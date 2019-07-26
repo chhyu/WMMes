@@ -63,6 +63,7 @@ public class ChooseProcedureActivity extends WMActivity<WorkHourPresenter> imple
         //张鑫说工序不会太多，故在此不做搜索功能
         RelativeLayout rlSearch = findViewById(R.id.rlSearch);
         rlSearch.setVisibility(View.GONE);
+        mRefreshLayout.setEnabled(false);
     }
 
     @Override

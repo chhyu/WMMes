@@ -1,9 +1,10 @@
-package com.weimi.wmmess.business.procedureOutput.activity;
+package com.weimi.wmmess.business.defectRegister.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.EditText;
@@ -14,12 +15,14 @@ import com.blankj.utilcode.util.SizeUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.weimi.wmmess.R;
 import com.weimi.wmmess.base.WMActivity;
-import com.weimi.wmmess.business.procedureInput.activity.AddProcedureInputActivity;
-import com.weimi.wmmess.business.procedureInput.bean.ProcedureInputResbean;
+import com.weimi.wmmess.business.defectRegister.adapter.DefectRegisterListAdapter;
+import com.weimi.wmmess.business.defectRegister.bean.DefectRegisterResbean;
+import com.weimi.wmmess.business.defectRegister.presenter.DefectRegisterPresenter;
+import com.weimi.wmmess.business.defectRegister.viewInterface.IDefectRegisterView;
+import com.weimi.wmmess.business.procedureOutput.activity.AddProcedureOutputActivity;
+import com.weimi.wmmess.business.procedureOutput.activity.ProcedureOutputListActivity;
 import com.weimi.wmmess.business.procedureOutput.adapter.ProcedureOutputListAdapter;
 import com.weimi.wmmess.business.procedureOutput.bean.ProcedureOutputResbean;
-import com.weimi.wmmess.business.procedureOutput.presenter.ProcedureOutputPresenter;
-import com.weimi.wmmess.business.procedureOutput.viewInterface.IProcedureOutputView;
 import com.weimi.wmmess.model.ListModel;
 import com.weimi.wmmess.params.GeneralParam;
 import com.weimi.wmmess.utils.ConfigUtils;
@@ -28,7 +31,8 @@ import com.weimi.wmmess.widget.LoadMoreFootView;
 import com.weimi.wmmess.widget.emptyView.MaskView;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 
-public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPresenter> implements IProcedureOutputView {
+public class DefectRegisterListActivity extends WMActivity<DefectRegisterPresenter> implements IDefectRegisterView {
+
     private SwipeMenuRecyclerView swipeMenuRecyclerView;
     private SwipeRefreshLayout mRefreshLayout;
     private MaskView maskView;
@@ -36,12 +40,12 @@ public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPrese
     private int current = 1;
     private EditText etSearch;
     private TextView tvSearch;
-    private ProcedureOutputPresenter presenter;
-    private ProcedureOutputListAdapter adapter;
+    private DefectRegisterPresenter presenter;
+    private DefectRegisterListAdapter adapter;
 
     @Override
     public int initLayout() {
-        return R.layout.activity_procedure_output_list;
+        return R.layout.activity_defect_register_list;
     }
 
     @Override
@@ -55,7 +59,7 @@ public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPrese
         ImageView ivAdd = findViewById(R.id.ivAdd);
         ivAdd.setVisibility(View.VISIBLE);
         ivAdd.setOnClickListener(v -> {
-            Intent intent = new Intent(ProcedureOutputListActivity.this, AddProcedureOutputActivity.class);
+            Intent intent = new Intent(DefectRegisterListActivity.this, AddDefectRegisterActivity.class);
             startActivity(intent);
         });
 
@@ -65,11 +69,11 @@ public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPrese
                 toastShort("请输入搜索关键字");
                 return;
             }
-            requestProcedureOutputList(true, keyword);
+            requestDefectRegisterList(true, keyword);
         });
     }
 
-    private void requestProcedureOutputList(boolean isRefresh, String keyword) {
+    private void requestDefectRegisterList(boolean isRefresh, String keyword) {
         if (isRefresh) {
             current = 1;
         } else {
@@ -79,31 +83,32 @@ public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPrese
         param.setCurrent(current);
         param.setSize(size);
         param.setKeyword(keyword);
-        presenter.loadProcedureOutputList(param);
+        presenter.loadDefectRegisterList(param);
     }
 
     @Override
     public void initData() {
-        setTitle("工序产出");
-        presenter = new ProcedureOutputPresenter(this);
+        setTitle("缺陷登记");
+        presenter = new DefectRegisterPresenter(this);
+
         initRcv();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        requestProcedureOutputList(true, null);
+        requestDefectRegisterList(true, null);
     }
 
     /**
      * 下拉刷新
      */
-    private SwipeRefreshLayout.OnRefreshListener mRefreshListener = () -> requestProcedureOutputList(true, null);
+    private SwipeRefreshLayout.OnRefreshListener mRefreshListener = () -> requestDefectRegisterList(true, null);
 
     /**
      * 加载更多。
      */
-    private SwipeMenuRecyclerView.LoadMoreListener mLoadMoreListener = () -> requestProcedureOutputList(false, null);
+    private SwipeMenuRecyclerView.LoadMoreListener mLoadMoreListener = () -> requestDefectRegisterList(false, null);
 
     private void initRcv() {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration.Builder().orientation(LinearLayoutManager.VERTICAL)
@@ -117,23 +122,28 @@ public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPrese
         swipeMenuRecyclerView.addFooterView(loadMoreView);
         swipeMenuRecyclerView.setLoadMoreView(loadMoreView);
         swipeMenuRecyclerView.setLoadMoreListener(mLoadMoreListener);
-        adapter = new ProcedureOutputListAdapter(this, R.layout.item_procedure_out_list);
+        adapter = new DefectRegisterListAdapter(this, R.layout.item_defect_register_list);
         swipeMenuRecyclerView.setAdapter(adapter);
 
-        adapter.setOnProcedureOutputItemClickListener(new ProcedureOutputListAdapter.OnProcedureOutputItemClickListener() {
+        adapter.setOnItemClickListener(new DefectRegisterListAdapter.OnItemClickListener() {
 
             @Override
-            public void onProcedureOutputItemClick(ProcedureOutputResbean procedureOutputResbean) {
-                Intent intent = new Intent(ProcedureOutputListActivity.this, AddProcedureOutputActivity.class);
-                intent.putExtra(AddProcedureOutputActivity.RECORD_ID, procedureOutputResbean.getRecordId());
+            public void onItemClick(Object o) {
+                DefectRegisterResbean defectRegisterResbean = (DefectRegisterResbean) o;
+                Intent intent = new Intent(DefectRegisterListActivity.this, AddDefectRegisterActivity.class);
+                intent.putExtra(AddDefectRegisterActivity.RECORD_ID, defectRegisterResbean.getRecordId());
                 startActivity(intent);
             }
 
             @Override
-            public void onSwipProcedureOutputItemClick(ProcedureOutputResbean procedureOutputResbean) {
-                presenter.deleteProcedureOutputItem(procedureOutputResbean);
+            public void onSwipItemClick(Object o) {
+                DefectRegisterResbean defectRegisterResbean = (DefectRegisterResbean) o;
+                if (!StringUtils.isEmpty(defectRegisterResbean.getRecordId())) {
+                    presenter.deleteItem(defectRegisterResbean.getRecordId());
+                }
             }
         });
+
     }
 
     private boolean isRefresh() {
@@ -149,7 +159,7 @@ public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPrese
     }
 
     @Override
-    public void onLoadProcedureOutputSuccess(ListModel<ProcedureOutputResbean> listModel) {
+    public void onLoadDefectRegisterListSuccess(ListModel<DefectRegisterResbean> listModel) {
         if (listModel != null && listModel.getRecords().size() > 0) {
             maskView.setVisibility(View.GONE);
             swipeMenuRecyclerView.setVisibility(View.VISIBLE);
@@ -174,9 +184,8 @@ public class ProcedureOutputListActivity extends WMActivity<ProcedureOutputPrese
     }
 
     @Override
-    public void onDeteleProcedureOutputItemSuccess() {
+    public void onDeleteSuccess() {
         toastShort("删除成功");
-        finish();
-        requestProcedureOutputList(true, null);
+        requestDefectRegisterList(true, null);
     }
 }
