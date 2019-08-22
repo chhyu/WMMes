@@ -1473,7 +1473,8 @@
             <Button
                 android:id="@+id/btnNextStep"
                 style="@style/nextStepBtnStyle"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dp_45"/>
         </LinearLayout>
 
     </ScrollView>

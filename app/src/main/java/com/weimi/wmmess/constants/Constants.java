@@ -17,7 +17,7 @@ public class Constants {
      * true：需要测试，将所有检测打开
      * false：不检测数据，直接跳过
      */
-    public static final boolean isNeedTest = true;
+    public static final boolean isNeedTest = false;
 
     /**
      * 最大小数点长度，默认小数点后4位
@@ -35,4 +35,10 @@ public class Constants {
      * 接口响应成功
      */
     public static final String RESPONSE_SUCCESS = "1";
+
+
+    /**
+     * 获取设备类型的固定值
+     */
+    public static final String FACILITY_TYPE_CODE="facilityTypeCode";
 }

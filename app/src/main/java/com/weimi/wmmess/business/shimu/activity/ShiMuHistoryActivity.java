@@ -54,7 +54,7 @@ public class ShiMuHistoryActivity extends WMActivity<ShiMuPresenter> implements 
     @Override
     public void initView(@Nullable Bundle savedInstanceState) {
         setTitle("试模列表");
-        tvRightOp = findViewById(R.id.tvRightOp);
+        tvRightOp = findViewById(R.id.tvOption);
         tvRightOp.setVisibility(View.VISIBLE);
         tvRightOp.setText("新建");
         swipeMenuRecyclerView = findViewById(R.id.rcvShiMuList);

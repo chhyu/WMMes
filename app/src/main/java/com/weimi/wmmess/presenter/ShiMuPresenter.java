@@ -197,7 +197,7 @@ public class ShiMuPresenter extends CommonPresenter {
                 .subscribe(new BaseObserver<ResultModel<List<CraftConfirmResbean>>>() {
                     @Override
                     public void onSuccess(ResultModel<List<CraftConfirmResbean>> result) {
-                        Log.e("lmsg", "getTrialParameterInfoById==" + JSON.toJSONString(result));
+//                        Log.e("lmsg", "getTrialParameterInfoById==" + JSON.toJSONString(result));
                         List<CraftConfirmResbean> data = result.getData();
                         ((ICraftConfirmView) mBaseView).onLoadCraftParamsSuccess(data);
                     }

@@ -631,7 +631,11 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
 
         if (!StringUtils.isEmpty(craftPaeameterId)) {
             presenter.getTrialParameterInfoById(craftPaeameterId);
+            btnNextStep.setVisibility(View.GONE);
+        } else {
+            btnNextStep.setVisibility(View.VISIBLE);
         }
+
         if (!StringUtils.isEmpty(workOrderId) && !StringUtils.isEmpty(procedureId)) {
             presenter.getModelInfoById(workOrderId, procedureId);
         }
@@ -683,6 +687,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
 
     private List<MobileTrialModeParam> carftParamsList = new ArrayList<>();
 
+
     private List<MobileTrialModeParam> setData2Resbean() {
         carftParamsList.clear();
         MobileTrialModeParam jinLiaoDuan = new MobileTrialModeParam();
@@ -692,6 +697,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         jinLiaoDuan.setLowerLimit(etJinLiaoDuanMin.getText().toString());
         jinLiaoDuan.setUpperLimit(etJinLiaoDuanMax.getText().toString());
         jinLiaoDuan.setCheckDate(etJinLiaoDuanTime.getText().toString());
+        jinLiaoDuan.setParameterType(CraftParamsName.TEMPERATURE);
         carftParamsList.add(jinLiaoDuan);
 
         MobileTrialModeParam houduan = new MobileTrialModeParam();
@@ -701,6 +707,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         houduan.setLowerLimit(etHouDuanMin.getText().toString());
         houduan.setUpperLimit(etHouDuanMax.getText().toString());
         houduan.setCheckDate(etHouDuanTime.getText().toString());
+        houduan.setParameterType(CraftParamsName.TEMPERATURE);
         carftParamsList.add(houduan);
 
         MobileTrialModeParam zhongJianDuan = new MobileTrialModeParam();
@@ -710,8 +717,8 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         zhongJianDuan.setLowerLimit(etZhongJianDuanMin.getText().toString());
         zhongJianDuan.setUpperLimit(etZhongJianDuanMax.getText().toString());
         zhongJianDuan.setCheckDate(etZhongJianDuanTime.getText().toString());
+        zhongJianDuan.setParameterType(CraftParamsName.TEMPERATURE);
         carftParamsList.add(zhongJianDuan);
-
 
         MobileTrialModeParam qianDuan = new MobileTrialModeParam();
         qianDuan.setParameterName(CraftParamsName.QIANDUAN);
@@ -720,6 +727,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         qianDuan.setLowerLimit(etQianDuanMin.getText().toString());
         qianDuan.setUpperLimit(etQianDuanMax.getText().toString());
         qianDuan.setCheckDate(etQianDuanTime.getText().toString());
+        qianDuan.setParameterType(CraftParamsName.TEMPERATURE);
         carftParamsList.add(qianDuan);
 
         MobileTrialModeParam penZui = new MobileTrialModeParam();
@@ -729,6 +737,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         penZui.setLowerLimit(etPenZuiMin.getText().toString());
         penZui.setUpperLimit(etPenZuiMax.getText().toString());
         penZui.setCheckDate(etPenZuiTime.getText().toString());
+        penZui.setParameterType(CraftParamsName.TEMPERATURE);
         carftParamsList.add(penZui);
 
         MobileTrialModeParam sheChu1Su = new MobileTrialModeParam();
@@ -738,6 +747,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChu1Su.setLowerLimit(etSheChu1SuMin.getText().toString());
         sheChu1Su.setUpperLimit(etSheChu1SuMax.getText().toString());
         sheChu1Su.setCheckDate(etSheChu1SuTime.getText().toString());
+        sheChu1Su.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(sheChu1Su);
 
 
@@ -748,6 +758,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChu2Su.setLowerLimit(etSheChu2SuMin.getText().toString());
         sheChu2Su.setUpperLimit(etSheChu2SuMax.getText().toString());
         sheChu2Su.setCheckDate(etSheChu2SuTime.getText().toString());
+        sheChu2Su.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(sheChu2Su);
 
         MobileTrialModeParam sheChu3Su = new MobileTrialModeParam();
@@ -757,7 +768,8 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChu3Su.setLowerLimit(etSheChu3SuMin.getText().toString());
         sheChu3Su.setUpperLimit(etSheChu3SuMax.getText().toString());
         sheChu3Su.setCheckDate(etSheChu3SuTime.getText().toString());
-        carftParamsList.add(sheChu2Su);
+        sheChu3Su.setParameterType(CraftParamsName.INJECTION);
+        carftParamsList.add(sheChu3Su);
 
         MobileTrialModeParam sheChu4Su = new MobileTrialModeParam();
         sheChu4Su.setParameterName(CraftParamsName.SHECHU4SU);
@@ -766,7 +778,8 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChu4Su.setLowerLimit(etSheChu4SuMin.getText().toString());
         sheChu4Su.setUpperLimit(etSheChu4SuMax.getText().toString());
         sheChu4Su.setCheckDate(etSheChu4SuTime.getText().toString());
-        carftParamsList.add(sheChu2Su);
+        sheChu4Su.setParameterType(CraftParamsName.INJECTION);
+        carftParamsList.add(sheChu4Su);
 
         MobileTrialModeParam oneDuanWeiZhi = new MobileTrialModeParam();
         oneDuanWeiZhi.setParameterName(CraftParamsName.ONEDUANWEIZHI);
@@ -775,6 +788,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         oneDuanWeiZhi.setLowerLimit(et1DuanWeiZhiMin.getText().toString());
         oneDuanWeiZhi.setUpperLimit(et1DuanWeiZhiMax.getText().toString());
         oneDuanWeiZhi.setCheckDate(et1DuanWeiZhiTime.getText().toString());
+        oneDuanWeiZhi.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(oneDuanWeiZhi);
 
         MobileTrialModeParam twoDuanWeiZhi = new MobileTrialModeParam();
@@ -784,6 +798,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         twoDuanWeiZhi.setLowerLimit(et2DuanWeiZhiMin.getText().toString());
         twoDuanWeiZhi.setUpperLimit(et2DuanWeiZhiMax.getText().toString());
         twoDuanWeiZhi.setCheckDate(et2DuanWeiZhiTime.getText().toString());
+        twoDuanWeiZhi.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(twoDuanWeiZhi);
 
         MobileTrialModeParam threeDuanWeiZhi = new MobileTrialModeParam();
@@ -793,6 +808,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         threeDuanWeiZhi.setLowerLimit(et3DuanWeiZhiMin.getText().toString());
         threeDuanWeiZhi.setUpperLimit(et3DuanWeiZhiMax.getText().toString());
         threeDuanWeiZhi.setCheckDate(et3DuanWeiZhiTime.getText().toString());
+        threeDuanWeiZhi.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(threeDuanWeiZhi);
 
         MobileTrialModeParam fourDuanWeiZhi = new MobileTrialModeParam();
@@ -802,6 +818,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         fourDuanWeiZhi.setLowerLimit(et4DuanWeiZhiMin.getText().toString());
         fourDuanWeiZhi.setUpperLimit(et4DuanWeiZhiMax.getText().toString());
         fourDuanWeiZhi.setCheckDate(et4DuanWeiZhiTime.getText().toString());
+        fourDuanWeiZhi.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(fourDuanWeiZhi);
 
 
@@ -812,6 +829,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         vpWeiZhi.setLowerLimit(etVPWeiZhiMin.getText().toString());
         vpWeiZhi.setUpperLimit(etVPWeiZhiMax.getText().toString());
         vpWeiZhi.setCheckDate(etVPWeiZhiTime.getText().toString());
+        vpWeiZhi.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(vpWeiZhi);
 
         MobileTrialModeParam sheChuYaLi1 = new MobileTrialModeParam();
@@ -821,6 +839,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChuYaLi1.setLowerLimit(etSheChuYaLi1Min.getText().toString());
         sheChuYaLi1.setUpperLimit(etSheChuYaLi1Max.getText().toString());
         sheChuYaLi1.setCheckDate(etSheChuYaLi1Time.getText().toString());
+        sheChuYaLi1.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(sheChuYaLi1);
 
         MobileTrialModeParam sheChuYaLi2 = new MobileTrialModeParam();
@@ -830,6 +849,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChuYaLi2.setLowerLimit(etSheChuYaLi2Min.getText().toString());
         sheChuYaLi2.setUpperLimit(etSheChuYaLi2Max.getText().toString());
         sheChuYaLi2.setCheckDate(etSheChuYaLi2Time.getText().toString());
+        sheChuYaLi2.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(sheChuYaLi2);
 
         MobileTrialModeParam sheChuYaLi3 = new MobileTrialModeParam();
@@ -839,6 +859,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChuYaLi3.setLowerLimit(etSheChuYaLi3Min.getText().toString());
         sheChuYaLi3.setUpperLimit(etSheChuYaLi3Max.getText().toString());
         sheChuYaLi3.setCheckDate(etSheChuYaLi3Time.getText().toString());
+        sheChuYaLi3.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(sheChuYaLi3);
 
         MobileTrialModeParam sheChuYaLi4 = new MobileTrialModeParam();
@@ -848,6 +869,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChuYaLi4.setLowerLimit(etSheChuYaLi4Min.getText().toString());
         sheChuYaLi4.setUpperLimit(etSheChuYaLi4Max.getText().toString());
         sheChuYaLi4.setCheckDate(etSheChuYaLi4Time.getText().toString());
+        sheChuYaLi4.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(sheChuYaLi4);
 
         MobileTrialModeParam lengQueShiJian = new MobileTrialModeParam();
@@ -857,6 +879,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         lengQueShiJian.setLowerLimit(etLengQueShiJianMin.getText().toString());
         lengQueShiJian.setUpperLimit(etLengQueShiJianMax.getText().toString());
         lengQueShiJian.setCheckDate(etLengQueShiJianTime.getText().toString());
+        lengQueShiJian.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(lengQueShiJian);
 
         MobileTrialModeParam sheChuShiJian = new MobileTrialModeParam();
@@ -866,6 +889,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         sheChuShiJian.setLowerLimit(etSheChuShiJianMin.getText().toString());
         sheChuShiJian.setUpperLimit(etSheChuShiJianMax.getText().toString());
         sheChuShiJian.setCheckDate(etSheChuShiJianTime.getText().toString());
+        sheChuShiJian.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(sheChuShiJian);
 
         MobileTrialModeParam zhouQiShiJian = new MobileTrialModeParam();
@@ -875,6 +899,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         zhouQiShiJian.setLowerLimit(etZhouQiShiJianMin.getText().toString());
         zhouQiShiJian.setUpperLimit(etZhouQiShiJianMax.getText().toString());
         zhouQiShiJian.setCheckDate(etZhouQiShiJianTime.getText().toString());
+        zhouQiShiJian.setParameterType(CraftParamsName.INJECTION);
         carftParamsList.add(zhouQiShiJian);
 
         MobileTrialModeParam baoYa1Duan = new MobileTrialModeParam();
@@ -884,6 +909,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYa1Duan.setLowerLimit(etBaoYa1DuanMin.getText().toString());
         baoYa1Duan.setUpperLimit(etBaoYa1DuanMax.getText().toString());
         baoYa1Duan.setCheckDate(etBaoYa1DuanTime.getText().toString());
+        baoYa1Duan.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYa1Duan);
 
         MobileTrialModeParam baoYa2Duan = new MobileTrialModeParam();
@@ -893,6 +919,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYa2Duan.setLowerLimit(etBaoYa2DuanMin.getText().toString());
         baoYa2Duan.setUpperLimit(etBaoYa2DuanMax.getText().toString());
         baoYa2Duan.setCheckDate(etBaoYa2DuanTime.getText().toString());
+        baoYa2Duan.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYa2Duan);
 
         MobileTrialModeParam baoYa3Duan = new MobileTrialModeParam();
@@ -902,6 +929,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYa3Duan.setLowerLimit(etBaoYa3DuanMin.getText().toString());
         baoYa3Duan.setUpperLimit(etBaoYa3DuanMax.getText().toString());
         baoYa3Duan.setCheckDate(etBaoYa3DuanTime.getText().toString());
+        baoYa3Duan.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYa3Duan);
 
         MobileTrialModeParam baoYa1Su = new MobileTrialModeParam();
@@ -911,6 +939,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYa1Su.setLowerLimit(etBaoYa1SuMin.getText().toString());
         baoYa1Su.setUpperLimit(etBaoYa1SuMax.getText().toString());
         baoYa1Su.setCheckDate(etBaoYa1SuTime.getText().toString());
+        baoYa1Su.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYa1Su);
 
         MobileTrialModeParam baoYa2Su = new MobileTrialModeParam();
@@ -920,6 +949,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYa2Su.setLowerLimit(etBaoYa2SuMin.getText().toString());
         baoYa2Su.setUpperLimit(etBaoYa2SuMax.getText().toString());
         baoYa2Su.setCheckDate(etBaoYa2SuTime.getText().toString());
+        baoYa2Su.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYa2Su);
 
         MobileTrialModeParam baoYa3Su = new MobileTrialModeParam();
@@ -929,6 +959,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYa3Su.setLowerLimit(etBaoYa3SuMin.getText().toString());
         baoYa3Su.setUpperLimit(etBaoYa3SuMax.getText().toString());
         baoYa3Su.setCheckDate(etBaoYa3SuTime.getText().toString());
+        baoYa3Su.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYa3Su);
 
         MobileTrialModeParam baoYaShiJian1 = new MobileTrialModeParam();
@@ -938,6 +969,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYaShiJian1.setLowerLimit(etBaoYaShiJian1Min.getText().toString());
         baoYaShiJian1.setUpperLimit(etBaoYaShiJian1Max.getText().toString());
         baoYaShiJian1.setCheckDate(etBaoYaShiJian1Time.getText().toString());
+        baoYaShiJian1.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYaShiJian1);
 
         MobileTrialModeParam baoYaShiJian2 = new MobileTrialModeParam();
@@ -947,6 +979,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYaShiJian2.setLowerLimit(etBaoYaShiJian2Min.getText().toString());
         baoYaShiJian2.setUpperLimit(etBaoYaShiJian2Max.getText().toString());
         baoYaShiJian2.setCheckDate(etBaoYaShiJian2Time.getText().toString());
+        baoYaShiJian2.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYaShiJian2);
 
         MobileTrialModeParam baoYaShiJian3 = new MobileTrialModeParam();
@@ -956,6 +989,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         baoYaShiJian3.setLowerLimit(etBaoYaShiJian3Min.getText().toString());
         baoYaShiJian3.setUpperLimit(etBaoYaShiJian3Max.getText().toString());
         baoYaShiJian3.setCheckDate(etBaoYaShiJian3Time.getText().toString());
+        baoYaShiJian3.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(baoYaShiJian3);
 
         MobileTrialModeParam luoGanZhuanSu = new MobileTrialModeParam();
@@ -965,6 +999,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         luoGanZhuanSu.setLowerLimit(etLuoGanZhuanSuMin.getText().toString());
         luoGanZhuanSu.setUpperLimit(etLuoGanZhuanSuMax.getText().toString());
         luoGanZhuanSu.setCheckDate(etLuoGanZhuanSuTime.getText().toString());
+        luoGanZhuanSu.setParameterType(CraftParamsName.PRESSURE);
         carftParamsList.add(luoGanZhuanSu);
 
         MobileTrialModeParam beiYa = new MobileTrialModeParam();
@@ -974,6 +1009,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         beiYa.setLowerLimit(etBeiYaMin.getText().toString());
         beiYa.setUpperLimit(etBeiYaMax.getText().toString());
         beiYa.setCheckDate(etBeiYaTime.getText().toString());
+        beiYa.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(beiYa);
 
         MobileTrialModeParam songTuiWeiZhi = new MobileTrialModeParam();
@@ -983,6 +1019,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         songTuiWeiZhi.setLowerLimit(etSongTuiWeiZhiMin.getText().toString());
         songTuiWeiZhi.setUpperLimit(etSongTuiWeiZhiMax.getText().toString());
         songTuiWeiZhi.setCheckDate(etSongTuiWeiZhiTime.getText().toString());
+        songTuiWeiZhi.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(songTuiWeiZhi);
 
         MobileTrialModeParam yongLiaoLiang = new MobileTrialModeParam();
@@ -992,6 +1029,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         yongLiaoLiang.setLowerLimit(etYongLiaoLiangMin.getText().toString());
         yongLiaoLiang.setUpperLimit(etYongLiaoLiangMax.getText().toString());
         yongLiaoLiang.setCheckDate(etYongLiaoLiangTime.getText().toString());
+        yongLiaoLiang.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(yongLiaoLiang);
 
         MobileTrialModeParam huanChongLiang = new MobileTrialModeParam();
@@ -1001,6 +1039,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         huanChongLiang.setLowerLimit(etHuanChongLiangMin.getText().toString());
         huanChongLiang.setUpperLimit(etHuanChongLiangMax.getText().toString());
         huanChongLiang.setCheckDate(etHuanChongLiangTime.getText().toString());
+        huanChongLiang.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(huanChongLiang);
 
         MobileTrialModeParam muJuBaoHuYaLi = new MobileTrialModeParam();
@@ -1010,6 +1049,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         muJuBaoHuYaLi.setLowerLimit(etMuJuBaoHuYaLiMin.getText().toString());
         muJuBaoHuYaLi.setUpperLimit(etMuJuBaoHuYaLiMax.getText().toString());
         muJuBaoHuYaLi.setCheckDate(etMuJuBaoHuYaLiTime.getText().toString());
+        muJuBaoHuYaLi.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(muJuBaoHuYaLi);
 
         MobileTrialModeParam muJuBaoHuWeiZhi = new MobileTrialModeParam();
@@ -1019,6 +1059,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         muJuBaoHuWeiZhi.setLowerLimit(etMuJuBaoHuWeiZhiMin.getText().toString());
         muJuBaoHuWeiZhi.setUpperLimit(etMuJuBaoHuWeiZhiMax.getText().toString());
         muJuBaoHuWeiZhi.setCheckDate(etMuJuBaoHuWeiZhiTime.getText().toString());
+        muJuBaoHuWeiZhi.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(muJuBaoHuWeiZhi);
 
         MobileTrialModeParam suoMoLi = new MobileTrialModeParam();
@@ -1028,6 +1069,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         suoMoLi.setLowerLimit(etSuoMoLiMin.getText().toString());
         suoMoLi.setUpperLimit(etSuoMoLiMax.getText().toString());
         suoMoLi.setCheckDate(etSuoMoLiTime.getText().toString());
+        suoMoLi.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(suoMoLi);
 
         MobileTrialModeParam dingChuWeiZhi = new MobileTrialModeParam();
@@ -1037,6 +1079,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         dingChuWeiZhi.setLowerLimit(etDingChuWeiZhiMin.getText().toString());
         dingChuWeiZhi.setUpperLimit(etDingChuWeiZhiMax.getText().toString());
         dingChuWeiZhi.setCheckDate(etDingChuWeiZhiTime.getText().toString());
+        dingChuWeiZhi.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(dingChuWeiZhi);
 
         MobileTrialModeParam dingMoWenDu = new MobileTrialModeParam();
@@ -1046,6 +1089,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         dingMoWenDu.setLowerLimit(etDingMoWenDuMin.getText().toString());
         dingMoWenDu.setUpperLimit(etDingMoWenDuMax.getText().toString());
         dingMoWenDu.setCheckDate(etDingMoWenDuTime.getText().toString());
+        dingMoWenDu.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(dingMoWenDu);
 
         MobileTrialModeParam dongMoWenDu = new MobileTrialModeParam();
@@ -1055,6 +1099,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         dongMoWenDu.setLowerLimit(etDongMoWenDuMin.getText().toString());
         dongMoWenDu.setUpperLimit(etDongMoWenDuMax.getText().toString());
         dongMoWenDu.setCheckDate(etDongMoWenDuTime.getText().toString());
+        dongMoWenDu.setParameterType(CraftParamsName.LOCKEDMODE);
         carftParamsList.add(dongMoWenDu);
 
         MobileTrialModeParam hongLiaoWenDu = new MobileTrialModeParam();
@@ -1064,6 +1109,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         hongLiaoWenDu.setLowerLimit(etHongLiaoWenDuMin.getText().toString());
         hongLiaoWenDu.setUpperLimit(etHongLiaoWenDuMax.getText().toString());
         hongLiaoWenDu.setCheckDate(etHongLiaoWenDuTime.getText().toString());
+        hongLiaoWenDu.setParameterType(CraftParamsName.OTHER);
         carftParamsList.add(hongLiaoWenDu);
 
         MobileTrialModeParam huiLiaoBiLi = new MobileTrialModeParam();
@@ -1073,6 +1119,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         huiLiaoBiLi.setLowerLimit(etHuiLiaoBiLiMin.getText().toString());
         huiLiaoBiLi.setUpperLimit(etHuiLiaoBiLiMax.getText().toString());
         huiLiaoBiLi.setCheckDate(etHuiLiaoBiLiTime.getText().toString());
+        huiLiaoBiLi.setParameterType(CraftParamsName.OTHER);
         carftParamsList.add(huiLiaoBiLi);
 
         MobileTrialModeParam qianJianShuLiang = new MobileTrialModeParam();
@@ -1082,6 +1129,7 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         qianJianShuLiang.setLowerLimit(etQianJianShuLiangMin.getText().toString());
         qianJianShuLiang.setUpperLimit(etQianJianShuLiangMax.getText().toString());
         qianJianShuLiang.setCheckDate(etQianJianShuLiangTime.getText().toString());
+        qianJianShuLiang.setParameterType(CraftParamsName.OTHER);
         carftParamsList.add(qianJianShuLiang);
 
         MobileTrialModeParam qianJianBianHao = new MobileTrialModeParam();
@@ -1091,87 +1139,104 @@ public class CraftConfirmActivity extends WMActivity<Step13Presenter> implements
         qianJianBianHao.setLowerLimit(etQianJianBianHaoMin.getText().toString());
         qianJianBianHao.setUpperLimit(etQianJianBianHaoMax.getText().toString());
         qianJianBianHao.setCheckDate(etQianJianBianHaoTime.getText().toString());
+        qianJianBianHao.setParameterType(CraftParamsName.OTHER);
         carftParamsList.add(qianJianBianHao);
 
         /*原料使用范围*/
         MobileTrialModeParam ganZaoWenDu = new MobileTrialModeParam();
         ganZaoWenDu.setParameterName(CraftParamsName.GANZAOWENDU);
         ganZaoWenDu.setDefaultValue(etGanZaoWenDu.getText().toString());
+        ganZaoWenDu.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(ganZaoWenDu);
 
         MobileTrialModeParam ganZaoShiJian = new MobileTrialModeParam();
         ganZaoShiJian.setParameterName(CraftParamsName.GANZAOSHIJIAN);
         ganZaoShiJian.setDefaultValue(etGanZaoShiJian.getText().toString());
+        ganZaoShiJian.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(ganZaoShiJian);
 
         MobileTrialModeParam yuanLiaoHanShuiFen = new MobileTrialModeParam();
         yuanLiaoHanShuiFen.setParameterName(CraftParamsName.YUANLIAOHANSHUIFEN);
         yuanLiaoHanShuiFen.setDefaultValue(etYuanLiaoHanShuiFen.getText().toString());
+        yuanLiaoHanShuiFen.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(yuanLiaoHanShuiFen);
 
         MobileTrialModeParam chengXingWenDu = new MobileTrialModeParam();
         chengXingWenDu.setParameterName(CraftParamsName.CHENGXINGWENDU);
         chengXingWenDu.setDefaultValue(etChengXingWenDu.getText().toString());
+        chengXingWenDu.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(chengXingWenDu);
 
         MobileTrialModeParam muJuWenDu = new MobileTrialModeParam();
         muJuWenDu.setParameterName(CraftParamsName.MUJUWENDU);
         muJuWenDu.setDefaultValue(etMuJuWenDu.getText().toString());
+        muJuWenDu.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(muJuWenDu);
 
         MobileTrialModeParam sheChuYaLi = new MobileTrialModeParam();
         sheChuYaLi.setParameterName(CraftParamsName.SHECHUYALI);
         sheChuYaLi.setDefaultValue(etSheChuYaLi.getText().toString());
+        sheChuYaLi.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(sheChuYaLi);
 
         MobileTrialModeParam sheChuShiJian2 = new MobileTrialModeParam();
         sheChuShiJian2.setParameterName(CraftParamsName.SHECHUSHIJIAN2);
         sheChuShiJian2.setDefaultValue(etSheChuShiJian.getText().toString());
+        sheChuShiJian2.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(sheChuShiJian2);
 
         MobileTrialModeParam sheChuSuDu = new MobileTrialModeParam();
         sheChuSuDu.setParameterName(CraftParamsName.SHECHUSUDU);
         sheChuSuDu.setDefaultValue(etSheChuSuDu.getText().toString());
+        sheChuSuDu.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(sheChuSuDu);
 
         MobileTrialModeParam baoYaYaLi = new MobileTrialModeParam();
         baoYaYaLi.setParameterName(CraftParamsName.BAOYAYALI);
         baoYaYaLi.setDefaultValue(etBaoYaYali.getText().toString());
+        baoYaYaLi.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(baoYaYaLi);
 
         MobileTrialModeParam baoYaShiJian = new MobileTrialModeParam();
         baoYaShiJian.setParameterName(CraftParamsName.BAOYASHIJIAN);
         baoYaShiJian.setDefaultValue(etBaoYaShiJian.getText().toString());
+        baoYaShiJian.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(baoYaShiJian);
 
         MobileTrialModeParam suoMoLi2 = new MobileTrialModeParam();
         suoMoLi2.setParameterName(CraftParamsName.SUOMOLI2);
         suoMoLi2.setDefaultValue(etBaoYaShiJian.getText().toString());
+        suoMoLi2.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(suoMoLi2);
 
         MobileTrialModeParam kaiHeMoShiJian = new MobileTrialModeParam();
         kaiHeMoShiJian.setParameterName(CraftParamsName.KAIHEMOSHIJIAN);
         kaiHeMoShiJian.setDefaultValue(etKaiHeMoShiJian.getText().toString());
+        kaiHeMoShiJian.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(kaiHeMoShiJian);
 
         MobileTrialModeParam lengQueShiJian2 = new MobileTrialModeParam();
         lengQueShiJian2.setParameterName(CraftParamsName.LENGQUESHIJIAN2);
         lengQueShiJian2.setDefaultValue(etLengQueShijian.getText().toString());
+        lengQueShiJian2.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(lengQueShiJian2);
 
         MobileTrialModeParam luoGanSuDu = new MobileTrialModeParam();
         luoGanSuDu.setParameterName(CraftParamsName.LUOGANZHUANSU2);
         luoGanSuDu.setDefaultValue(etLuoGanSuDu.getText().toString());
+        luoGanSuDu.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(luoGanSuDu);
 
         MobileTrialModeParam dingTuiChuShiJian = new MobileTrialModeParam();
         dingTuiChuShiJian.setParameterName(CraftParamsName.DINGTUICHUSHIJIAN);
         dingTuiChuShiJian.setDefaultValue(etDingTuiChuShijian.getText().toString());
+        dingTuiChuShiJian.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(dingTuiChuShiJian);
 
         MobileTrialModeParam beiYa2 = new MobileTrialModeParam();
         beiYa2.setParameterName(CraftParamsName.BEIYA2);
         beiYa2.setDefaultValue(etBeiYa.getText().toString());
+        beiYa2.setParameterType(CraftParamsName.METERIALUSERANGE);
         carftParamsList.add(beiYa2);
         return carftParamsList;
     }

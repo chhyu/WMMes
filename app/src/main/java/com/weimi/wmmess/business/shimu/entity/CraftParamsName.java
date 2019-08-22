@@ -7,6 +7,16 @@ package com.weimi.wmmess.business.shimu.entity;
  */
 public class CraftParamsName {
 
+    /*类型*/
+    public static final String TEMPERATURE = "温度";
+    public static final String INJECTION  = "射出";
+    public static final String PRESSURE  = "保压";
+    public static final String LOCKEDMODE  = "锁模";
+    public static final String OTHER  = "其它";
+    public static final String METERIALUSERANGE  = "原料使用范围";
+
+
+
     /*温度*/
     public static final String JINLIAODUAN = "进料段(℃)";
     public static final String HOUDUAN = "后段(℃)";
@@ -90,4 +100,5 @@ public class CraftParamsName {
     public static final String LUOGANZHUANSU2 = "螺杆转速（RPM）";
     public static final String DINGTUICHUSHIJIAN = "顶出/退时间 S";
     public static final String BEIYA2 = "背压 MPA";
+
 }

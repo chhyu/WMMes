@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.weimi.wmmess.MainActivity;
 import com.weimi.wmmess.R;
 import com.weimi.wmmess.base.WMActivity;
+import com.weimi.wmmess.business.workOrder.WorkOrderListActivity;
 import com.weimi.wmmess.presenter.LoginPresenter;
 import com.weimi.wmmess.viewInterface.ILoginView;
 import com.weimi.wmmess.widget.ClearEditText;
@@ -72,7 +73,7 @@ public class LoginActivity extends WMActivity<LoginPresenter> implements View.On
         btnLogin.setButtonText("登录");
         presenter = new LoginPresenter(this);
 
-        doLogin();
+//        doLogin();
     }
 
     @Override
@@ -122,7 +123,8 @@ public class LoginActivity extends WMActivity<LoginPresenter> implements View.On
 
     private void onLoginDone() {
         btnLogin.stopAnim();
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this, WorkOrderListActivity.class);
         startActivity(intent);
         finish();
     }

@@ -1,17 +1,23 @@
 <resources>
-    <string name="app_name">WMMes</string>
+    <string name="app_name" translatable="false">WMMes</string>
 
-    <string name="shimu_way">方法：  1. 螺杆温度根据原料物性表的料温范围内设定在中值的上、下各（5-10 ℃）温度公差并实测料温，检查产品的外观是否有缩水、毛边、缺料等缺陷和确认产品的外形尺寸是否Ok，并记录在下表内，根据记录确定料温的公差。  每种螺杆温度状态下的产品至少3模给QE测量关键尺寸；
+    <string name="shimu_way" translatable="false">方法：  1. 螺杆温度根据原料物性表的料温范围内设定在中值的上、下各（5-10 ℃）温度公差并实测料温，检查产品的外观是否有缩水、毛边、缺料等缺陷和确认产品的外形尺寸是否Ok，并记录在下表内，根据记录确定料温的公差。  每种螺杆温度状态下的产品至少3模给QE测量关键尺寸；
                 "\n"  2.模具温度根据原料物性表的模温范围内设定在中值的上、下各（5-10 ℃）温度公差并实测模温，检查产品的外观是否有缩水、毛边、缺料等缺陷和确认产品的外形尺寸是否ok，并记录在下表内，根据记录确定模温的公差。每种模具温度状态下的产品至少3模给QE测量关键尺寸。 </string>
 
-    <string name="work_order_type_of_trialModel">试模工单</string>
-    <string name="work_order_type_of_trialProduce">试做工单</string>
-    <string name="work_order_type_of_rework">返工工单</string>
-    <string name="work_order_type_of_produce">生产工单</string>
+    <string name="work_order_type_of_trialModel" translatable="false">试模工单</string>
+    <string name="work_order_type_of_trialProduce" translatable="false">试做工单</string>
+    <string name="work_order_type_of_rework" translatable="false">返工工单</string>
+    <string name="work_order_type_of_produce" translatable="false">生产工单</string>
 
-    <string name="work_order_state_of_start">工单下达</string>
-    <string name="work_order_state_of_readying">工单准备</string>
-    <string name="work_order_state_of_proceducing">生产中</string>
-    <string name="work_order_state_of_finish">生产完成</string>
-    <string name="work_order_state_of_exception">生产异常</string>
+    <string name="work_order_state_of_start" translatable="false">工单下达</string>
+    <string name="work_order_state_of_readying" translatable="false">工单准备</string>
+    <string name="work_order_state_of_proceducing" translatable="false">生产中</string>
+    <string name="work_order_state_of_finish" translatable="false">生产完成</string>
+    <string name="work_order_state_of_exception" translatable="false">生产异常</string>
+
+    <string name="sopt_check_type_of_day" translatable="false">日点检</string>
+    <string name="sopt_check_type_of_week" translatable="false">周点检</string>
+    <string name="sopt_check_type_of_month" translatable="false">月点检</string>
+    <string name="sopt_check_type_of_season" translatable="false">季点检</string>
+    <string name="sopt_check_type_of_yeer" translatable="false">年点检</string>
 </resources>

@@ -17,7 +17,7 @@ import retrofit2.http.POST;
 public interface MainServive {
 
     @Headers({BaseUrl.HEADER_HOST})
-    @POST("mes/mobile/checkUserInfo")
+    @POST("mes/mobile/checkUserInfoTrial")
     Observable<ResultModel<String>> doLogin(@Body LoginParams user);
 
 }

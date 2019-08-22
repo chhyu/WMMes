@@ -4,13 +4,25 @@ import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.weimi.wmmess.base.BasePresenter;
 import com.weimi.wmmess.base.interfaces.IBaseView;
+import com.weimi.wmmess.business.shimu.api.ShiMuServive;
 import com.weimi.wmmess.business.shimu.bean.problem.ProblemItemResbean;
+import com.weimi.wmmess.constants.HostAddress;
+import com.weimi.wmmess.http.HttpClient;
 
 import java.util.List;
 
 public class ProblemRecordPresenter extends BasePresenter {
+    private ShiMuServive service;
+
     public ProblemRecordPresenter(IBaseView view) {
         super(view);
+        service = HttpClient
+                .builder()
+                .baseUrl(HostAddress.HOST_API)
+                .build()
+                .getRetrofit()
+                .create(ShiMuServive.class);
+
     }
 
     public boolean checkDataIsLegal(List<ProblemItemResbean> problemItemResbeans) {
@@ -37,4 +49,9 @@ public class ProblemRecordPresenter extends BasePresenter {
         }
         return true;
     }
+
+    /**
+     * 记录试模遇到的问题
+     */
+    public void recodeTrialPeoblem(){}
 }

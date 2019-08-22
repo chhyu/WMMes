@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlRootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tvCheckTypeNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="类型名称："
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvCheckTypeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_3"
+        android:layout_toRightOf="@+id/tvCheckTypeNameText"
+        android:text="扫地机器人"
+        android:textSize="@dimen/text_size_16" />
+
+    <TextView
+        android:id="@+id/tvCheckTypeId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="12345678910" />
+
+    <TextView
+        android:id="@+id/tvCheckTypeCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCheckTypeNameText"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="类型Code：" />
+
+    <TextView
+        android:id="@+id/tvCheckTypeCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCheckTypeNameText"
+        android:layout_toRightOf="@+id/tvCheckTypeCodeText"
+        android:text="" />
+
+</RelativeLayout>

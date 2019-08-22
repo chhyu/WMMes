@@ -6,65 +6,71 @@ package com.weimi.wmmess.business.workOrder.bean;
  * Describle:
  */
 public class WorkOrderListResbean {
+
     /**
-     * bomCode : MobileWorkOrderParam
-     * bomId : 1140806453393887232
-     * actualStartTime : 2019-07-02 00:00:00
-     * craftId : 1144111063189688320
-     * planCount : 10000
-     * craftName : 撒大苏打
-     * planStartTime : 2019-07-02 00:00:00
-     * productId : 1139696389413146624
-     * workOrderType : produce
-     * orderId : 1145857629755805696
-     * workOrderCode : Test
-     * productName : 测试产品
+     * actualStartTime : 2019-08-19 10:33:47
+     * craftId : 1163267767282176000
+     * craftName : zack.注塑
+     * workOrderType : trialModel
+     * orderId : 1163271488808423424
+     * workOrderCode : 20190819Trialmodel
+     * productName : 产品zack
+     * modelFrameCode : 模架Zack
+     * modelKernelId : 1163268188587429888
+     * customerId :
+     * bomName : 产品zack
+     * productSpec :
+     * injectionCode : Injection.zack
+     * bomCode : zack.product
+     * bomId : 1163269866099314688
+     * planCount : 1000
+     * planStartTime : 2019-08-19 10:33:43
+     * productId : 1163266245131505664
+     * modelKernelCode : 模仁zack
+     * updateTime : 2019-08-19T13:39:08.303
+     * injectionId : 1163264013468176384
+     * procedureId : 1163267528886325248
      * bomVersion :
-     * productCode : MobileWorkOrderParam
-     * customerId : 1126086358352531456
-     * actualEndTime : 2019-07-02 00:00:00
-     * bomName : 测试产品
-     * orderCode : Test
-     * planEndTime : 2019-07-02 00:00:00
-     * workOrderId : 1145883625959723008
+     * unit :
+     * productCode : zack.product
+     * actualEndTime : 2019-08-20 10:33:47
+     * orderCode : 20190819Zack
+     * planEndTime : 2019-08-20 10:33:43
+     * workOrderId : 1163277906705911808
+     * modelFrameId : 1163267956814385152
+     * cavityNum : 4
      */
-    private String bomCode;
-    private String bomId;
     private String actualStartTime;
     private String craftId;
-    private int planCount;
     private String craftName;
-    private String planStartTime;
-    private String productId;
     private String workOrderType;
     private String orderId;
     private String workOrderCode;
     private String productName;
-    private String bomVersion;
-    private String productCode;
+    private String modelFrameCode;
+    private String modelKernelId;
     private String customerId;
-    private String actualEndTime;
     private String bomName;
+    private String productSpec;
+    private String injectionCode;
+    private String bomCode;
+    private String bomId;
+    private int planCount;
+    private String planStartTime;
+    private String productId;
+    private String modelKernelCode;
+    private String updateTime;
+    private String injectionId;
+    private String procedureId;
+    private String bomVersion;
+    private String unit;
+    private String productCode;
+    private String actualEndTime;
     private String orderCode;
     private String planEndTime;
     private String workOrderId;
-    private String procedureId;
-
-    public String getProcedureId() {
-        return procedureId;
-    }
-
-    public void setProcedureId(String procedureId) {
-        this.procedureId = procedureId;
-    }
-
-    public void setBomCode(String bomCode) {
-        this.bomCode = bomCode;
-    }
-
-    public void setBomId(String bomId) {
-        this.bomId = bomId;
-    }
+    private String modelFrameId;
+    private int cavityNum;
 
     public void setActualStartTime(String actualStartTime) {
         this.actualStartTime = actualStartTime;
@@ -74,20 +80,8 @@ public class WorkOrderListResbean {
         this.craftId = craftId;
     }
 
-    public void setPlanCount(int planCount) {
-        this.planCount = planCount;
-    }
-
     public void setCraftName(String craftName) {
         this.craftName = craftName;
-    }
-
-    public void setPlanStartTime(String planStartTime) {
-        this.planStartTime = planStartTime;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
     }
 
     public void setWorkOrderType(String workOrderType) {
@@ -106,24 +100,80 @@ public class WorkOrderListResbean {
         this.productName = productName;
     }
 
-    public void setBomVersion(String bomVersion) {
-        this.bomVersion = bomVersion;
+    public void setModelFrameCode(String modelFrameCode) {
+        this.modelFrameCode = modelFrameCode;
     }
 
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
+    public void setModelKernelId(String modelKernelId) {
+        this.modelKernelId = modelKernelId;
     }
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 
-    public void setActualEndTime(String actualEndTime) {
-        this.actualEndTime = actualEndTime;
-    }
-
     public void setBomName(String bomName) {
         this.bomName = bomName;
+    }
+
+    public void setProductSpec(String productSpec) {
+        this.productSpec = productSpec;
+    }
+
+    public void setInjectionCode(String injectionCode) {
+        this.injectionCode = injectionCode;
+    }
+
+    public void setBomCode(String bomCode) {
+        this.bomCode = bomCode;
+    }
+
+    public void setBomId(String bomId) {
+        this.bomId = bomId;
+    }
+
+    public void setPlanCount(int planCount) {
+        this.planCount = planCount;
+    }
+
+    public void setPlanStartTime(String planStartTime) {
+        this.planStartTime = planStartTime;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+
+    public void setModelKernelCode(String modelKernelCode) {
+        this.modelKernelCode = modelKernelCode;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public void setInjectionId(String injectionId) {
+        this.injectionId = injectionId;
+    }
+
+    public void setProcedureId(String procedureId) {
+        this.procedureId = procedureId;
+    }
+
+    public void setBomVersion(String bomVersion) {
+        this.bomVersion = bomVersion;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    public void setProductCode(String productCode) {
+        this.productCode = productCode;
+    }
+
+    public void setActualEndTime(String actualEndTime) {
+        this.actualEndTime = actualEndTime;
     }
 
     public void setOrderCode(String orderCode) {
@@ -138,12 +188,12 @@ public class WorkOrderListResbean {
         this.workOrderId = workOrderId;
     }
 
-    public String getBomCode() {
-        return bomCode;
+    public void setModelFrameId(String modelFrameId) {
+        this.modelFrameId = modelFrameId;
     }
 
-    public String getBomId() {
-        return bomId;
+    public void setCavityNum(int cavityNum) {
+        this.cavityNum = cavityNum;
     }
 
     public String getActualStartTime() {
@@ -154,20 +204,8 @@ public class WorkOrderListResbean {
         return craftId;
     }
 
-    public int getPlanCount() {
-        return planCount;
-    }
-
     public String getCraftName() {
         return craftName;
-    }
-
-    public String getPlanStartTime() {
-        return planStartTime;
-    }
-
-    public String getProductId() {
-        return productId;
     }
 
     public String getWorkOrderType() {
@@ -186,24 +224,80 @@ public class WorkOrderListResbean {
         return productName;
     }
 
-    public String getBomVersion() {
-        return bomVersion;
+    public String getModelFrameCode() {
+        return modelFrameCode;
     }
 
-    public String getProductCode() {
-        return productCode;
+    public String getModelKernelId() {
+        return modelKernelId;
     }
 
     public String getCustomerId() {
         return customerId;
     }
 
-    public String getActualEndTime() {
-        return actualEndTime;
-    }
-
     public String getBomName() {
         return bomName;
+    }
+
+    public String getProductSpec() {
+        return productSpec;
+    }
+
+    public String getInjectionCode() {
+        return injectionCode;
+    }
+
+    public String getBomCode() {
+        return bomCode;
+    }
+
+    public String getBomId() {
+        return bomId;
+    }
+
+    public int getPlanCount() {
+        return planCount;
+    }
+
+    public String getPlanStartTime() {
+        return planStartTime;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public String getModelKernelCode() {
+        return modelKernelCode;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public String getInjectionId() {
+        return injectionId;
+    }
+
+    public String getProcedureId() {
+        return procedureId;
+    }
+
+    public String getBomVersion() {
+        return bomVersion;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public String getProductCode() {
+        return productCode;
+    }
+
+    public String getActualEndTime() {
+        return actualEndTime;
     }
 
     public String getOrderCode() {
@@ -216,5 +310,13 @@ public class WorkOrderListResbean {
 
     public String getWorkOrderId() {
         return workOrderId;
+    }
+
+    public String getModelFrameId() {
+        return modelFrameId;
+    }
+
+    public int getCavityNum() {
+        return cavityNum;
     }
 }

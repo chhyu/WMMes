@@ -113,6 +113,7 @@ public abstract class BaseAdapter<T> extends RecyclerView.Adapter<ViewHolder> im
         if (list != null) {
             mDatas.addAll(list);
         }
+        notifyDataSetChanged();
     }
 
     public void clearItems() {

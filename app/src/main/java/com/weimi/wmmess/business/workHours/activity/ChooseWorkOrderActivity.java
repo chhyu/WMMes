@@ -92,7 +92,9 @@ public class ChooseWorkOrderActivity extends WMActivity<WorkHourPresenter> imple
             current++;
         }
         MobileWorkOrderParam mobileWorkOrderParam = new MobileWorkOrderParam();
+
         GeneralParam generalParam = new GeneralParam();
+
         generalParam.setSize(size);
         generalParam.setCurrent(current);
         WorkOrderVO workOrderVO = new WorkOrderVO();

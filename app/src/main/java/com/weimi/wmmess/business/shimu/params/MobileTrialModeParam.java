@@ -13,6 +13,15 @@ public class MobileTrialModeParam {
     private String defaultValue;    //设定值
     private String actualValue;     //实际值
     private String checkDate;       //检查日期
+    private String parameterType;   //参数类型
+
+    public String getParameterType() {
+        return parameterType;
+    }
+
+    public void setParameterType(String parameterType) {
+        this.parameterType = parameterType;
+    }
 
     public String getParameterName() {
         return parameterName;

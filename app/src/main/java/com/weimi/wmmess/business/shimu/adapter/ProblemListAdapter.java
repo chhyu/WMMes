@@ -107,7 +107,7 @@ public class ProblemListAdapter extends RecyclerView.Adapter<ProblemListAdapter.
                     String text = etProblemDescribe.getText().toString();
                     problemItemResbeans.get(position).setDescribe(text);
                     if (listener != null) {
-                        listener.onComplete(text, position, ET_PROBLEM_DESCRIBLE);
+                        listener. onComplete(text, position, ET_PROBLEM_DESCRIBLE);
                     }
                 }
             });

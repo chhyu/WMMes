@@ -259,7 +259,7 @@ public class WorkOrderPresenter extends BasePresenter {
      *
      * @param popView
      */
-    private void showAnimation(View popView) {
+    protected void showAnimation(View popView) {
         AnimationSet animationSet = new AnimationSet(false);
         AlphaAnimation alphaAnimation = new AlphaAnimation(0f, 1.0f);
         alphaAnimation.setDuration(300);
@@ -284,7 +284,7 @@ public class WorkOrderPresenter extends BasePresenter {
             ToastUtils.showShort("工单ID为null");
             return;
         }
-        service.checkWorkOrderHavingParameter(orderId, Constants.DEFAULT_PROCEDURE_ID)
+        service.checkWorkOrderHavingParameter(orderId,/* Constants.DEFAULT_PROCEDURE_ID*/procedureId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())//多个subscribeOn只有第一个起作用
                 .doOnSubscribe(disposable -> mBaseView.showProgress())

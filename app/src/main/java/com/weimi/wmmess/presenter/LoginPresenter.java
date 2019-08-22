@@ -60,8 +60,12 @@ public class LoginPresenter extends CommonPresenter {
                     @Override
                     public void onSuccess(ResultModel<String> result) {
                         Log.e("lmsg", "onSuccess==" + JSON.toJSONString(result));
-                        ConfigUtils.setTicket(result.getData());
-                        ((ILoginView) mBaseView).onLoginSuccess();
+                        if(result.getStatus().equals("1")){
+                            ConfigUtils.setTicket(result.getData());
+                            ((ILoginView) mBaseView).onLoginSuccess();
+                        }else {
+                            onFailed(result.getStatus());
+                        }
                     }
 
                     @Override

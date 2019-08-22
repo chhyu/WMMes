@@ -26,8 +26,9 @@ import com.weimi.wmmess.business.procedureInput.activity.ProcedureInputActivity;
 import com.weimi.wmmess.business.procedureOutput.activity.ProcedureOutputListActivity;
 import com.weimi.wmmess.business.shimu.activity.ShiMuActivity;
 import com.weimi.wmmess.business.sip.SipCallActivity;
-import com.weimi.wmmess.business.spotCheck.SpotCheckProjectListActivity;
+import com.weimi.wmmess.business.spotCheck.activity.SpotCheckDetailActivity;
 import com.weimi.wmmess.business.workHours.WorkHourActivity;
+import com.weimi.wmmess.business.workHours.activity.ChooseWorkOrderActivity;
 import com.weimi.wmmess.business.workOrder.WorkOrderListActivity;
 import com.weimi.wmmess.presenter.MainPresenter;
 import com.weimi.wmmess.widget.NoticeView;
@@ -124,11 +125,12 @@ public class ApplicationCenterFragment extends BaseFragment<MainPresenter> {
         list.add(new AppItemBean(R.drawable.main_app_icon_shimu, R.color.md_blue_800, "科学试模", ShiMuActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_sip, R.color.md_deep_orange_400, "Sip通话", SipCallActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_gongdan, R.color.md_light_green_800, "试模工单", WorkOrderListActivity.class));
-        list.add(new AppItemBean(R.drawable.main_app_icon_dianjian, R.color.md_deep_orange_800, "项目点检", SpotCheckProjectListActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_dianjian, R.color.md_deep_orange_800, "项目点检", SpotCheckDetailActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_workhour, R.color.md_brown_800, "工时", WorkHourActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_procedure_input, R.color.md_deep_orange_400, "工序投入", ProcedureInputActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_procedure_output, R.color.md_green_A100, "工序产出", ProcedureOutputListActivity.class));
         list.add(new AppItemBean(R.drawable.main_app_icon_defect_register, R.color.md_cyan_A200, "缺陷登记", DefectRegisterListActivity.class));
+        list.add(new AppItemBean(R.drawable.main_app_icon_work_order_manager, R.color.md_blue_600, "工单管理", ChooseWorkOrderActivity.class));
     }
 
     /**
@@ -145,12 +147,7 @@ public class ApplicationCenterFragment extends BaseFragment<MainPresenter> {
         bannerList.add("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3339521810,5385666&fm=26&gp=0.jpg");
         bannerList.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1226382817,2877711195&fm=26&gp=0.jpg");
         WebBannerAdapter webBannerAdapter = new WebBannerAdapter(getContext(), bannerList);
-        webBannerAdapter.setOnBannerItemClickListener(new BannerLayout.OnBannerItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Toast.makeText(getActivity(), "点击了第  " + position + "  项", Toast.LENGTH_SHORT).show();
-            }
-        });
+        webBannerAdapter.setOnBannerItemClickListener(position -> Toast.makeText(getActivity(), "点击了第  " + position + "  项", Toast.LENGTH_SHORT).show());
         recyclerBanner.setAdapter(webBannerAdapter);
         recyclerBanner.setAutoPlaying(true);
     }

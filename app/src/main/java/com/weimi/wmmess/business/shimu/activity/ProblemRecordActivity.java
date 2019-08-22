@@ -44,8 +44,6 @@ public class ProblemRecordActivity extends BaseActivity<ProblemRecordPresenter> 
     private ProblemResbean problemResbean;
     private ProblemListAdapter problemListAdapter;
     private ProblemRecordPresenter presenter;
-    public static final String HISTORY_ID = "history_id";
-    private long historyId;
 
     @Override
     public int initLayout() {
@@ -58,75 +56,17 @@ public class ProblemRecordActivity extends BaseActivity<ProblemRecordPresenter> 
         btnAddRecord = findViewById(R.id.btnAddRecord);
         TextView tvComplete = findViewById(R.id.tvRightOp);
         tvComplete.setVisibility(View.VISIBLE);
-        tvComplete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onProblemRecordComplete();
-            }
-        });
-        btnAddRecord.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addProblemRecord();
-            }
-        });
+        tvComplete.setOnClickListener(v -> onProblemRecordComplete());
+        btnAddRecord.setOnClickListener(v -> addProblemRecord());
 
     }
 
     private void onProblemRecordComplete() {
         if (Constants.isNeedTest) {
             if (presenter.checkDataIsLegal(problemItemResbeans)) {
-                try {
-                    problemResbean.setProblemId(MainApplication.thisTimeId);
-                    problemResbean.setCurrentStepIsChecked(true);
-                    ProblemResbeanDao problemResbeanDao = daoSession.getProblemResbeanDao();
-                    ProblemItemResbeanDao problemItemResbeanDao = daoSession.getProblemItemResbeanDao();
-                    problemItemResbeanDao.insertInTx(problemItemResbeans);
-                    problemResbeanDao.insert(problemResbean);
-
-                    ToastUtils.showShort("记录成功");
-                    isJump = true;
-                    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-                    String currentTime = dateFormat.format(new Date());
-                    ShiMuResbean shiMuResbean = new ShiMuResbean(null, currentTime, false, thisTimeId, thisTimeId, thisTimeId, thisTimeId, thisTimeId,
-                            thisTimeId, thisTimeId, thisTimeId, thisTimeId, thisTimeId, thisTimeId, thisTimeId, thisTimeId, thisTimeId, thisTimeId);
-                    ShiMuResbeanDao shiMuResbeanDao = daoSession.getShiMuResbeanDao();
-                    shiMuResbean.setIsComplete(true);
-                    shiMuResbeanDao.insert(shiMuResbean);
-                } catch (Exception e) {
-                    if (historyId != 0) {
-                        finish();
-                    }
-                } finally {
-                    TestUtil.loadAllDatas();
-                    if (isJump) {
-                        jump2ShiMuHistoryList();
-                    }
-                }
+                // TODO: 2019/8/16 记录试模问题
+                presenter.recodeTrialPeoblem();
             }
-        }
-    }
-
-    private boolean isJump = false;
-
-    private void jump2ShiMuHistoryList() {
-        Intent intent = new Intent(this, ShiMuHistoryActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        try {
-            ShiMuResbean shiMuResbean = MainApplication.daoSession.getShiMuResbeanDao().load(MainApplication.thisTimeId);
-            if (!shiMuResbean.getIsComplete()) {
-                //为完成的就删掉
-                Log.e("SipCallActivity", "delete all");
-                TestUtil.deleteNotCompleteDate();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -147,32 +87,9 @@ public class ProblemRecordActivity extends BaseActivity<ProblemRecordPresenter> 
                 setData2Bean(text, position, etIndex);
             }
         });
-        historyId = getIntent().getLongExtra(HISTORY_ID, 0);
-        if (historyId != 0) {
-            showHistoryData(historyId);
-        }
+
     }
 
-    private void showHistoryData(long historyId) {
-        try {
-            List<ProblemResbean> problemResbeans = MainApplication.daoSession.getProblemResbeanDao().loadAll();
-
-            List<ProblemItemResbean> problemItemResbeanList = MainApplication.daoSession.getProblemItemResbeanDao().loadAll();
-
-            if (problemItemResbeans != null && problemItemResbeans.size() > 0) {
-                problemItemResbeans.clear();
-            }
-            for (ProblemItemResbean problemItemResbean : problemItemResbeanList) {
-                if (problemItemResbean.getProblemItemResbeanId().equals(historyId)) {
-                    problemItemResbeans.add(problemItemResbean);
-                }
-            }
-            problemListAdapter.notifyDataSetChanged();
-            rcvProblemList.setEnabled(false);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     private void setData2Bean(String text, int position, int etIndex) {
         ProblemItemResbean problemItemResbean = problemItemResbeans.get(position);

@@ -22,19 +22,28 @@ public class OrderListAdapter extends CommAdapter<WorkOrderListResbean> {
     @Override
     public void convert(ViewHolder holder, WorkOrderListResbean workOrderListResbean, int position) {
         super.convert(holder, workOrderListResbean, position);
-        TextView tvWorkOrderName = holder.getView(R.id.tvWorkOrderName);
         TextView tvWorkOrderCode = holder.getView(R.id.tvWorkOrderCode);
-        TextView tvProductType = holder.getView(R.id.tvProductType);
-        TextView tvPlanCount = holder.getView(R.id.tvPlanCount);
-        TextView tvState = holder.getView(R.id.tvState);
-        TextView tvStartTime = holder.getView(R.id.tvStartTime);
-        TextView tvEndTime = holder.getView(R.id.tvEndTime);
 
-        tvWorkOrderName.setText(workOrderListResbean.getWorkOrderCode());
-        tvWorkOrderCode.setText(workOrderListResbean.getWorkOrderId());
+        TextView tvBomCode = holder.getView(R.id.tvBomCode);
+        TextView tvProductCode = holder.getView(R.id.tvProductCode);
+        TextView tvProductType = holder.getView(R.id.tvProductType);
+        TextView tvModelKernel = holder.getView(R.id.tvModelKernel);
+
+        TextView tvBomName = holder.getView(R.id.tvBomName);
+        TextView tvProductName = holder.getView(R.id.tvProductName);
+        TextView tvCraftName = holder.getView(R.id.tvCraftName);
+        TextView tvModelFrame = holder.getView(R.id.tvModelFrame);
+
+        tvWorkOrderCode.setText(workOrderListResbean.getWorkOrderCode());
+
+        tvBomCode.setText(workOrderListResbean.getBomCode());
+        tvProductCode.setText(workOrderListResbean.getProductCode());
         tvProductType.setText(workOrderListResbean.getWorkOrderType());
-        tvPlanCount.setText(workOrderListResbean.getPlanCount() + "");
-        tvStartTime.setText(workOrderListResbean.getPlanStartTime());
-        tvEndTime.setText(workOrderListResbean.getPlanEndTime());
+        tvModelKernel.setText(workOrderListResbean.getModelFrameCode());
+
+        tvBomName.setText(workOrderListResbean.getBomName());
+        tvProductName.setText(workOrderListResbean.getProductName());
+        tvCraftName.setText(workOrderListResbean.getCraftName());
+        tvModelFrame.setText(workOrderListResbean.getModelFrameCode());
     }
 }

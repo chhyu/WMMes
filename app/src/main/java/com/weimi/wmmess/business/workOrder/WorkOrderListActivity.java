@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.Button;
@@ -113,7 +114,7 @@ public class WorkOrderListActivity extends WMActivity<WorkOrderPresenter> implem
 
     @Override
     public void initData() {
-        setTitle("工单列表");
+        setTitle("试模工单列表");
         mPresenter = new WorkOrderPresenter(this);
         filterWorkOrderParams = new WorkOrderVO();
         pageInfoParams = new GeneralParam();
@@ -417,12 +418,14 @@ public class WorkOrderListActivity extends WMActivity<WorkOrderPresenter> implem
     }
 
     private void initRcv() {
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration.Builder().orientation(LinearLayoutManager.VERTICAL)
-                .dividerHeight(SizeUtils.dp2px(0.5f))
-                .dividerLeftMargin(SizeUtils.dp2px(60))
-                .dividerColor(R.color.divider)
-                .build();
-        ConfigUtils.configRecycleView(swipeMenuRecyclerView, dividerItemDecoration);
+//        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration.Builder().orientation(LinearLayoutManager.VERTICAL)
+//                .dividerHeight(SizeUtils.dp2px(0.5f))
+//                .dividerLeftMargin(SizeUtils.dp2px(60))
+//                .dividerColor(R.color.divider)
+//                .build();
+//        ConfigUtils.configRecycleView(swipeMenuRecyclerView, dividerItemDecoration);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        swipeMenuRecyclerView.setLayoutManager(layoutManager);
         mRefreshLayout.setOnRefreshListener(mRefreshListener);
         LoadMoreFootView loadMoreView = new LoadMoreFootView(this);
         swipeMenuRecyclerView.addFooterView(loadMoreView);
