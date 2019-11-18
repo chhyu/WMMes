@@ -94,7 +94,7 @@
                 android:id="@+id/tvModelKernelText"
                 style="@style/workOrder_text_style"
                 android:layout_below="@+id/tvProductType"
-                android:text="模仁：" />
+                android:text="模仁编码：" />
 
             <TextView
                 android:id="@+id/tvModelKernel"
@@ -150,7 +150,7 @@
                 android:id="@+id/tvModelFrameText"
                 style="@style/workOrder_text_style"
                 android:layout_below="@+id/tvCraftNameText"
-                android:text="模架：" />
+                android:text="模架编码：" />
 
             <TextView
                 android:id="@+id/tvModelFrame"

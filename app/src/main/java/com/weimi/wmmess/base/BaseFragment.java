@@ -22,7 +22,7 @@ import com.weimi.wmmess.widget.kprogresshud.LoadingView;
 import org.greenrobot.eventbus.EventBus;
 
 /**
- * Created by Jason on 2018/7/19.
+ * Created by chhhyu on 2018/7/19.
  */
 public abstract class BaseFragment<P extends BasePresenter> extends RxFragment implements IFragment,IBaseView {
     //region Variable

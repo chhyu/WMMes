@@ -107,9 +107,8 @@ public class CommUtils {
      * @param view view
      * @return Activity
      */
-    public static
     @NonNull
-    Activity getActivity(View view) {
+    public static Activity getActivity(View view) {
         Context context = view.getContext();
 
         while (context instanceof ContextWrapper) {

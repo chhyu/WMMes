@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">WMMes</string>
+    <string name="app_name" translatable="false">科学试模</string>
 
     <string name="shimu_way" translatable="false">方法：  1. 螺杆温度根据原料物性表的料温范围内设定在中值的上、下各（5-10 ℃）温度公差并实测料温，检查产品的外观是否有缩水、毛边、缺料等缺陷和确认产品的外形尺寸是否Ok，并记录在下表内，根据记录确定料温的公差。  每种螺杆温度状态下的产品至少3模给QE测量关键尺寸；
                 "\n"  2.模具温度根据原料物性表的模温范围内设定在中值的上、下各（5-10 ℃）温度公差并实测模温，检查产品的外观是否有缩水、毛边、缺料等缺陷和确认产品的外形尺寸是否ok，并记录在下表内，根据记录确定模温的公差。每种模具温度状态下的产品至少3模给QE测量关键尺寸。 </string>

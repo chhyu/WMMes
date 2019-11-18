@@ -69,7 +69,7 @@ public class SipCallActivity extends AppCompatActivity {
         registerReceiver(mReceiver, intentFilter);
     }
 
-    public void reg(View view) {
+    public void register(View view) {
         if (!LinphoneMiniManager.isReady()) {
             Toast.makeText(SipCallActivity.this, "Service没准备好", Toast.LENGTH_SHORT).show();
             return;
@@ -193,4 +193,11 @@ public class SipCallActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mReceiver != null) {
+            unregisterReceiver(mReceiver);
+        }
+    }
 }

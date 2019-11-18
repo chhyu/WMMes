@@ -80,9 +80,12 @@ public class WorkOrderPresenter extends BasePresenter {
 
                     @Override
                     public void onSuccess(ResultModel<ListModel<WorkOrderListResbean>> result) {
-                        Log.e("lmsg", "result==" + JSON.toJSONString(result.getData()));
-                        ListModel<WorkOrderListResbean> data = result.getData();
-                        ((IWorkOrderListView) mBaseView).onLoadWorkOrderListSuccess(data);
+                      if(result.getStatus().equals("1")){
+                          ListModel<WorkOrderListResbean> data = result.getData();
+                          ((IWorkOrderListView) mBaseView).onLoadWorkOrderListSuccess(data);
+                      }else{
+                          ToastUtils.showShort("加载失败");
+                      }
                     }
                 });
     }

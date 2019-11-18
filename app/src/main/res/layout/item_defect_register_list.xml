@@ -82,7 +82,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvWorkCenterText"
             android:layout_marginLeft="@dimen/dp_10"
-            android:layout_toRightOf="@+id/tvPlanCountText"
             android:text="员工：" />
 
         <TextView

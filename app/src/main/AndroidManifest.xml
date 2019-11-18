@@ -38,7 +38,7 @@
         <activity android:name=".business.shimu.activity.ProblemRecordActivity" />
         <activity android:name=".business.shimu.activity.ShiMuActivity" />
         <activity android:name=".business.shimu.activity.ShiMuHistoryActivity" />
-
+        <service android:name=".business.sip.LinphoneMiniManager" />
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.weimi.wmmess.fileprovider"

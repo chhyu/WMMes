@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;

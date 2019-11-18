@@ -39,8 +39,8 @@ public class WGAActivityLifecycleCallbacks implements Application.ActivityLifecy
 //            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
 //        }
 
-        //强制横屏  已确定所有界面全部横屏
-        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //强制横屏  已确定所有界面全部横屏(根据重力感应适应横屏方向)
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
     }
 
     @Override

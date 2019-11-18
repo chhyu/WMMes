@@ -155,9 +155,12 @@ public class ShiMuPresenter extends CommonPresenter {
                 .subscribe(new BaseObserver<ResultModel<ListModel<HistoryResbean>>>() {
                     @Override
                     public void onSuccess(ResultModel<ListModel<HistoryResbean>> result) {
-                        Log.e("lmsg", "result==" + JSON.toJSONString(result));
-                        List<HistoryResbean> records = result.getData().getRecords();
-                        ((IShiMuHistoryView) mBaseView).onLoadShiMuRecodeSuccess(records);
+                        if(result.getStatus().equals("1")){
+                            List<HistoryResbean> records = result.getData().getRecords();
+                            ((IShiMuHistoryView) mBaseView).onLoadShiMuRecodeSuccess(records);
+                        }else{
+                            ToastUtils.showShort("获取试模历史记录列表失败");
+                        }
                     }
                 });
     }
@@ -177,8 +180,12 @@ public class ShiMuPresenter extends CommonPresenter {
                 .subscribe(new BaseObserver<ResultModel<ModelInfoResbean>>() {
                     @Override
                     public void onSuccess(ResultModel<ModelInfoResbean> result) {
-                        Log.e("lmsg", "Object==" + JSON.toJSONString(result));
-                        ((IModelView) mBaseView).getModelInfoSuccess(result.getData());
+                        if (result.getStatus(). equals("1")) {
+                            Log.e("lmsg", "Object==" + JSON.toJSONString(result));
+                            ((IModelView) mBaseView).getModelInfoSuccess(result.getData());
+                        } else {
+                            ToastUtils.showShort("获取模具、机台信息失败");
+                        }
                     }
                 });
     }
@@ -197,9 +204,12 @@ public class ShiMuPresenter extends CommonPresenter {
                 .subscribe(new BaseObserver<ResultModel<List<CraftConfirmResbean>>>() {
                     @Override
                     public void onSuccess(ResultModel<List<CraftConfirmResbean>> result) {
-//                        Log.e("lmsg", "getTrialParameterInfoById==" + JSON.toJSONString(result));
-                        List<CraftConfirmResbean> data = result.getData();
-                        ((ICraftConfirmView) mBaseView).onLoadCraftParamsSuccess(data);
+                        if (result.getStatus() .equals("1")) {
+                            List<CraftConfirmResbean> data = result.getData();
+                            ((ICraftConfirmView) mBaseView).onLoadCraftParamsSuccess(data);
+                        } else {
+                            ToastUtils.showShort("获取工艺参数失败");
+                        }
                     }
                 });
     }
@@ -226,8 +236,12 @@ public class ShiMuPresenter extends CommonPresenter {
                 .subscribe(new BaseObserver<ResultModel<Object>>() {
                     @Override
                     public void onSuccess(ResultModel<Object> result) {
-                        Log.e("lmsg", "result==" + JSON.toJSONString(result));
-                        ((ICraftConfirmView) mBaseView).onSaveCraftParamsSuccess();
+                        if(result.getStatus().equals("1")){
+                            ToastUtils.showShort("保存成功");
+                            ((ICraftConfirmView) mBaseView).onSaveCraftParamsSuccess();
+                        }else{
+                            ToastUtils.showShort("保存失败，请稍候再试...");
+                        }
                     }
                 });
     }

@@ -32,13 +32,13 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
-            192.168.1.55:5060
+
 
             <EditText
                 android:id="@+id/id_etext_ipport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="192.168.1.55:5060" />
+                android:text="192.168.0.67:5060" />
 
         </LinearLayout>
 
@@ -58,7 +58,7 @@
                 android:id="@+id/id_etext_regtext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1001" />
+                android:text="1000" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
                 android:id="@+id/id_etext_dail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1000" />
+                android:text="1001" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,7 +110,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:onClick="reg"
+        android:onClick="register"
         android:text="注册" />
 
 
